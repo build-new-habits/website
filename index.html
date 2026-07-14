@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<!--
+  index.html
+  14 Jul 2026 v1
+
+  Alongside — Home page.
+  Route: /
+
+  Brought into scope mid-session 14 Jul 2026 (originally out of scope,
+  blocked on Graeme's photograph — see blueprint Section 2). Built with
+  two placeholders so the whole site shape is visible before either
+  blocker clears:
+    - Movement 6 photograph: styled placeholder box, not a broken <img>.
+      Real photo + reviewed alt text to be dropped in later — see build
+      note above Movement 6 below.
+    - Movement 8 mailing-list capture: same placeholder pattern as the
+      Community page join form — Kit embed not yet available.
+  Movement 7's two "hidden door" links (Philosophy, Impact) point to
+  pages that don't exist yet, so per the site's no-dead-links rule they
+  are shown as "coming soon" badges rather than live links — a departure
+  from the spec's literal arrow-link treatment, flagged in the handoff.
+
+  Content ground-truthed against alongside_homepage_experience_spec_23jun2026_v1.
+  Design tokens from css/site.css (matched to the live app 14 Jul 2026).
+-->
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alongside — You were never the one who needed fixing.</title>
+  <meta name="description" content="An adaptive coach that meets you where you actually are — not where you're supposed to be. Alongside: Move.">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div id="site-nav"></div>
+
+  <main id="main-content">
+    <div class="container">
+
+      <!-- Movement 1 — The Gates -->
+      <section class="hero" aria-label="Introduction">
+        <h1 class="hero__headline">
+          <span class="hero__headline-line">You were never the one who needed fixing.</span>
+          <span class="hero__headline-line">Your bad days aren't the problem. We built the app around them.</span>
+        </h1>
+
+        <div class="hero__rotator" id="hero-rotator">
+          <button type="button" class="hero__pause" id="hero-pause" aria-label="Pause rotating text">&#9208;</button>
+          <div aria-hidden="true">
+            <p class="hero__rotator-line is-active">You've tried the other apps. This one was built differently.</p>
+            <p class="hero__rotator-line">Movement that works on your worst days, not just your best.</p>
+            <p class="hero__rotator-line">For the woman whose body changes and the programme never did.</p>
+            <p class="hero__rotator-line">You're not the reason other apps didn't work for you.</p>
+            <p class="hero__rotator-line">This is what it feels like when a coach actually pays attention.</p>
+          </div>
+        </div>
+        <ul class="visually-hidden" aria-label="All rotating messages">
+          <li>You've tried the other apps. This one was built differently.</li>
+          <li>Movement that works on your worst days, not just your best.</li>
+          <li>For the woman whose body changes and the programme never did.</li>
+          <li>You're not the reason other apps didn't work for you.</li>
+          <li>This is what it feels like when a coach actually pays attention.</li>
+        </ul>
+
+        <span class="visually-hidden">Scroll to explore</span>
+        <div class="hero__scroll-signal" aria-hidden="true"></div>
+      </section>
+
+      <!-- Movement 2 — You Are Not Alone -->
+      <section aria-labelledby="belonging-title">
+        <h2 id="belonging-title" class="visually-hidden">You are not alone</h2>
+        <div class="belonging">
+          <p class="belonging__truth">
+            Every person who found this page arrived here the same way.<br>
+            Something wasn't working. And they wondered if it was them.<br>
+            It wasn't.
+          </p>
+          <ul class="belonging__voices">
+            <li><blockquote>I'd quit four apps before this one.</blockquote></li>
+            <li><blockquote>I didn't know what I was missing until the coach noticed.</blockquote></li>
+            <li><blockquote>I came back after six weeks away. It welcomed me.</blockquote></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Movement 3 — Main Street -->
+      <section aria-labelledby="values-title">
+        <h2 id="values-title" class="visually-hidden">What makes this different</h2>
+        <div class="value-statements">
+          <p class="value-statement">Ready when you are.</p>
+          <p class="value-statement">Listens to what your body is saying, even when you can't.</p>
+          <p class="value-statement">Adjusts to who you are today, not to where you're supposed to be.</p>
+        </div>
+      </section>
+
+      <!-- Movement 4 — The First Ride -->
+      <section aria-labelledby="coach-preview-title">
+        <h2 id="coach-preview-title" class="visually-hidden">This is what the coach actually sounds like</h2>
+        <p class="coach-preview__framing">This is your coach. They don't have a name — but they know yours.</p>
+
+        <div id="coach-tabs">
+          <div class="coach-tabs__list" role="tablist" aria-label="Coach message categories">
+            <button type="button" role="tab" id="tab-struggling" aria-selected="true" aria-controls="panel-struggling" tabindex="0" class="coach-tabs__tab">When you're struggling</button>
+            <button type="button" role="tab" id="tab-return" aria-selected="false" aria-controls="panel-return" tabindex="-1" class="coach-tabs__tab">When you return</button>
+            <button type="button" role="tab" id="tab-grow" aria-selected="false" aria-controls="panel-grow" tabindex="-1" class="coach-tabs__tab">When you grow</button>
+          </div>
+
+          <div role="tabpanel" id="panel-struggling" aria-labelledby="tab-struggling" class="coach-tabs__panel">
+            <div class="coach-bubble">
+              <span class="coach-bubble__context">You open the app. Energy at 2.</span>
+              <p class="coach-bubble__message">"I hear you. Energy at 2 is real, and I'm not going to pretend otherwise. Today is for gentle movement only. No pushing. Just being kind to yourself."</p>
+            </div>
+            <div class="coach-bubble">
+              <span class="coach-bubble__context">You check in and flag that your back is at 7 out of 10 today.</span>
+              <p class="coach-bubble__message">"I'm sorry your back is difficult today. 7 out of 10 is significant, and I want to be really careful with you. I've adjusted everything to protect that area. We'll be gentle."</p>
+            </div>
+            <div class="coach-bubble">
+              <span class="coach-bubble__context">You tell the coach you're thinking about stopping altogether.</span>
+              <p class="coach-bubble__message">"I'm glad you told me how you're feeling. That takes trust. Can you help me understand what's going on? Whatever's happening, we can figure it out together. But I'm not going to let you give up on yourself without at least talking about it first."</p>
+            </div>
+          </div>
+
+          <div role="tabpanel" id="panel-return" aria-labelledby="tab-return" class="coach-tabs__panel" hidden>
+            <div class="coach-bubble">
+              <span class="coach-bubble__context">You haven't opened the app in ten days.</span>
+              <p class="coach-bubble__message">"Welcome back. I'm genuinely glad you're here. Whatever kept you away — that's okay. You don't need to explain. Let's start gently and take it one day at a time."</p>
+            </div>
+            <div class="coach-bubble">
+              <span class="coach-bubble__context">The coach has noticed something across your last few sessions.</span>
+              <p class="coach-bubble__message">"I've noticed you've been running on low for a few days. That's not a failure — it's information. Your nervous system is asking for rest. When you're ready for more, I'll be here."</p>
+            </div>
+          </div>
+
+          <div role="tabpanel" id="panel-grow" aria-labelledby="tab-grow" class="coach-tabs__panel" hidden>
+            <div class="coach-bubble">
+              <span class="coach-bubble__context">You tell the coach you've been letting yourself down.</span>
+              <p class="coach-bubble__message">"I want to gently push back on that. I'm watching you try. That's not failure. That's courage."</p>
+            </div>
+            <div class="coach-bubble">
+              <span class="coach-bubble__context">You've told the coach you're running on empty. The session begins.</span>
+              <p class="coach-bubble__message">"Today's session is gentle by design. There's no rush. Take a breath, and start when you feel ready."</p>
+            </div>
+            <div class="coach-bubble">
+              <span class="coach-bubble__context">You finish your first full programme.</span>
+              <p class="coach-bubble__message">"I am so proud of you. Take time to really feel this. You committed to something and saw it through. That takes strength."</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Movement 5 — Behind the Magic -->
+      <section aria-labelledby="science-title">
+        <h2 id="science-title" class="visually-hidden">Behind the magic</h2>
+        <div class="science-accordion">
+          <details class="science-accordion__item">
+            <summary>Why did the other apps make me feel worse about myself? <span class="science-accordion__chevron" aria-hidden="true">&rarr;</span></summary>
+            <div class="science-accordion__body">
+              <p>97% of people stop using fitness apps within a year. Research consistently identifies the same cause: shame. Streak-loss, rigid targets, and punishment for absence trigger disengagement — particularly in neurodivergent users and women navigating hormonal change.</p>
+              <span class="science-accordion__source">— Bondaronek et al., British Journal of Health Psychology, October 2025</span>
+              <p class="science-accordion__reflection">Graeme's reflection: I'd quit three fitness apps before I started building this one. They kept telling me to push, and then I got injured and the apps continued to treat me like I was fully fit. They refused to accept I needed adjustment. This is the gap Alongside is trying to close.</p>
+            </div>
+          </details>
+
+          <details class="science-accordion__item">
+            <summary>What does the science say actually works? <span class="science-accordion__chevron" aria-hidden="true">&rarr;</span></summary>
+            <div class="science-accordion__body">
+              <p>Burnout is nervous system dysregulation, not tiredness. Pushing through makes it worse. Alongside detects the early signs — sustained low energy, broken sleep, accumulating pain — and responds with restoration, not pressure.</p>
+              <span class="science-accordion__source">— Dr Claire Plumbly, Burnout: How to Manage Your Nervous System, 2024</span>
+              <p>Self-compassion improves motivation, not reduces it. Removing shame correlates with stronger resilience, better barrier self-efficacy, and more sustainable physical activity over time.</p>
+              <span class="science-accordion__source">— Zhang et al., British Journal of Health Psychology, 2025</span>
+              <p class="science-accordion__reflection">Graeme's reflection: I built the burnout detection into the app before I read Plumbly's research. When I did read it, I felt seen by a book for the first time in years. I knew the feeling, I just couldn't name it. That's exactly the feeling I want Alongside to give people.</p>
+            </div>
+          </details>
+
+          <details class="science-accordion__item">
+            <summary>What happens when someone finally pays attention? <span class="science-accordion__chevron" aria-hidden="true">&rarr;</span></summary>
+            <div class="science-accordion__body">
+              <p>Other-oriented empathy — genuinely caring about others — is protective against burnout. Self-oriented responses, like guilt and distress, are risk factors. Being consistently met with dignity may gradually change how people relate to themselves, and then to others.</p>
+              <span class="science-accordion__source">— Empathy types and burnout meta-analysis, Psychology, Health &amp; Medicine, November 2025</span>
+              <p class="science-accordion__reflection">Graeme's reflection: Being understood changes us. People who feel genuinely seen become, over time, slightly better at seeing others. That's the long horizon Alongside is building toward.</p>
+            </div>
+          </details>
+        </div>
+        <p class="science-sources-note">24 peer-reviewed sources. Available on request.</p>
+      </section>
+
+      <!-- Movement 6 — The Human Behind It -->
+      <!-- BUILD NOTE: photo placeholder below. Swap for Graeme's real working/
+           thinking photograph when ready. Alt text must be reviewed by Graeme
+           before publishing (per spec) — do not ship generic alt text. -->
+      <section aria-labelledby="human-title">
+        <h2 id="human-title" class="visually-hidden">The human behind it</h2>
+        <div class="human-behind__photo" role="img" aria-label="Photograph placeholder. Real photo of Graeme, working or thinking, to be added — alt text to be reviewed by Graeme before publishing.">
+          Photo placeholder — Graeme, working/thinking
+        </div>
+        <div class="human-behind__text">
+          <p>I quit three fitness apps before I built this one.</p>
+          <p>They kept telling me to push through. My body kept telling me something different.</p>
+          <p>After burnout, and years of rebuilding — I made the thing I needed.</p>
+          <p>I hope you find it useful.</p>
+          <p class="human-behind__turn">The rest is yours.</p>
+        </div>
+      </section>
+
+      <!-- Movement 7 — The Castle -->
+      <section aria-labelledby="castle-title">
+        <h2 id="castle-title" class="visually-hidden">The castle</h2>
+        <p class="castle__philosophy">
+          Most people who've struggled with fitness apps haven't failed.<br>
+          The apps failed to understand them.
+        </p>
+        <div class="castle__impact">
+          <p>Five percent of everything we make goes to causes our community votes on.</p>
+          <p>Because how you care for yourself and how you care for the world are the same thing.</p>
+        </div>
+        <div class="castle__door">
+          <p class="castle__door-lead">There's more underneath this, if you want it.</p>
+          <span class="badge badge--soon">Full philosophy — coming soon</span>
+          <span class="badge badge--soon">Where the money goes — coming soon</span>
+        </div>
+      </section>
+
+      <!-- Movement 8 — The Gates Close Behind Her -->
+      <!-- BUILD NOTE: form disabled — Kit embed/API key not yet available.
+           Same placeholder pattern as the Community page join form. -->
+      <section aria-labelledby="capture-title" class="closing-capture">
+        <h2 id="capture-title" class="visually-hidden">Join the people who found this first</h2>
+        <p class="closing-capture__lead">Join the people who found this first.</p>
+
+        <form class="closing-capture__form" aria-label="Join the Alongside mailing list">
+          <div class="form-field">
+            <label class="form-label" for="capture-email">Your email address</label>
+            <input
+              class="form-input"
+              type="email"
+              id="capture-email"
+              name="email"
+              autocomplete="email"
+              required
+              disabled
+              aria-describedby="capture-hint"
+            >
+          </div>
+          <div class="closing-capture__consent">
+            <input type="checkbox" id="capture-consent" name="consent" disabled>
+            <label for="capture-consent">I agree to receive emails from Build New Habits Ltd. I can unsubscribe at any time.</label>
+          </div>
+          <button type="submit" class="btn btn--disabled" aria-disabled="true" disabled>I'm ready</button>
+          <p class="form-hint" id="capture-hint">
+            Sign-up isn't wired up yet — this form is a placeholder until the
+            mailing list connection is ready. Check back soon.
+          </p>
+        </form>
+
+        <p class="closing-capture__after">
+          The app feels exactly like this.<br>
+          Ready when you are.
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/site.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>
