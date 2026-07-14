@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  sitemap.xml
+  14 Jul 2026 v1
+
+  Alongside — website sitemap.
+  Only lists pages that are actually live. Add a <url> entry as each new
+  page ships — do not pre-list pages still blocked or unbuilt.
+  URLs point at the GitHub Pages hosting URL for this session. Update to
+  the real domain once it's connected (post-Home-launch, per website
+  planning doc — not this session).
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://build-new-habits.github.io/website/products/</loc>
+    <lastmod>2026-07-14</lastmod>
+  </url>
+  <url>
+    <loc>https://build-new-habits.github.io/website/community/</loc>
+    <lastmod>2026-07-14</lastmod>
+  </url>
+</urlset>
