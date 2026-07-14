@@ -1,5 +1,9 @@
 /* home.js
- * 14 Jul 2026 v1
+ * 14 Jul 2026 v2
+ *
+ * v2 — Pause button moved out of the rotator overlap (phone-test fix);
+ *   updated to set innerHTML (icon + label) instead of textContent.
+ * v1 — Initial.
  *
  * Alongside — Home page interactions.
  * Page-specific script, not shared with other pages — keeps site.js generic.
@@ -61,11 +65,11 @@
         isPaused = !isPaused;
         if (isPaused) {
           stop();
-          pauseBtn.textContent = "\u25B6"; // play glyph
+          pauseBtn.innerHTML = '<span aria-hidden="true">&#9654;</span> Resume';
           pauseBtn.setAttribute("aria-label", "Resume rotating text");
         } else {
           start();
-          pauseBtn.textContent = "\u23F8"; // pause glyph
+          pauseBtn.innerHTML = '<span aria-hidden="true">&#9208;</span> Pause';
           pauseBtn.setAttribute("aria-label", "Pause rotating text");
         }
       });
