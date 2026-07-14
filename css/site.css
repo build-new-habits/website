@@ -1,6 +1,12 @@
 /* site.css
- * 14 Jul 2026 v3
+ * 14 Jul 2026 v4
  *
+ * v4 — Responsive layout added: real desktop breakpoint (content width,
+ *   Products 3-col grid) plus manual layout override support. Nav
+ *   show/hide rules converted from raw @media(max-width:480px) to
+ *   [data-layout] attribute selectors (see js/layout.js) so the manual
+ *   toggle can actually override the real viewport, not just respond to
+ *   it. Added .site-nav__controls and .site-nav__layout-toggle styles.
  * v3 — Phone-test fixes: hero headline lines were inline spans that ran
  *   together (now block-level, more spacing), hero pause button
  *   overlapped the rotating text (moved to its own row below), hero
@@ -300,51 +306,121 @@ section + section {
   border-bottom-color: var(--color-primary);
 }
 
+.site-nav__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.site-nav__controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.site-nav__layout-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: var(--touch-target-min);
+  padding: 0 var(--space-3);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  color: var(--color-text-secondary);
+  font-family: var(--font-family);
+  font-size: var(--text-xs);
+  cursor: pointer;
+}
+
+.site-nav__layout-toggle:hover,
+.site-nav__layout-toggle:focus-visible {
+  border-color: var(--color-primary);
+  color: var(--color-text);
+}
+
 .site-nav__toggle {
+  display: none;
+  width: var(--touch-target-min);
+  height: var(--touch-target-min);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+/* Layout-mode driven nav — see js/layout.js. Auto-detects viewport via
+   matchMedia by default; the [data-layout] attribute is what actually
+   drives these rules so a manual override truly overrides the viewport,
+   not just raw @media width (which can't be forced by JS). */
+
+html[data-layout="mobile"] .site-nav__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+html[data-layout="desktop"] .site-nav__toggle {
   display: none;
 }
 
-/* Mobile nav */
-@media (max-width: 480px) {
-  .site-nav__toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: var(--touch-target-min);
-    height: var(--touch-target-min);
-    background: transparent;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
-    color: var(--color-text);
-    cursor: pointer;
-  }
+html[data-layout="mobile"] .site-nav__links {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  gap: 0;
+  background: var(--color-bg-deep);
+  border-bottom: 1px solid var(--color-border-light);
+  display: none;
+}
 
-  .site-nav__links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    gap: 0;
-    background: var(--color-bg-deep);
-    border-bottom: 1px solid var(--color-border-light);
-    display: none;
-  }
+html[data-layout="mobile"] .site-nav__links.is-open {
+  display: flex;
+}
 
-  .site-nav__links.is-open {
-    display: flex;
-  }
+html[data-layout="mobile"] .site-nav__link {
+  padding: var(--space-4) var(--content-padding);
+  width: 100%;
+  border-bottom: 1px solid var(--color-border-light);
+}
 
-  .site-nav__link {
-    padding: var(--space-4) var(--content-padding);
-    width: 100%;
-    border-bottom: 1px solid var(--color-border-light);
-  }
+html[data-layout="mobile"] .site-nav__link[aria-current="page"] {
+  border-bottom: 1px solid var(--color-border-light);
+  background: var(--color-bg);
+}
 
-  .site-nav__link[aria-current="page"] {
-    border-bottom: 1px solid var(--color-border-light);
-    background: var(--color-bg);
-  }
+html[data-layout="desktop"] .site-nav__links {
+  display: flex;
+  position: static;
+  background: transparent;
+  border-bottom: none;
+}
+
+/* Desktop breakpoint — content width and Products grid.
+   A modest content-width bump, not a full redesign: Home's narrative
+   sections stay a comfortable reading column even on wide screens
+   (deliberate — matches the page's own single-column design principle). */
+
+html[data-layout="desktop"] .container {
+  max-width: 720px;
+}
+
+html[data-layout="desktop"] .product-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+
+html[data-layout="desktop"] .product-cards .product-card {
+  margin-bottom: 0;
+}
+
+html[data-layout="desktop"] .hero__headline,
+html[data-layout="desktop"] .hero__tagline {
+  max-width: none;
 }
 
 /* ========================================
