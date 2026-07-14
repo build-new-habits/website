@@ -1,0 +1,9 @@
+# robots.txt
+# 14 Jul 2026 v1
+# Alongside — website
+
+User-agent: *
+Disallow: /admin/
+Allow: /
+
+Sitemap: https://build-new-habits.github.io/website/sitemap.xml
