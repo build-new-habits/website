@@ -1,5 +1,10 @@
 /* site.css
- * 14 Jul 2026 v1
+ * 14 Jul 2026 v2
+ *
+ * v2 — Home page brought into scope this session. Added Home-page-specific
+ *   section (Movements 1-8) below the Community section. Shared shell,
+ *   Products, and Community styles unchanged.
+ * v1 — Initial. Shared shell, Products, Community.
  *
  * Alongside — website shared stylesheet.
  * Design tokens ground-truthed against the live app's base/variables.css
@@ -636,4 +641,385 @@ section + section {
   .join-panel__row .form-field {
     flex: 1;
   }
+}
+
+/* ========================================
+   HOME PAGE
+   Added 14 Jul 2026 — Home brought into scope this session.
+   Photo (Movement 6) and mailing-list capture (Movement 8) are
+   placeholders — see build notes in home/index.html.
+   ======================================== */
+
+/* Movement 1 — The Gates */
+
+.hero {
+  min-height: calc(100vh - var(--nav-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-6);
+  position: relative;
+  padding-bottom: var(--space-10);
+}
+
+.hero__headline {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  max-width: 320px;
+}
+
+.hero__headline-line + .hero__headline-line {
+  margin-top: var(--space-4);
+  color: var(--color-text-secondary);
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+}
+
+.hero__rotator {
+  position: relative;
+  min-height: 3.5em;
+  width: 100%;
+  max-width: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__rotator-line {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+  font-size: var(--text-base);
+  opacity: 0;
+  transition: opacity var(--transition-slow, 600ms ease-out);
+}
+
+.hero__rotator-line.is-active {
+  opacity: 1;
+}
+
+.hero__pause {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+  width: var(--touch-target-min);
+  height: var(--touch-target-min);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  font-size: var(--text-sm);
+}
+
+.hero__pause:hover,
+.hero__pause:focus-visible {
+  border-color: var(--color-primary);
+  color: var(--color-text);
+}
+
+.hero__scroll-signal {
+  position: absolute;
+  bottom: var(--space-5);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 24px;
+  border-bottom: 2px solid var(--color-border);
+  border-right: 2px solid var(--color-border);
+  transform: translateX(-50%) rotate(45deg);
+  opacity: 0.6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__rotator-line {
+    transition: none;
+  }
+}
+
+/* Movement 2 — You Are Not Alone */
+
+.belonging {
+  text-align: center;
+}
+
+.belonging__truth {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  max-width: 400px;
+  margin: 0 auto var(--space-6) auto;
+}
+
+.belonging__voices {
+  display: grid;
+  gap: var(--space-4);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.belonging__voices blockquote {
+  margin: 0;
+  padding: var(--space-4);
+  background: var(--color-bg-card);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-primary);
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+/* Movement 3 — Main Street */
+
+.value-statements {
+  display: grid;
+  gap: var(--space-7);
+}
+
+.value-statement {
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-tight);
+  max-width: 380px;
+}
+
+/* Movement 4 — The First Ride */
+
+.coach-preview__framing {
+  text-align: center;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-6);
+}
+
+.coach-tabs__list {
+  display: flex;
+  border-bottom: 1px solid var(--color-border-light);
+  margin-bottom: var(--space-5);
+}
+
+.coach-tabs__tab {
+  flex: 1;
+  min-height: var(--touch-target-min);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--color-text-secondary);
+  font-family: var(--font-family);
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  padding: var(--space-3) var(--space-2);
+  cursor: pointer;
+}
+
+.coach-tabs__tab[aria-selected="true"] {
+  color: var(--color-primary-light);
+  border-bottom-color: var(--color-primary);
+}
+
+.coach-tabs__panel {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.coach-tabs__panel[hidden] {
+  display: none;
+}
+
+.coach-bubble {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  border-top-left-radius: var(--radius-sm);
+  padding: var(--space-4);
+  max-width: 90%;
+}
+
+.coach-bubble__context {
+  display: block;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+
+.coach-bubble__message {
+  margin: 0;
+  color: var(--color-text);
+  line-height: var(--leading-relaxed);
+}
+
+/* Movement 5 — Behind the Magic */
+
+.science-accordion {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.science-accordion__item {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-4);
+}
+
+.science-accordion__item summary {
+  min-height: var(--touch-target-min);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-weight: var(--font-medium);
+  list-style: none;
+}
+
+.science-accordion__item summary::-webkit-details-marker {
+  display: none;
+}
+
+.science-accordion__chevron {
+  transition: transform var(--transition-normal);
+  color: var(--color-text-muted);
+}
+
+.science-accordion__item[open] .science-accordion__chevron {
+  transform: rotate(90deg);
+}
+
+.science-accordion__body {
+  padding: var(--space-3) 0 var(--space-4) 0;
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+.science-accordion__source {
+  display: block;
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.science-accordion__reflection {
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border-light);
+  font-size: var(--text-sm);
+}
+
+.science-sources-note {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  margin-top: var(--space-4);
+}
+
+/* Movement 6 — The Human Behind It */
+
+.human-behind__photo {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--color-border);
+  background: var(--color-bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  padding: var(--space-5);
+  margin-bottom: var(--space-5);
+}
+
+.human-behind__text p {
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+.human-behind__turn {
+  color: var(--color-text);
+  font-weight: var(--font-medium);
+}
+
+/* Movement 7 — The Castle */
+
+.castle__philosophy {
+  text-align: center;
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+}
+
+.castle__impact {
+  margin-top: var(--space-6);
+  padding: var(--space-5);
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  line-height: var(--leading-relaxed);
+}
+
+.castle__door {
+  margin-top: var(--space-6);
+  text-align: center;
+  display: grid;
+  gap: var(--space-2);
+}
+
+.castle__door-lead {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.castle__door-link {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  text-decoration: none;
+}
+
+/* Movement 8 — The Gates Close Behind Her */
+
+.closing-capture {
+  text-align: center;
+  padding: var(--space-8) 0;
+}
+
+.closing-capture__lead {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-6);
+}
+
+.closing-capture__form {
+  display: grid;
+  gap: var(--space-4);
+  max-width: 360px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.closing-capture__consent {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  text-align: left;
+}
+
+.closing-capture__consent input {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  margin-top: 2px;
+}
+
+.closing-capture__consent label {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.closing-capture__after {
+  margin-top: var(--space-6);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
 }
