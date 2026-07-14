@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <!--
   products/index.html
-  14 Jul 2026 v1
+  14 Jul 2026 v2
+
+  v2 — Added product-cards class for the desktop 3-column grid (see
+    site.css v4 / js/layout.js). Content unchanged.
+  v1 — Initial build.
 
   Alongside — Products page.
   Route: /products/
@@ -30,7 +34,7 @@
         <p class="form-note">One coach. Every context. Every phase of life.</p>
       </section>
 
-      <section aria-label="Alongside products">
+      <section aria-label="Alongside products" class="product-cards">
 
         <article class="card product-card">
           <div class="product-card__header">
@@ -93,6 +97,7 @@
 
   <div id="site-footer"></div>
 
+  <script src="../js/layout.js"></script>
   <script src="../js/site.js"></script>
 </body>
 </html>
