@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--
+  community/index.html
+  14 Jul 2026 v1
+
+  Alongside — Community page.
+  Route: /community/
+  AMENDED per blueprint Section 8: join mechanism is the mailing list only.
+  Zero references to Facebook, Discord, or any named social platform.
+  Kit embed not yet available — join form is a placeholder state, flagged
+  in the handoff as needing the real embed before this page goes live.
+-->
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community | Alongside</title>
+  <meta name="description" content="Help us grow something worth growing. Shared values, not competitive performance.">
+  <link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div id="site-nav"></div>
+
+  <main id="main-content">
+    <div class="container">
+
+      <section aria-labelledby="page-title">
+        <h1 id="page-title">Help us grow something worth growing.</h1>
+        <p class="form-note">Shared values, not competitive performance.</p>
+      </section>
+
+      <section aria-labelledby="charter-title">
+        <h2 id="charter-title" class="visually-hidden">The charter</h2>
+        <div class="charter card">
+          <div class="charter__group charter__group--belongs">
+            <h3>What belongs here</h3>
+            <p>Identity, struggle, what worked for me, asking for support, celebrating quietly.</p>
+          </div>
+          <div class="charter__group charter__group--doesnt">
+            <h3>What doesn't</h3>
+            <p>Counts, comparisons, challenges, weight numbers, before/after content.</p>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="ways-title">
+        <h2 id="ways-title">Three ways</h2>
+        <div class="three-ways">
+          <p class="three-ways__item">Show up</p>
+          <p class="three-ways__item">Share the impact</p>
+          <p class="three-ways__item">Carry the signal</p>
+        </div>
+      </section>
+
+      <section aria-labelledby="join-title">
+        <h2 id="join-title">Join the list</h2>
+        <div class="card join-panel">
+          <p class="form-note">
+            No group to join yet — just a list. We'll let you know when there's
+            a real space worth stepping into.
+          </p>
+
+          <form class="join-panel__form" aria-label="Join the Alongside mailing list">
+            <div class="join-panel__row">
+              <div class="form-field">
+                <label class="form-label" for="join-email">Email address</label>
+                <input
+                  class="form-input"
+                  type="email"
+                  id="join-email"
+                  name="email"
+                  autocomplete="email"
+                  required
+                  aria-describedby="join-hint"
+                  disabled
+                >
+              </div>
+              <button type="submit" class="btn btn--disabled" aria-disabled="true" disabled>
+                Join the list
+              </button>
+            </div>
+            <p class="form-hint" id="join-hint">
+              Sign-up isn't wired up yet — this form is a placeholder until the
+              mailing list connection is ready. Check back soon.
+            </p>
+          </form>
+        </div>
+      </section>
+
+      <section aria-label="Closing statement">
+        <p class="close-statement">We hope to work Alongside you.</p>
+      </section>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../js/site.js"></script>
+</body>
+</html>
