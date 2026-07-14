@@ -1,14 +1,18 @@
 /* site.js
- * 14 Jul 2026 v1
+ * 14 Jul 2026 v2
+ *
+ * v2 — Home page brought into scope this session. Brand mark now links to
+ *   "/website/" since Home is real. Nothing else changed.
+ * v1 — Initial. Nav + footer injection, mobile toggle.
  *
  * Alongside — shared site shell.
  * Injects nav + footer into every page via #site-nav / #site-footer mount
  * points, so nav/footer markup lives in exactly one place. Handles mobile
  * nav toggle and active-link state. No build step, no dependencies.
  *
- * Nav links ONLY the pages that are actually live. Do not add Home,
- * Philosophy, About, Upgrade, Safety, or Impact links until those pages
- * are real — a nav link to a 404 is worse than no link.
+ * Nav links ONLY the pages that are actually live. Do not add Philosophy,
+ * About, Upgrade, Safety, or Impact links until those pages are real —
+ * a nav link to a 404 is worse than no link.
  */
 
 (function () {
@@ -50,7 +54,7 @@
     mount.innerHTML =
       '<nav class="site-nav" aria-label="Primary">' +
         '<div class="site-nav__inner">' +
-          '<span class="site-nav__brand">Alongside</span>' +
+          '<a class="site-nav__brand" href="/website/">Alongside</a>' +
           '<button type="button" class="site-nav__toggle" id="nav-toggle" ' +
             'aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">' +
             "&#9776;" +
