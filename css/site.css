@@ -1,6 +1,12 @@
 /* site.css
- * 14 Jul 2026 v2
+ * 14 Jul 2026 v3
  *
+ * v3 — Phone-test fixes: hero headline lines were inline spans that ran
+ *   together (now block-level, more spacing), hero pause button
+ *   overlapped the rotating text (moved to its own row below), hero
+ *   headline sized up for impact (text-2xl -> text-4xl), Three Ways
+ *   section was centre-aligned against a left-aligned page (now
+ *   consistent). Added .hero__tagline for the new product-explainer line.
  * v2 — Home page brought into scope this session. Added Home-page-specific
  *   section (Movements 1-8) below the Community section. Shared shell,
  *   Products, and Community styles unchanged.
@@ -605,13 +611,14 @@ section + section {
 
 .three-ways {
   display: grid;
-  gap: var(--space-4);
-  grid-template-columns: 1fr;
+  gap: var(--space-3);
 }
 
 .three-ways__item {
-  text-align: center;
   font-weight: var(--font-medium);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-bg-card);
+  border-radius: var(--radius-md);
 }
 
 .join-panel {
@@ -665,18 +672,28 @@ section + section {
 }
 
 .hero__headline {
-  font-size: var(--text-2xl);
+  font-size: var(--text-4xl);
   font-weight: var(--font-bold);
   line-height: var(--leading-tight);
   letter-spacing: var(--tracking-tight);
-  max-width: 320px;
+  max-width: 360px;
+}
+
+.hero__headline-line {
+  display: block;
 }
 
 .hero__headline-line + .hero__headline-line {
-  margin-top: var(--space-4);
+  margin-top: var(--space-6);
   color: var(--color-text-secondary);
   font-size: var(--text-xl);
   font-weight: var(--font-semibold);
+}
+
+.hero__tagline {
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  max-width: 320px;
 }
 
 .hero__rotator {
@@ -705,18 +722,24 @@ section + section {
   opacity: 1;
 }
 
+.hero__rotator-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-2);
+}
+
 .hero__pause {
-  position: absolute;
-  top: var(--space-2);
-  right: var(--space-2);
-  width: var(--touch-target-min);
-  height: var(--touch-target-min);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--touch-target-min);
+  padding: 0 var(--space-3);
   background: transparent;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-full);
-  color: var(--color-text-secondary);
+  color: var(--color-text-muted);
   cursor: pointer;
-  font-size: var(--text-sm);
+  font-size: var(--text-xs);
 }
 
 .hero__pause:hover,
