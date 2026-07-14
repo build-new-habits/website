@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <!--
   index.html
-  14 Jul 2026 v1
+  14 Jul 2026 v2
+
+  v2 — Phone-test fixes: headline line-break/spacing fixed, pause button
+    moved off the rotating text, added a product-explainer tagline under
+    the headline (Graeme's direct request — flagged for wording approval
+    in the handoff), hero sized up. Three Ways markup unchanged (fix was
+    CSS-only, see site.css v3).
+  v1 — Initial build.
 
   Alongside — Home page.
   Route: /
@@ -46,8 +53,12 @@
           <span class="hero__headline-line">Your bad days aren't the problem. We built the app around them.</span>
         </h1>
 
+        <p class="hero__tagline">
+          Alongside: one coach for your body and your wellbeing — meeting you
+          exactly where you are today.
+        </p>
+
         <div class="hero__rotator" id="hero-rotator">
-          <button type="button" class="hero__pause" id="hero-pause" aria-label="Pause rotating text">&#9208;</button>
           <div aria-hidden="true">
             <p class="hero__rotator-line is-active">You've tried the other apps. This one was built differently.</p>
             <p class="hero__rotator-line">Movement that works on your worst days, not just your best.</p>
@@ -55,6 +66,11 @@
             <p class="hero__rotator-line">You're not the reason other apps didn't work for you.</p>
             <p class="hero__rotator-line">This is what it feels like when a coach actually pays attention.</p>
           </div>
+        </div>
+        <div class="hero__rotator-controls">
+          <button type="button" class="hero__pause" id="hero-pause" aria-label="Pause rotating text">
+            <span aria-hidden="true">&#9208;</span> Pause
+          </button>
         </div>
         <ul class="visually-hidden" aria-label="All rotating messages">
           <li>You've tried the other apps. This one was built differently.</li>
