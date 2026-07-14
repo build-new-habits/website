@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   sitemap.xml
-  14 Jul 2026 v1
+  14 Jul 2026 v2
+
+  v2 — Home added, brought into scope mid-session.
+  v1 — Products, Community only.
 
   Alongside — website sitemap.
   Only lists pages that are actually live. Add a <url> entry as each new
@@ -11,6 +14,10 @@
   planning doc — not this session).
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://build-new-habits.github.io/website/</loc>
+    <lastmod>2026-07-14</lastmod>
+  </url>
   <url>
     <loc>https://build-new-habits.github.io/website/products/</loc>
     <lastmod>2026-07-14</lastmod>
