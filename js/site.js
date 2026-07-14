@@ -1,6 +1,8 @@
 /* site.js
- * 14 Jul 2026 v2
+ * 14 Jul 2026 v3
  *
+ * v3 — Added the layout-mode toggle button (Auto/Desktop/Mobile) to the
+ *   nav, wired to window.AlongsideLayout (layout.js — must load first).
  * v2 — Home page brought into scope this session. Brand mark now links to
  *   "/website/" since Home is real. Nothing else changed.
  * v1 — Initial. Nav + footer injection, mobile toggle.
@@ -55,13 +57,41 @@
       '<nav class="site-nav" aria-label="Primary">' +
         '<div class="site-nav__inner">' +
           '<a class="site-nav__brand" href="/website/">Alongside</a>' +
-          '<button type="button" class="site-nav__toggle" id="nav-toggle" ' +
-            'aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">' +
-            "&#9776;" +
-          "</button>" +
-          '<ul class="site-nav__links" id="nav-links">' + linksHtml + "</ul>" +
+          '<div class="site-nav__right">' +
+            '<ul class="site-nav__links" id="nav-links">' + linksHtml + "</ul>" +
+            '<div class="site-nav__controls">' +
+              '<button type="button" class="site-nav__layout-toggle" id="layout-toggle" aria-label="Layout: Auto. Press to change.">' +
+                '<span aria-hidden="true">&#8646;</span> <span id="layout-toggle-label">Auto</span>' +
+              "</button>" +
+              '<button type="button" class="site-nav__toggle" id="nav-toggle" ' +
+                'aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">' +
+                "&#9776;" +
+              "</button>" +
+            "</div>" +
+          "</div>" +
         "</div>" +
       "</nav>";
+
+    var layoutToggle = document.getElementById("layout-toggle");
+    var layoutLabel = document.getElementById("layout-toggle-label");
+
+    function reflectLayoutState() {
+      if (!window.AlongsideLayout || !layoutToggle || !layoutLabel) return;
+      var state = window.AlongsideLayout.getState(); // 'auto' | 'desktop' | 'mobile'
+      var display = state === "auto" ? "Auto" : state === "desktop" ? "Desktop" : "Mobile";
+      layoutLabel.textContent = display;
+      layoutToggle.setAttribute("aria-label", "Layout: " + display + ". Press to change.");
+    }
+
+    if (layoutToggle) {
+      reflectLayoutState();
+      layoutToggle.addEventListener("click", function () {
+        if (window.AlongsideLayout) {
+          window.AlongsideLayout.cycle();
+          reflectLayoutState();
+        }
+      });
+    }
 
     var toggle = document.getElementById("nav-toggle");
     var links = document.getElementById("nav-links");
