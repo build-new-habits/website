@@ -1,7 +1,10 @@
 /* site.css
- * 14 Jul 2026 v4
+ * 20 Jul 2026 v5
  *
- * v4 — Responsive layout added: real desktop breakpoint (content width,
+ * v5 — Additive only, Website Build 2 (20 Jul): Impact page section added
+ *   (cause cards, gold accent token, empty-state, anchor link). No
+ *   existing rules from v4 changed or restructured, per blueprint.
+ * v4 — 14 Jul 2026. Responsive layout added: real desktop breakpoint (content width,
  *   Products 3-col grid) plus manual layout override support. Nav
  *   show/hide rules converted from raw @media(max-width:480px) to
  *   [data-layout] attribute selectors (see js/layout.js) so the manual
@@ -421,6 +424,104 @@ html[data-layout="desktop"] .product-cards .product-card {
 html[data-layout="desktop"] .hero__headline,
 html[data-layout="desktop"] .hero__tagline {
   max-width: none;
+}
+
+/* ========================================
+   IMPACT PAGE
+   Added 20 Jul 2026 — Website Build 2.
+   Gold accent introduced here for the first time on the website (used
+   sparingly, per the design system rule — vote-related elements only).
+   ======================================== */
+
+:root {
+  --color-gold: #B8970A;
+}
+
+.anchor-link {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.anchor-link a {
+  color: var(--color-text-muted);
+}
+
+.anchor-link a:hover,
+.anchor-link a:focus-visible {
+  color: var(--color-text);
+}
+
+.impact-opening {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+}
+
+.impact-commitment,
+.impact-your-credits {
+  line-height: var(--leading-relaxed);
+}
+
+.impact-your-credits h2 {
+  color: var(--color-gold);
+}
+
+.impact-empty-state {
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+.cause-cards {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.cause-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.cause-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cause-card__slot {
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-text-muted);
+}
+
+.cause-card__belief {
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  margin: 0;
+}
+
+.cause-card__body {
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.cause-card__vote {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.cause-card__vote .form-input:disabled {
+  border-color: var(--color-gold);
+  opacity: 0.5;
+}
+
+html[data-layout="desktop"] .cause-cards {
+  grid-template-columns: repeat(3, 1fr);
 }
 
 /* ========================================
