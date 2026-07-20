@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!--
+  impact/index.html
+  20 Jul 2026 v1
+
+  Alongside — Impact page.
+  Route: /impact/
+  Built per alongside_impact_page_architecture_09jul2026_v1.md and
+  alongside_blueprint_website2-impact_20jul2026_v1.md.
+
+  Two resolutions from Graeme this session (blueprint Section 2):
+
+  QUESTION A — no backend/Supabase exists yet. Resolved: informational/
+  conceptual page only. "Your Credits" section reframed — no fake live
+  number, explains the model instead. Cause-card credit inputs shown as
+  disabled illustrative controls (matches the established pattern from
+  session 1's Kit-pending forms), not real functionality. Real voting is
+  a future, Supabase-dependent session.
+
+  QUESTION B — no real causes picked for launch yet. Resolved: belief-slot
+  framework only (Slot 1/2/3, locked belief names), no organisation names
+  invented. Each card marked "Coming at launch."
+
+  Past allocations: honest pre-launch empty state, not a fabricated table.
+-->
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How your movement makes a difference | Alongside</title>
+  <meta name="description" content="Five percent of everything Alongside earns goes to causes our community believes in. Your movement earns credits — and credits are votes.">
+  <link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div id="site-nav"></div>
+
+  <main id="main-content">
+    <div class="container">
+
+      <section aria-labelledby="page-title">
+        <h1 id="page-title">How your movement makes a difference</h1>
+        <p class="anchor-link"><a href="#causes">Already know how it works? Jump to this quarter's causes &rarr;</a></p>
+      </section>
+
+      <section aria-label="Opening">
+        <p class="impact-opening">
+          Every time you move with Alongside, you earn credits.<br>
+          Not points. Not rewards.<br>
+          <strong>Votes.</strong>
+        </p>
+      </section>
+
+      <section aria-labelledby="how-title">
+        <h2 id="how-title">How it works</h2>
+        <p>
+          Five percent of everything Alongside earns goes to causes our
+          community believes in. Each quarter, three causes are selected —
+          each one representing something Alongside stands for: dignity,
+          support, and our connection to the world around us.
+        </p>
+        <p>
+          Your credits are your voice in where that money goes. You can
+          split them, give them all to one cause, or carry them forward and
+          watch them grow until a cause moves you enough to commit.
+        </p>
+      </section>
+
+      <section aria-labelledby="commitment-title" class="card impact-commitment">
+        <h2 id="commitment-title">The commitment</h2>
+        <p>
+          Five percent is where we start. Not where we stop.<br>
+          As Alongside grows, so does the commitment.<br>
+          That's not a promise we made to investors. It's a promise we made to you.
+        </p>
+      </section>
+
+      <section aria-labelledby="allocations-title">
+        <h2 id="allocations-title">Past allocations</h2>
+        <p>
+          Transparency matters. Every quarter, we publish where the credits
+          went, how much was allocated, and what it funded. You can see
+          every decision we've made since day one.
+        </p>
+        <!-- Honest pre-launch empty state — no fabricated data. -->
+        <div class="card impact-empty-state">
+          <p>Our first quarter starts at launch — check back here to see where it went.</p>
+        </div>
+      </section>
+
+      <section aria-labelledby="causes-title" id="causes">
+        <h2 id="causes-title">The causes — this quarter</h2>
+        <!-- Belief-slot framework only, per Question B — no organisation
+             names invented. Each slot's belief name is locked; the
+             organisation filling it is not yet chosen. -->
+        <div class="cause-cards">
+
+          <article class="card cause-card">
+            <div class="cause-card__header">
+              <span class="cause-card__slot">Slot 1</span>
+              <span class="badge badge--soon">Coming at launch</span>
+            </div>
+            <h3 class="cause-card__belief">Dignity and being seen</h3>
+            <p class="cause-card__body">
+              This slot represents causes that protect people's dignity and
+              make sure they're truly seen — the specific organisation
+              filling it will be announced at launch.
+            </p>
+            <div class="cause-card__vote">
+              <label class="form-label" for="credits-slot-1">Your credits for this cause</label>
+              <input class="form-input" type="number" id="credits-slot-1" min="0" disabled aria-describedby="vote-hint">
+            </div>
+          </article>
+
+          <article class="card cause-card">
+            <div class="cause-card__header">
+              <span class="cause-card__slot">Slot 2</span>
+              <span class="badge badge--soon">Coming at launch</span>
+            </div>
+            <h3 class="cause-card__belief">Everyone deserves support</h3>
+            <p class="cause-card__body">
+              This slot represents causes that make sure support reaches
+              people who need it — the specific organisation filling it
+              will be announced at launch.
+            </p>
+            <div class="cause-card__vote">
+              <label class="form-label" for="credits-slot-2">Your credits for this cause</label>
+              <input class="form-input" type="number" id="credits-slot-2" min="0" disabled aria-describedby="vote-hint">
+            </div>
+          </article>
+
+          <article class="card cause-card">
+            <div class="cause-card__header">
+              <span class="cause-card__slot">Slot 3</span>
+              <span class="badge badge--soon">Coming at launch</span>
+            </div>
+            <h3 class="cause-card__belief">We are not separate</h3>
+            <p class="cause-card__body">
+              This slot represents causes that reflect our connection to
+              the world around us — the specific organisation filling it
+              will be announced at launch.
+            </p>
+            <div class="cause-card__vote">
+              <label class="form-label" for="credits-slot-3">Your credits for this cause</label>
+              <input class="form-input" type="number" id="credits-slot-3" min="0" disabled aria-describedby="vote-hint">
+            </div>
+          </article>
+
+        </div>
+        <p class="form-hint" id="vote-hint">
+          Voting isn't live yet — these fields show how it will work once
+          you're a member. Real causes and real voting arrive at launch.
+        </p>
+      </section>
+
+      <!-- QUESTION A reframing — no fake live number. Explains the model
+           for a logged-out marketing-site visitor instead. -->
+      <section aria-labelledby="credits-title" class="card impact-your-credits">
+        <h2 id="credits-title">Your credits</h2>
+        <p>
+          Once you're a member, your running credit total lives in the app —
+          visible, growing.
+        </p>
+        <p>
+          Every session adds to it. Every credit is a vote waiting to happen.
+          You choose when. You choose where.
+        </p>
+      </section>
+
+      <section aria-label="Closing statement">
+        <p class="close-statement">
+          This is what it looks like when a business believes in what it says.
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../js/layout.js"></script>
+  <script src="../js/site.js"></script>
+</body>
+</html>
