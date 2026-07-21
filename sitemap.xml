@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   sitemap.xml
-  14 Jul 2026 v2
+  20 Jul 2026 v3
 
-  v2 — Home added, brought into scope mid-session.
+  v3 — Impact added, Website Build 2.
+  v2 — 14 Jul 2026. Home added, brought into scope mid-session.
   v1 — Products, Community only.
 
   Alongside — website sitemap.
@@ -25,5 +26,9 @@
   <url>
     <loc>https://build-new-habits.github.io/website/community/</loc>
     <lastmod>2026-07-14</lastmod>
+  </url>
+  <url>
+    <loc>https://build-new-habits.github.io/website/impact/</loc>
+    <lastmod>2026-07-20</lastmod>
   </url>
 </urlset>
