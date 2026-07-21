@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <!--
   index.html
-  20 Jul 2026 v4
+  21 Jul 2026 v5
 
-  v4 — Cache-busting fix: added ?v=N query strings to css/site.css and all
+  v5 — No markup change; site.css ?v= bumped to 7 to match the desktop-
+    width fix (see site.css v7 changelog).
+  v4 — 20 Jul 2026. Cache-busting fix: added ?v=N query strings to css/site.css and all
     js/*.js references. Graeme deployed site.css v6 but browsers kept
     serving the cached v5 — GitHub Pages doesn't cache-bust on its own.
     STANDING RULE going forward: whenever site.css or a shared js/*.js
@@ -44,7 +46,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alongside — You were never the one who needed fixing.</title>
   <meta name="description" content="An adaptive coach that meets you where you actually are — not where you're supposed to be. Alongside: Move.">
-  <link rel="stylesheet" href="css/site.css?v=6">
+  <link rel="stylesheet" href="css/site.css?v=7">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
