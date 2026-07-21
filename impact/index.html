@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <!--
   impact/index.html
-  20 Jul 2026 v2
+  21 Jul 2026 v3
 
-  v2 — Cache-busting fix: ?v=N added to css/site.css and js/*.js
+  v3 — Added section-wide class to the causes section (see site.css v7
+    desktop-width fix). ?v= bumped to match.
+  v2 — 20 Jul 2026. Cache-busting fix: ?v=N added to css/site.css and js/*.js
     references (see index.html v4 changelog for the full reason and the
     new standing rule). No content changes.
   v1 — Initial build.
@@ -34,7 +36,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>How your movement makes a difference | Alongside</title>
   <meta name="description" content="Five percent of everything Alongside earns goes to causes our community believes in. Your movement earns credits — and credits are votes.">
-  <link rel="stylesheet" href="../css/site.css?v=6">
+  <link rel="stylesheet" href="../css/site.css?v=7">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -94,7 +96,7 @@
         </div>
       </section>
 
-      <section aria-labelledby="causes-title" id="causes">
+      <section aria-labelledby="causes-title" id="causes" class="section-wide">
         <h2 id="causes-title">The causes — this quarter</h2>
         <!-- Belief-slot framework only, per Question B — no organisation
              names invented. Each slot's belief name is locked; the
