@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <!--
   impact/index.html
-  20 Jul 2026 v1
+  20 Jul 2026 v2
+
+  v2 — Cache-busting fix: ?v=N added to css/site.css and js/*.js
+    references (see index.html v4 changelog for the full reason and the
+    new standing rule). No content changes.
+  v1 — Initial build.
 
   Alongside — Impact page.
   Route: /impact/
@@ -29,7 +34,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>How your movement makes a difference | Alongside</title>
   <meta name="description" content="Five percent of everything Alongside earns goes to causes our community believes in. Your movement earns credits — and credits are votes.">
-  <link rel="stylesheet" href="../css/site.css">
+  <link rel="stylesheet" href="../css/site.css?v=6">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -179,7 +184,7 @@
 
   <div id="site-footer"></div>
 
-  <script src="../js/layout.js"></script>
-  <script src="../js/site.js"></script>
+  <script src="../js/layout.js?v=1"></script>
+  <script src="../js/site.js?v=4"></script>
 </body>
 </html>
