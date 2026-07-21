@@ -1,7 +1,16 @@
 /* site.css
- * 20 Jul 2026 v6
+ * 21 Jul 2026 v7
  *
- * v6 — Fix: on desktop's 3-col cause-card grid, cards with a 2-line
+ * v7 — Fix: desktop container was only 720px, leaving huge dead space on
+ *   real desktop screens (Graeme flagged with screenshots — ~600px waste
+ *   each side at wide viewports). Container now 1100px; every top-level
+ *   section narrows itself to a centred 760px reading column by default;
+ *   grid-holding sections opt out via a new .section-wide class (added
+ *   to Products' card section and Impact's causes section) to use the
+ *   full width. Nav/footer widened to match. A few previously-unconstrained
+ *   elements (Home's photo placeholder/text, Impact's vote-hint) given
+ *   their own max-width so they don't stretch edge-to-edge.
+ * v6 — 20 Jul 2026. Fix: on desktop's 3-col cause-card grid, cards with a 2-line
  *   heading (e.g. Slot 2) pushed their credits-input row lower than the
  *   1-line cards either side, breaking the visual line across all three.
  *   .cause-card__vote now pinned to the bottom of each card (margin-top:
@@ -407,13 +416,34 @@ html[data-layout="desktop"] .site-nav__links {
   border-bottom: none;
 }
 
-/* Desktop breakpoint — content width and Products grid.
-   A modest content-width bump, not a full redesign: Home's narrative
-   sections stay a comfortable reading column even on wide screens
-   (deliberate — matches the page's own single-column design principle). */
+/* Desktop breakpoint — content width and Products/Impact grids.
+   FIX 21 Jul: container was only 720px, leaving huge dead space on real
+   desktop screens (flagged by Graeme with screenshots showing ~600px of
+   waste on each side at ~1900px viewport width). Container is now
+   genuinely wide; individual prose sections narrow and centre themselves
+   within it so reading lines don't get absurdly long, while grid
+   sections (marked .section-wide) use the full width. */
 
 html[data-layout="desktop"] .container {
-  max-width: 720px;
+  max-width: 1100px;
+}
+
+html[data-layout="desktop"] .site-nav__inner,
+html[data-layout="desktop"] .site-footer__inner {
+  max-width: 1100px;
+}
+
+/* Every top-level section is a narrow, centred reading column by
+   default on desktop. Sections that hold a card grid opt out via
+   .section-wide to use the full container width instead. */
+html[data-layout="desktop"] .container > section {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+html[data-layout="desktop"] .container > section.section-wide {
+  max-width: none;
 }
 
 html[data-layout="desktop"] .product-cards {
@@ -429,6 +459,27 @@ html[data-layout="desktop"] .product-cards .product-card {
 html[data-layout="desktop"] .hero__headline,
 html[data-layout="desktop"] .hero__tagline {
   max-width: none;
+}
+
+/* Elements that previously had no max-width of their own and would
+   otherwise stretch edge-to-edge inside a wide desktop container. */
+html[data-layout="desktop"] .human-behind__photo {
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+html[data-layout="desktop"] .human-behind__text {
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+html[data-layout="desktop"] .section-wide > .form-hint {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 /* ========================================
