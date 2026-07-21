@@ -1,7 +1,9 @@
 /* site.js
- * 14 Jul 2026 v3
+ * 20 Jul 2026 v4
  *
- * v3 — Added the layout-mode toggle button (Auto/Desktop/Mobile) to the
+ * v4 — Website Build 2: added Impact to NAV_LINKS now it's a real live
+ *   page. Nothing else changed.
+ * v3 — 14 Jul 2026. Added the layout-mode toggle button (Auto/Desktop/Mobile) to the
  *   nav, wired to window.AlongsideLayout (layout.js — must load first).
  * v2 — Home page brought into scope this session. Brand mark now links to
  *   "/website/" since Home is real. Nothing else changed.
@@ -22,7 +24,8 @@
 
   var NAV_LINKS = [
     { label: "Products", href: "/website/products/" },
-    { label: "Community", href: "/website/community/" }
+    { label: "Community", href: "/website/community/" },
+    { label: "Impact", href: "/website/impact/" }
   ];
 
   var FOOTER_LINKS = [
