@@ -1,6 +1,11 @@
-/* css/site.css
- * 20 Jul 2026 v5
+/* site.css
+ * 20 Jul 2026 v6
  *
+ * v6 — Fix: on desktop's 3-col cause-card grid, cards with a 2-line
+ *   heading (e.g. Slot 2) pushed their credits-input row lower than the
+ *   1-line cards either side, breaking the visual line across all three.
+ *   .cause-card__vote now pinned to the bottom of each card (margin-top:
+ *   auto) so the row aligns regardless of heading/body text length.
  * v5 — Additive only, Website Build 2 (20 Jul): Impact page section added
  *   (cause cards, gold accent token, empty-state, anchor link). No
  *   existing rules from v4 changed or restructured, per blueprint.
@@ -512,6 +517,7 @@ html[data-layout="desktop"] .hero__tagline {
   flex-direction: column;
   gap: var(--space-2);
   padding-top: var(--space-2);
+  margin-top: auto;
   border-top: 1px solid var(--color-border-light);
 }
 
