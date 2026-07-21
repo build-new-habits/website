@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <!--
   products/index.html
-  14 Jul 2026 v2
+  20 Jul 2026 v3
 
-  v2 — Added product-cards class for the desktop 3-column grid (see
+  v3 — Cache-busting fix: ?v=N added to css/site.css and js/*.js
+    references (see index.html v4 changelog for the full reason and the
+    new standing rule).
+  v2 — 20 Jul 2026. Added product-cards class for the desktop 3-column grid (see
     site.css v4 / js/layout.js). Content unchanged.
   v1 — Initial build.
 
@@ -19,7 +22,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Alongside family | Alongside</title>
   <meta name="description" content="One coach. Every context. Every phase of life. Meet the Alongside family of products.">
-  <link rel="stylesheet" href="../css/site.css">
+  <link rel="stylesheet" href="../css/site.css?v=6">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -97,7 +100,7 @@
 
   <div id="site-footer"></div>
 
-  <script src="../js/layout.js"></script>
-  <script src="../js/site.js"></script>
+  <script src="../js/layout.js?v=1"></script>
+  <script src="../js/site.js?v=4"></script>
 </body>
 </html>
