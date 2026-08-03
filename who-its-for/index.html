@@ -1,8 +1,34 @@
 <!DOCTYPE html>
 <!--
   who-its-for/index.html
-  03 Aug 2026 v4
+  03 Aug 2026 v5
 
+  v5 — MAJOR CORRECTION, checked against live code (js/views/gym-
+    programme.js, js/session-builder.js, js/views/session-builder-ui.js,
+    js/data/exercises/strength.js, js/views/progress.js in alongside-app
+    repo), not assumed from specs. Findings:
+    (1) "Full Body" confirmed as the correct free-tier session name
+    (id: "full" in SESSION_TYPES) - Graeme's decision, matches reality.
+    (2) Difficulty scale is 1-3 in live data (checked 90 exercises in
+    strength.js), not 1-5 as the exercise-database spec claimed. Graeme
+    has decided to migrate to 1-5 - logged as a new build item, not
+    done here.
+    (3) No hardcoded programme exists any more - gym-programme.js v3
+    (31 Jul) reads exclusively from the session builder. "Hardcoded
+    programme only" was stale copy.
+    (4) Exercise-library and Programmes rows were describing FUTURE
+    spec'd differentiation that isn't built: checked selectFromCategories()
+    in session-builder.js directly - no difficultyLevel filter exists
+    anywhere in the selection logic. Both tiers get the same exercise
+    pool today. Reworded both rows and the matching persona-card claims
+    (Jess/Priya/Mark) to state current reality and mark the roadmap
+    items "Coming soon" instead of presenting them as live.
+    (5) Progress row confirmed accurate - tier === 'personal' checks
+    genuinely gate the 30/90-day tabs in progress.js. Free row now says
+    "rolling 7-day" explicitly, per Graeme's ask.
+    (6) Coach-behaviour row (memory/pattern-noticing for Personal) is
+    NOT verified against live code - flagged to Graeme separately,
+    left as-is for now rather than guessed at either way.
   v4 — Per Graeme's feedback: new "Areas explained" section added before
     the comparison table (Sessions/Exercise library/Programmes/Progress/
     Coach behaviour defined in plain language, so the table doesn't need
@@ -98,7 +124,7 @@
                 <ul class="persona-card__list">
                   <li><span class="tier-tag tier-tag--free">Free</span>Credits, not streaks — nothing resets, nothing is broken by a missed week.</li>
                   <li><span class="tier-tag tier-tag--free">Free</span>A short, conversational check-in — energy, mood, pain, time — not a form.</li>
-                  <li><span class="tier-tag tier-tag--personal">Personal</span>The full exercise library means real day-to-day novelty, not the same rotating basics.</li>
+                  <li><span class="tier-tag tier-tag--personal">Personal</span>The other six session types open up — Glute Focus, Upper Body, Cardio, and more — so a session can genuinely look different, not the same Full Body slot every time.</li>
                   <li><span class="tier-tag tier-tag--personal">Personal</span>The coach starts noticing her own patterns — when a hyperfocus curve usually breaks — instead of only responding to today.</li>
                 </ul>
               </div>
@@ -156,8 +182,9 @@
                   <li><span class="tier-tag tier-tag--free">Free</span>Pattern-detection triggers Recovery Mode before burnout lands.</li>
                   <li><span class="tier-tag tier-tag--free">Free</span>Cycle-phase adaptation applies to regular cycles too, not just perimenopause.</li>
                   <li><span class="tier-tag tier-tag--free">Free</span>No before/after, no calorie language, anywhere in the product.</li>
-                  <li><span class="tier-tag tier-tag--personal">Personal</span>A generative programme builds week on week toward her own goals, instead of a fixed starter plan.</li>
+                  <li><span class="tier-tag tier-tag--personal">Personal</span>Every session type and every duration, so a workout can actually match how much time and energy she has that day — not always the same 30-minute slot.</li>
                   <li><span class="tier-tag tier-tag--personal">Personal</span>Progress is framed as consistency and trend, never a number to chase.</li>
+                  <li><span class="tier-tag tier-tag--personal">Coming soon</span>A generative programme that builds week on week toward her own goals, instead of always starting fresh.</li>
                 </ul>
               </div>
               <div class="persona-card__narrative">
@@ -185,7 +212,8 @@
                   <li><span class="tier-tag tier-tag--free">Free</span>Three-tier condition safety filtering — every exercise gated safe, caution, or blocked.</li>
                   <li><span class="tier-tag tier-tag--free">Free</span>Exercise history and "returning after" context let onboarding build from his real background.</li>
                   <li><span class="tier-tag tier-tag--free">Free</span>Condition filtering and burnout detection are free forever — never a feature he has to pay to access safely.</li>
-                  <li><span class="tier-tag tier-tag--personal">Personal</span>The full exercise database and a generative programme let his return progress phase by phase, instead of repeating the same safe starter set.</li>
+                  <li><span class="tier-tag tier-tag--personal">Personal</span>All 7 session types and every duration, so his return can be shaped around what his body can genuinely handle each day.</li>
+                  <li><span class="tier-tag tier-tag--personal">Coming soon</span>A generative programme that lets his return progress phase by phase, instead of repeating the same starting point.</li>
                 </ul>
               </div>
               <div class="persona-card__narrative">
@@ -207,19 +235,19 @@
         <dl class="areas-explained">
           <div class="areas-explained__item">
             <dt>Sessions</dt>
-            <dd>How your workout is structured — a single fixed routine on Free, or full choice across every session type and length on Personal.</dd>
+            <dd>How your workout is structured — Full Body only at a fixed 30 minutes on Free, or full choice across every session type and length on Personal.</dd>
           </div>
           <div class="areas-explained__item">
             <dt>Exercise library</dt>
-            <dd>The pool of exercises the coach can draw from — beginner-level only on Free, the complete database on Personal.</dd>
+            <dd>The pool of exercises the coach can draw from — currently the same full pool on both tiers. Level-based progression (matching your fitness level and building from there) is coming to Personal tier.</dd>
           </div>
           <div class="areas-explained__item">
             <dt>Programmes</dt>
-            <dd>Whether you follow one built-in routine, or the coach builds you a plan that evolves week by week.</dd>
+            <dd>Right now, every session is built fresh by the same session builder on both tiers. A generative multi-week programme — one that actually progresses week on week — is coming to Personal tier.</dd>
           </div>
           <div class="areas-explained__item">
             <dt>Progress</dt>
-            <dd>How much insight you get into your own patterns — a simple weekly log on Free, or trend charts and pattern insights on Personal.</dd>
+            <dd>How much insight you get into your own patterns — a simple rolling 7-day log on Free, or trend charts and pattern insights (7/30/90-day) on Personal.</dd>
           </div>
           <div class="areas-explained__item">
             <dt>Coach behaviour</dt>
@@ -240,22 +268,22 @@
             <tbody>
               <tr>
                 <th scope="row">Sessions</th>
-                <td>One fixed template</td>
-                <td>All 7 session types, per-session equipment override</td>
+                <td>Full Body only, 30 minutes</td>
+                <td>All 7 session types, 15/30/45/60 min, per-session equipment override</td>
               </tr>
               <tr>
                 <th scope="row">Exercise library</th>
-                <td>Difficulty level 1 only</td>
-                <td>Full exercise database</td>
+                <td>Full pool, all levels</td>
+                <td>Full pool, all levels <span class="tier-tag tier-tag--personal" style="margin-left:0;">Coming soon</span> — level-based progression</td>
               </tr>
               <tr>
                 <th scope="row">Programmes</th>
-                <td>Hardcoded programme only</td>
-                <td>Generative engine — named sessions, week-on-week progression</td>
+                <td>Session builder only</td>
+                <td>Session builder <span class="tier-tag tier-tag--personal" style="margin-left:0;">Coming soon</span> — multi-week generative programmes with real periodisation</td>
               </tr>
               <tr>
                 <th scope="row">Progress</th>
-                <td>Basic view</td>
+                <td>Basic view (rolling 7-day)</td>
                 <td>Trend analysis, correlation insights, coach insight cards</td>
               </tr>
               <tr>
