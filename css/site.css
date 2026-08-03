@@ -1,6 +1,17 @@
 /* site.css
- * 03 Aug 2026 v8
+ * 03 Aug 2026 v9
  *
+ * v9 — Scroll-arrow repositioning, per live-screenshot review. The arrow
+ *   was position:absolute, bottom: var(--space-5) — pinned to the very
+ *   bottom of the ~100vh hero section, disconnected from the Pause
+ *   button which sits mid-flow in the centred flex column. On tall
+ *   viewports this put real distance between them, and the arrow read
+ *   as lost/disconnected rather than as a "scroll for more" cue tied to
+ *   the visible content above it. Removed the absolute positioning;
+ *   it's now a normal flex child directly after .hero__rotator-controls
+ *   (Pause), picking up the hero's existing --space-6 (32px) gap like
+ *   every other hero element — sits close to Pause, not orphaned at
+ *   the bottom of the section.
  * v8 — WCAG 2.2 AA contrast audit. (1) Confirmed fail: hero scroll-arrow
  *   (.hero__scroll-signal) was ~1.6:1 against its background (--color-border
  *   at 0.6 opacity) vs the 3:1 minimum for graphical objects (SC 1.4.11).
@@ -1010,15 +1021,11 @@ html[data-layout="desktop"] .cause-cards {
 }
 
 .hero__scroll-signal {
-  position: absolute;
-  bottom: var(--space-5);
-  left: 50%;
-  transform: translateX(-50%);
   width: 24px;
   height: 24px;
   border-bottom: 2px solid var(--color-text-muted);
   border-right: 2px solid var(--color-text-muted);
-  transform: translateX(-50%) rotate(45deg);
+  transform: rotate(45deg);
   opacity: 0.85;
 }
 
