@@ -1,6 +1,9 @@
 /* site.js
- * 20 Jul 2026 v4
+ * 03 Aug 2026 v5
  *
+ * v5 — Added Upgrade to NAV_LINKS now /upgrade/ is a real page (content
+ *   complete; checkout wiring is separate infra work, not a reason to
+ *   withhold the nav link — page renders real content, not a 404).
  * v4 — Website Build 2: added Impact to NAV_LINKS now it's a real live
  *   page. Nothing else changed.
  * v3 — 14 Jul 2026. Added the layout-mode toggle button (Auto/Desktop/Mobile) to the
@@ -25,7 +28,8 @@
   var NAV_LINKS = [
     { label: "Products", href: "/website/products/" },
     { label: "Community", href: "/website/community/" },
-    { label: "Impact", href: "/website/impact/" }
+    { label: "Impact", href: "/website/impact/" },
+    { label: "Upgrade", href: "/website/upgrade/" }
   ];
 
   var FOOTER_LINKS = [

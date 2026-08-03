@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <!--
   products/index.html
-  21 Jul 2026 v4
+  03 Aug 2026 v5
 
+  v5 — No markup change; site.css ?v= bumped to 11, site.js ?v= bumped
+    to 5 (Upgrade nav link now included in shared nav). Note: page's
+    own header comment ("pricing lives only on /upgrade, which does
+    not exist yet") is now stale — /upgrade/ was built this session.
+    Not correcting the comment text itself here, out of this edit's
+    narrow scope; flagged in session summary.
   v4 — Added section-wide class to the product-cards section (see
     site.css v7 desktop-width fix). ?v= bumped to match.
   v3 — 20 Jul 2026. Cache-busting fix: ?v=N added to css/site.css and js/*.js
@@ -15,8 +21,8 @@
   Alongside — Products page.
   Route: /products/
   Cards: Move (live), Learn (coming soon), Life (coming soon).
-  No pricing anywhere on this page — pricing lives only on /upgrade,
-  which does not exist yet.
+  No pricing anywhere on this page — pricing lives only on /upgrade/,
+  which now exists (built 03 Aug 2026).
 -->
 <html lang="en-GB">
 <head>
@@ -24,7 +30,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Alongside family | Alongside</title>
   <meta name="description" content="One coach. Every context. Every phase of life. Meet the Alongside family of products.">
-  <link rel="stylesheet" href="../css/site.css?v=7">
+  <link rel="stylesheet" href="../css/site.css?v=11">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -103,6 +109,6 @@
   <div id="site-footer"></div>
 
   <script src="../js/layout.js?v=1"></script>
-  <script src="../js/site.js?v=4"></script>
+  <script src="../js/site.js?v=5"></script>
 </body>
 </html>

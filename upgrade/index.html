@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--
+  upgrade/index.html
+  03 Aug 2026 v1
+
+  v1 — Initial build, from alongside_upgrade_page_architecture_09jul2026_v1
+    (confirmed and locked). Content is verbatim from that document.
+
+  Alongside — Upgrade page.
+  Route: /upgrade/
+
+  IMPORTANT — what this build does and does not include:
+  This is the static content and design layer only. The full spec (see
+  Upgrade Flow Blueprint, alongside_upgrade_flow_blueprint_04jun2026_v1)
+  calls for this page to read a token from the URL, validate it against
+  Supabase, and run Stripe checkout. None of that infrastructure exists
+  yet (Supabase auth is S-F3, Stripe is S-F4 — neither built as of this
+  session). Building fake/non-functional Stripe or Supabase calls would
+  be worse than an honest placeholder, so the CTA button below is
+  disabled with a plain note, following the same pattern already used
+  for the Community page's mailing-list signup. Wiring the real
+  checkout flow is separate infra work, not a copy/content task.
+
+  Pricing confirmed from alongside_pricing_model_20jun2026_v2 (current,
+  live model): £7.99/month standard, £49.99/year (launch year, to
+  30 Nov 2026). Page copy intentionally does not mention the £4.99
+  three-month intro rate or the Year 2 increase to £59.99 — the locked
+  page architecture is deliberately minimal ("£7.99 a month. £49.99 for
+  the year. That's it.") and those details are a checkout-flow concern,
+  not page copy, per that document's own "honest, calm, no pressure"
+  design note.
+-->
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ready to go deeper? | Alongside</title>
+  <meta name="description" content="Personal tier gives the coach more to work with. The deeper the relationship, the better it understands you.">
+  <link rel="stylesheet" href="../css/site.css?v=11">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div id="site-nav"></div>
+
+  <main id="main-content">
+    <div class="container">
+
+      <section aria-labelledby="page-title" class="upgrade-hero">
+        <h1 id="page-title">Ready to go deeper?</h1>
+
+        <p class="upgrade-hero__opening">
+          You've already felt something different.
+          The coach noticed. Adapted. Met you where you were.
+          That wasn't a trial. That was real.
+        </p>
+
+        <p class="upgrade-hero__shift">
+          Personal tier gives the coach more to work with.
+          The deeper the relationship, the better it understands you.
+        </p>
+      </section>
+
+      <section aria-labelledby="changes-title" class="upgrade-changes">
+        <h2 id="changes-title" class="visually-hidden">What changes with Personal</h2>
+
+        <p class="upgrade-changes__item">
+          Your sessions become yours — not a template, but a programme built
+          around your goals, your week, your pace.
+        </p>
+        <p class="upgrade-changes__item">
+          Your progress becomes a conversation — patterns noticed, trends
+          named, the coach reflecting back what it sees across weeks, not
+          just today.
+        </p>
+        <p class="upgrade-changes__item">
+          Your exercise library opens fully — every movement available,
+          matched to where you actually are.
+        </p>
+        <p class="upgrade-changes__item">
+          Your programme builds — week on week, phase by phase, going
+          somewhere rather than just showing up.
+        </p>
+      </section>
+
+      <section aria-label="A note on commitment" class="upgrade-commitment">
+        <p>No contract. Cancel any time.</p>
+        <p>This isn't a commitment to us. It's a commitment to yourself.</p>
+        <p>And you can change your mind.</p>
+      </section>
+
+      <section aria-labelledby="pricing-title" class="pricing-section">
+        <h2 id="pricing-title" class="visually-hidden">Pricing</h2>
+
+        <div class="pricing-cards">
+          <div class="card pricing-card">
+            <p class="pricing-card__period">Monthly</p>
+            <p class="pricing-card__price">&pound;7.99</p>
+            <p class="pricing-card__period">a month</p>
+          </div>
+
+          <div class="card pricing-card">
+            <p class="pricing-card__period">Annual</p>
+            <p class="pricing-card__price">&pound;49.99</p>
+            <p class="pricing-card__period">for the year</p>
+          </div>
+        </div>
+
+        <p class="pricing-note">
+          That's it. And five percent of everything you pay goes to causes
+          our community chooses. Your subscription does more than you might
+          think.
+        </p>
+
+        <div class="upgrade-cta">
+          <button type="button" class="btn btn--gold" aria-disabled="true" disabled>
+            I'm ready
+          </button>
+        </div>
+
+        <p class="upgrade-safety-note">
+          Checkout isn't connected yet — this page is ready, the payment
+          flow comes next. Nothing is lost either way: all your data stays
+          with your account, whatever you decide.
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../js/layout.js?v=1"></script>
+  <script src="../js/site.js?v=5"></script>
+</body>
+</html>

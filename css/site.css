@@ -1,6 +1,17 @@
 /* site.css
- * 03 Aug 2026 v10
+ * 03 Aug 2026 v11
  *
+ * v11 — /upgrade page built for the first time, from the confirmed
+ *   locked architecture (alongside_upgrade_page_architecture_09jul2026_v1).
+ *   New section added: upgrade-hero, upgrade-changes, pricing-cards,
+ *   .btn--gold. Gold (#B8970A) used for price figures and the CTA
+ *   button, matching the confirmed "Personal tier gold accent" rule —
+ *   text-inverse on gold gives 6.35:1, comfortably clears 4.5:1.
+ *   Cache-busting fix: every page's site.css?v= bumped to match this
+ *   version (they'd drifted to ?v=7 while the stylesheet moved to v10
+ *   across the earlier fixes this session — a real bug, browsers/CDN
+ *   could have kept serving the stale v7 file under the old query
+ *   string indefinitely).
  * v10 — coach-bubble__context colour changed from --color-text-muted
  *   (4.67:1 on bg-card — technically AA-passing but Graeme flagged it
  *   as "close for comfort") to --color-primary-light teal (7.00:1),
@@ -1319,4 +1330,117 @@ html[data-layout="desktop"] .cause-cards {
   margin-top: var(--space-6);
   color: var(--color-text-muted);
   font-size: var(--text-sm);
+}
+
+/* ========================================
+   UPGRADE PAGE
+   ======================================== */
+
+.upgrade-hero {
+  text-align: center;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: var(--space-6) 0;
+}
+
+.upgrade-hero__opening,
+.upgrade-hero__shift {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  margin: 0 0 var(--space-4) 0;
+}
+
+.upgrade-changes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: 480px;
+  margin: 0 auto;
+  padding: var(--space-6) 0;
+}
+
+.upgrade-changes__item {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  text-align: center;
+  margin: 0;
+}
+
+.upgrade-commitment {
+  text-align: center;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: var(--space-6) 0;
+  color: var(--color-text-secondary);
+}
+
+.upgrade-commitment p {
+  margin: 0 0 var(--space-2) 0;
+}
+
+.pricing-section {
+  padding: var(--space-6) 0;
+}
+
+.pricing-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  max-width: 480px;
+  margin: 0 auto var(--space-6) auto;
+}
+
+.pricing-card {
+  text-align: center;
+}
+
+.pricing-card__period {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-2) 0;
+}
+
+.pricing-card__price {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  color: var(--color-gold);
+  margin: 0;
+}
+
+.pricing-note {
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  max-width: 420px;
+  margin: 0 auto var(--space-6) auto;
+}
+
+.upgrade-cta {
+  text-align: center;
+  padding: var(--space-4) 0;
+}
+
+.btn--gold {
+  background: var(--color-gold);
+  color: var(--color-text-inverse);
+}
+
+.btn--gold:hover,
+.btn--gold:focus-visible {
+  filter: brightness(1.1);
+}
+
+.btn--gold:disabled,
+.btn--gold[aria-disabled="true"] {
+  opacity: 0.7;
+  cursor: not-allowed;
+  filter: none;
+}
+
+.upgrade-safety-note {
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  max-width: 420px;
+  margin: var(--space-4) auto 0 auto;
 }
