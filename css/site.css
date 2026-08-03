@@ -1,6 +1,12 @@
 /* site.css
- * 03 Aug 2026 v16
+ * 03 Aug 2026 v17
  *
+ * v17 — Comparison table polish per Graeme's feedback: column headers
+ *   bigger (text-lg -> text-xl) with a header divider; row headers
+ *   ("Sessions", "Exercise library" etc.) now text-secondary, visually
+ *   distinct from the data cells' full-white text; added subtle
+ *   vertical dividers between columns alongside the existing row
+ *   dividers, for a fuller grid feel without going full-spreadsheet.
  * v16 — Community page "Three ways" reworked from three bare words into
  *   real explanatory content, per Graeme's flag (raised earlier, not
  *   actioned until now). Each item now has a title + one line of real
@@ -1649,10 +1655,11 @@ html[data-layout="desktop"] .cause-cards {
 }
 
 .comparison-table thead th {
-  font-size: var(--text-lg);
+  font-size: var(--text-xl);
   font-weight: var(--font-bold);
   color: var(--color-text-secondary);
   padding-bottom: var(--space-4);
+  border-bottom: 2px solid var(--color-border-light);
 }
 
 .comparison-table thead th.comparison-table__free {
@@ -1664,13 +1671,24 @@ html[data-layout="desktop"] .cause-cards {
 }
 
 .comparison-table tbody th[scope="row"] {
-  color: var(--color-text);
+  color: var(--color-text-secondary);
   font-weight: var(--font-semibold);
+  font-size: var(--text-base);
   white-space: nowrap;
 }
 
 .comparison-table tbody td {
   color: var(--color-text);
+}
+
+.comparison-table th,
+.comparison-table td {
+  border-right: 1px solid var(--color-border-light);
+}
+
+.comparison-table th:last-child,
+.comparison-table td:last-child {
+  border-right: none;
 }
 
 .upgrade-product-label--teal {
@@ -1683,4 +1701,27 @@ html[data-layout="desktop"] .cause-cards {
 
 .product-card__details-link {
   margin: 0;
+}
+
+.areas-explained {
+  display: grid;
+  gap: var(--space-4);
+  max-width: 560px;
+  margin: 0 auto var(--space-8) auto;
+}
+
+.areas-explained__item {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.areas-explained dt {
+  font-weight: var(--font-semibold);
+  color: var(--color-text);
+}
+
+.areas-explained dd {
+  margin: 0;
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
 }
