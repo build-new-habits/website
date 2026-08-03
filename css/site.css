@@ -1,6 +1,33 @@
 /* site.css
- * 21 Jul 2026 v7
+ * 03 Aug 2026 v8
  *
+ * v8 — WCAG 2.2 AA contrast audit. (1) Confirmed fail: hero scroll-arrow
+ *   (.hero__scroll-signal) was ~1.6:1 against its background (--color-border
+ *   at 0.6 opacity) vs the 3:1 minimum for graphical objects (SC 1.4.11).
+ *   Switched to --color-text-muted at 0.85 opacity — 6.14:1, real margin.
+ *   (2) Same root cause found on 5 more functional element borders that
+ *   rely on --color-border to convey a UI component's boundary (nav
+ *   layout-toggle, nav hamburger-toggle, .btn--ghost, .form-input,
+ *   hero__pause) — --color-border measures 1.15–2.36:1 against every
+ *   background token in this system, never clears 3:1 anywhere. All six
+ *   switched to --color-text-muted, which clears 3:1 against all four
+ *   background tokens (3.91:1 worst case, on --color-bg-hover).
+ *   --color-border itself is left unchanged for decorative use (e.g. the
+ *   Home photo-placeholder dashed border, out of scope this session).
+ *   (3) New finding: .badge--live/.badge--soon text-vs-background fell as
+ *   low as 3.24:1 (needs 4.5:1) when rendered inside a .card (bg-card) —
+ *   the 15%-alpha tinted background was context-dependent and never
+ *   verified against a card context. Fixed by making all three badge
+ *   variants use a solid var(--color-bg-deep) background instead of a
+ *   blended rgba() one — now opaque and background-independent, 6.96–
+ *   10.69:1 in every context. (4) Checked, no fix needed: --color-border-
+ *   light (decorative dividers only, SC 1.4.11 doesn't apply); focus
+ *   indicator --color-border-focus (9.59:1 down to 4.66:1 worst case,
+ *   already clears everywhere); disabled cause-card__vote inputs (gold
+ *   border at 1.95:1 vs 3:1, but WCAG 2.2 explicitly exempts disabled/
+ *   non-interactive controls from SC 1.4.11 — confirmed genuinely and
+ *   permanently disabled in markup, no JS toggles it). Full ratios in
+ *   session summary.
  * v7 — Fix: desktop container was only 720px, leaving huge dead space on
  *   real desktop screens (Graeme flagged with screenshots — ~600px waste
  *   each side at wide viewports). Container now 1100px; every top-level
@@ -342,7 +369,7 @@ section + section {
   min-height: var(--touch-target-min);
   padding: 0 var(--space-3);
   background: transparent;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-text-muted);
   border-radius: var(--radius-full);
   color: var(--color-text-secondary);
   font-family: var(--font-family);
@@ -361,7 +388,7 @@ section + section {
   width: var(--touch-target-min);
   height: var(--touch-target-min);
   background: transparent;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-text-muted);
   border-radius: var(--radius-sm);
   color: var(--color-text);
   cursor: pointer;
@@ -666,7 +693,7 @@ html[data-layout="desktop"] .cause-cards {
 .btn--ghost {
   background: transparent;
   color: var(--color-text);
-  border-color: var(--color-border);
+  border-color: var(--color-text-muted);
 }
 
 .btn--ghost:hover,
@@ -709,17 +736,17 @@ html[data-layout="desktop"] .cause-cards {
 }
 
 .badge--live {
-  background: rgba(52, 211, 153, 0.15);
+  background: var(--color-bg-deep);
   color: var(--color-success);
 }
 
 .badge--soon {
-  background: rgba(96, 165, 250, 0.15);
+  background: var(--color-bg-deep);
   color: var(--color-info);
 }
 
 .badge--pending {
-  background: rgba(251, 191, 36, 0.15);
+  background: var(--color-bg-deep);
   color: var(--color-warning);
 }
 
@@ -743,7 +770,7 @@ html[data-layout="desktop"] .cause-cards {
   min-height: var(--touch-target-min);
   padding: var(--space-3) var(--space-4);
   background: var(--color-bg);
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-text-muted);
   border-radius: var(--radius-md);
   color: var(--color-text);
   font-family: var(--font-family);
@@ -969,7 +996,7 @@ html[data-layout="desktop"] .cause-cards {
   min-height: var(--touch-target-min);
   padding: 0 var(--space-3);
   background: transparent;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-text-muted);
   border-radius: var(--radius-full);
   color: var(--color-text-muted);
   cursor: pointer;
@@ -989,10 +1016,10 @@ html[data-layout="desktop"] .cause-cards {
   transform: translateX(-50%);
   width: 24px;
   height: 24px;
-  border-bottom: 2px solid var(--color-border);
-  border-right: 2px solid var(--color-border);
+  border-bottom: 2px solid var(--color-text-muted);
+  border-right: 2px solid var(--color-text-muted);
   transform: translateX(-50%) rotate(45deg);
-  opacity: 0.6;
+  opacity: 0.85;
 }
 
 @media (prefers-reduced-motion: reduce) {
