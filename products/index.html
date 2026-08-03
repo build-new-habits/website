@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <!--
   products/index.html
-  03 Aug 2026 v6
+  03 Aug 2026 v7
 
+  v7 — Restructured per Graeme's correction: the generic below-all-
+    cards "Learn more" section (added last session) is wrong — removed.
+    Replaced with a single details link specifically under the Move
+    card only ("See who it's for, compare tiers & pricing"), since
+    that content (/who-its-for/) is Move-specific, not family-wide.
+    "Get early access" now opens in a new tab (target="_blank",
+    rel="noopener noreferrer"). site.css ?v= bumped to 14.
   v6 — Added links to /who-its-for/ and /upgrade/, per Graeme's
     instruction that both should be reachable from this page (only
     Upgrade is also in the top nav bar). site.css ?v= bumped to 13,
@@ -34,7 +41,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Alongside family | Alongside</title>
   <meta name="description" content="One coach. Every context. Every phase of life. Meet the Alongside family of products.">
-  <link rel="stylesheet" href="../css/site.css?v=12">
+  <link rel="stylesheet" href="../css/site.css?v=14">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -60,9 +67,12 @@
             Your body. Your wellbeing. A coach that adapts to how you actually feel —
             not how you're supposed to feel.
           </p>
-          <a class="btn btn--primary" href="https://build-new-habits.github.io/alongside-app/">
+          <a class="btn btn--primary" href="https://build-new-habits.github.io/alongside-app/" target="_blank" rel="noopener noreferrer">
             Get early access
           </a>
+          <p class="product-card__details-link">
+            <a class="site-footer__link" href="../who-its-for/">See who it's for, compare tiers &amp; pricing &rarr;</a>
+          </p>
         </article>
 
         <article class="card product-card">
@@ -89,15 +99,6 @@
           </p>
         </article>
 
-      </section>
-
-      <section aria-label="Learn more" style="text-align: center; padding: var(--space-6) 0;">
-        <p style="margin-bottom: var(--space-4);">
-          <a class="site-footer__link" href="../who-its-for/">See who Alongside is built for &rarr;</a>
-        </p>
-        <p>
-          <a class="btn btn--gold" href="../upgrade/">See Personal tier pricing</a>
-        </p>
       </section>
 
       <section class="vision-line" aria-label="Future products">

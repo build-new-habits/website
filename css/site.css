@@ -1,6 +1,15 @@
 /* site.css
- * 03 Aug 2026 v13
+ * 03 Aug 2026 v14
  *
+ * v14 — Gold token lightened, per Graeme's feedback that it read as
+ *   "dirty and dark" on the black background: --color-gold #B8970A ->
+ *   #D4AF37 (classic web gold). This is a global token so it ripples
+ *   through everywhere gold is used (text-gold, btn--gold, pricing
+ *   figures, comparison-table header) — checked, every usage improves
+ *   (text-inverse on the new gold button bg: 8.49:1, was 6.35:1; text
+ *   on bg-card: 4.92:1, was 3.68:1). New: .upgrade-product-label,
+ *   .pricing-note__standout (subscription line now its own line),
+ *   .product-card__details-link.
  * v13 — New /who-its-for/ page section added: persona-intro,
  *   persona-card (reuses .card + .coach-tabs__* tab pattern from the
  *   home page for the persona tabs), and a real comparison-table for
@@ -561,7 +570,7 @@ html[data-layout="desktop"] .section-wide > .form-hint {
    ======================================== */
 
 :root {
-  --color-gold: #B8970A;
+  --color-gold: #D4AF37;
 }
 
 .anchor-link {
@@ -1359,6 +1368,20 @@ html[data-layout="desktop"] .cause-cards {
   padding: var(--space-6) 0;
 }
 
+.upgrade-product-label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  margin: 0 0 var(--space-3) 0;
+}
+
+.pricing-note__standout {
+  display: block;
+  margin-top: var(--space-3);
+  font-size: var(--text-lg);
+}
+
 .upgrade-hero__opening,
 .upgrade-hero__shift {
   font-size: var(--text-lg);
@@ -1561,4 +1584,9 @@ html[data-layout="desktop"] .cause-cards {
 
 .comparison-table td:first-child {
   color: var(--color-text-secondary);
+}
+
+.product-card__details-link {
+  font-size: var(--text-sm);
+  margin: 0;
 }
