@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <!--
   products/index.html
-  03 Aug 2026 v5
+  03 Aug 2026 v6
 
+  v6 — Added links to /who-its-for/ and /upgrade/, per Graeme's
+    instruction that both should be reachable from this page (only
+    Upgrade is also in the top nav bar). site.css ?v= bumped to 13,
+    site.js ?v= bumped to 6.
   v5 — No markup change; site.css ?v= bumped to 11, site.js ?v= bumped
     to 5 (Upgrade nav link now included in shared nav). Note: page's
     own header comment ("pricing lives only on /upgrade, which does
@@ -30,7 +34,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Alongside family | Alongside</title>
   <meta name="description" content="One coach. Every context. Every phase of life. Meet the Alongside family of products.">
-  <link rel="stylesheet" href="../css/site.css?v=11">
+  <link rel="stylesheet" href="../css/site.css?v=12">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -87,6 +91,15 @@
 
       </section>
 
+      <section aria-label="Learn more" style="text-align: center; padding: var(--space-6) 0;">
+        <p style="margin-bottom: var(--space-4);">
+          <a class="site-footer__link" href="../who-its-for/">See who Alongside is built for &rarr;</a>
+        </p>
+        <p>
+          <a class="btn btn--gold" href="../upgrade/">See Personal tier pricing</a>
+        </p>
+      </section>
+
       <section class="vision-line" aria-label="Future products">
         <p>And there's more coming.</p>
         <p class="vision-line__names">Rest. Love. Lead. Compass. Savvy.</p>
@@ -109,6 +122,6 @@
   <div id="site-footer"></div>
 
   <script src="../js/layout.js?v=1"></script>
-  <script src="../js/site.js?v=5"></script>
+  <script src="../js/site.js?v=6"></script>
 </body>
 </html>

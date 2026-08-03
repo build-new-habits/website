@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<!--
+  who-its-for/index.html
+  03 Aug 2026 v1
+
+  v1 — Initial build. Content drawn from alongside_customer_analysis_
+    personas_25jul2026_v1 (confidential internal doc) — quotes and pain
+    points reused close to verbatim since they're already written in
+    the right voice for this; "How Alongside helps" points condensed
+    from the same document's "How Alongside: Move Helps" sections.
+    Comparison table is Move-only (the only product with a confirmed
+    Free vs Personal split) — from alongside_move_overview_and_personas_
+    25jul2026_v2's "Known" table. Linked from Products page and from
+    here to /upgrade/. Not in the top nav bar, by Graeme's instruction —
+    only Upgrade is.
+
+  Alongside — Who it's for page.
+  Route: /who-its-for/
+-->
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Who it's for | Alongside</title>
+  <meta name="description" content="Four people. Four different reasons mainstream fitness apps failed them. See how Alongside actually meets each one.">
+  <link rel="stylesheet" href="../css/site.css?v=13">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div id="site-nav"></div>
+
+  <main id="main-content">
+    <div class="container">
+
+      <section aria-labelledby="page-title">
+        <h1 id="page-title" style="text-align: center;">Who it's for.</h1>
+        <p class="persona-intro">
+          Alongside was built for people mainstream fitness culture has
+          consistently failed. Here are four of them — real reasons other
+          apps didn't work, and what actually changes here.
+        </p>
+      </section>
+
+      <section aria-labelledby="personas-title">
+        <h2 id="personas-title" class="visually-hidden">Persona walkthroughs</h2>
+
+        <div id="persona-tabs">
+          <div class="coach-tabs__list" role="tablist" aria-label="Choose a persona">
+            <button type="button" role="tab" id="tab-jess" aria-selected="true" aria-controls="panel-jess" tabindex="0" class="coach-tabs__tab">Jess</button>
+            <button type="button" role="tab" id="tab-claire" aria-selected="false" aria-controls="panel-claire" tabindex="-1" class="coach-tabs__tab">Claire</button>
+            <button type="button" role="tab" id="tab-priya" aria-selected="false" aria-controls="panel-priya" tabindex="-1" class="coach-tabs__tab">Priya</button>
+            <button type="button" role="tab" id="tab-mark" aria-selected="false" aria-controls="panel-mark" tabindex="-1" class="coach-tabs__tab">Mark</button>
+          </div>
+
+          <div role="tabpanel" id="panel-jess" aria-labelledby="tab-jess" class="coach-tabs__panel">
+            <div class="card persona-card">
+              <span class="persona-card__label">Neurodivergent adult, ADHD, mid-30s</span>
+              <p class="persona-card__quote">"I don't need another app that decides for me. I need one that actually notices what's going on."</p>
+              <div>
+                <span class="persona-card__label">What's been hard</span>
+                <ul class="persona-card__list">
+                  <li>Streaks, guilt notifications, and broken-chain messaging punish exactly the inconsistency her condition produces.</li>
+                  <li>A small pool of workouts reshuffled to look varied reads as repetitive and triggers disengagement.</li>
+                  <li>Long onboarding forms feel like rejection, not a task — each extra step multiplies exit risk.</li>
+                </ul>
+              </div>
+              <div>
+                <span class="persona-card__label">How Alongside helps</span>
+                <ul class="persona-card__list">
+                  <li>Credits, not streaks — nothing resets, nothing is broken by a missed week.</li>
+                  <li>Genuine session-to-session variation, not a reshuffled pool.</li>
+                  <li>A short, conversational check-in — energy, mood, pain, time — not a form.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div role="tabpanel" id="panel-claire" aria-labelledby="tab-claire" class="coach-tabs__panel" hidden>
+            <div class="card persona-card">
+              <span class="persona-card__label">Woman navigating perimenopause, late 40s</span>
+              <p class="persona-card__quote">"I'm not looking to push through this. I'm looking for something that finally takes it seriously."</p>
+              <div>
+                <span class="persona-card__label">What's been hard</span>
+                <ul class="persona-card__list">
+                  <li>Mainstream fitness apps offer no menopause support, or tracking only — nothing that actually changes what's recommended.</li>
+                  <li>Rigid 28-day cycle logic doesn't fit an irregular or absent cycle.</li>
+                  <li>Wellness marketing implicitly says push harder, rather than validating that today is genuinely different from yesterday.</li>
+                </ul>
+              </div>
+              <div>
+                <span class="persona-card__label">How Alongside helps</span>
+                <ul class="persona-card__list">
+                  <li>Coaching tone and exercise selection adapt to perimenopause/menopause status and symptoms.</li>
+                  <li>No assumed cycle pattern — the daily check-in drives adaptation, not a fixed 28-day model.</li>
+                  <li>Cycle tracking is optional, never required — skip it with no penalty.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div role="tabpanel" id="panel-priya" aria-labelledby="tab-priya" class="coach-tabs__panel" hidden>
+            <div class="card persona-card">
+              <span class="persona-card__label">Woman in general fitness, early 30s</span>
+              <p class="persona-card__quote">"I don't want a transformation. I want something that doesn't make me feel like I've failed every time life gets in the way."</p>
+              <div>
+                <span class="persona-card__label">What's been hard</span>
+                <ul class="persona-card__list">
+                  <li>Apps built on streaks and comparison pushed her into over-exertion followed by guilt-driven abandonment.</li>
+                  <li>Most fitness content quietly reduces movement to appearance management.</li>
+                  <li>Even as a younger user, cycle-linked energy shifts are ignored by mainstream apps.</li>
+                </ul>
+              </div>
+              <div>
+                <span class="persona-card__label">How Alongside helps</span>
+                <ul class="persona-card__list">
+                  <li>Pattern-detection triggers Recovery Mode before burnout lands.</li>
+                  <li>Cycle-phase adaptation applies to regular cycles too, not just perimenopause.</li>
+                  <li>No before/after, no calorie language, anywhere in the product.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div role="tabpanel" id="panel-mark" aria-labelledby="tab-mark" class="coach-tabs__panel" hidden>
+            <div class="card persona-card">
+              <span class="persona-card__label">Returning after illness or chronic pain, mid-40s</span>
+              <p class="persona-card__quote">"I've done this before. I just need something that remembers I'm not starting from zero — and that some days genuinely are harder than others."</p>
+              <div>
+                <span class="persona-card__label">What's been hard</span>
+                <ul class="persona-card__list">
+                  <li>Most apps offer a blanket disclaimer instead of genuine exercise-level filtering for his specific condition.</li>
+                  <li>Post-session recovery guidance isn't linked to what was actually trained that day.</li>
+                  <li>Returning users get funnelled into generic "beginner" content that ignores real history.</li>
+                </ul>
+              </div>
+              <div>
+                <span class="persona-card__label">How Alongside helps</span>
+                <ul class="persona-card__list">
+                  <li>Three-tier condition safety filtering — every exercise gated safe, caution, or blocked.</li>
+                  <li>Exercise history and "returning after" context let onboarding build from his real background.</li>
+                  <li>Condition filtering and burnout detection are free forever — never a feature he has to pay to access safely.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="comparison-title">
+        <h2 id="comparison-title" style="text-align: center;">Free vs Personal.</h2>
+        <p class="persona-intro">
+          Safety and wellbeing are never part of this comparison — they're
+          standard at every tier, always.
+        </p>
+
+        <div class="comparison-table-wrap">
+          <table class="comparison-table">
+            <caption class="visually-hidden">Comparison of Free and Personal tier features for Alongside: Move</caption>
+            <thead>
+              <tr>
+                <th scope="col">Area</th>
+                <th scope="col">Free</th>
+                <th scope="col" class="comparison-table__personal">Personal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Sessions</td>
+                <td>One fixed template</td>
+                <td>All 7 session types, per-session equipment override</td>
+              </tr>
+              <tr>
+                <td>Exercise library</td>
+                <td>Difficulty level 1 only</td>
+                <td>Full exercise database</td>
+              </tr>
+              <tr>
+                <td>Programmes</td>
+                <td>Hardcoded programme only</td>
+                <td>Generative engine — named sessions, week-on-week progression</td>
+              </tr>
+              <tr>
+                <td>Progress</td>
+                <td>Basic view</td>
+                <td>Trend analysis, correlation insights, coach insight cards</td>
+              </tr>
+              <tr>
+                <td>Coach behaviour</td>
+                <td>Warm, adaptive, meets you today</td>
+                <td>Warm, adaptive, remembers across time</td>
+              </tr>
+              <tr>
+                <td>Safety and wellbeing</td>
+                <td>Always full — never gated</td>
+                <td>Always full — never gated</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p style="text-align: center; margin-top: var(--space-6);">
+          <a class="btn btn--gold" href="../upgrade/">See Personal tier pricing</a>
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../js/layout.js?v=1"></script>
+  <script src="../js/site.js?v=6"></script>
+  <script src="../js/who-its-for.js?v=1"></script>
+</body>
+</html>

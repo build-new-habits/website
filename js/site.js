@@ -1,6 +1,10 @@
 /* site.js
- * 03 Aug 2026 v5
+ * 03 Aug 2026 v6
  *
+ * v6 — Footer fix: removed "Ltd" from the copyright line. Build New
+ *   Habits is an unregistered sole trader (HMRC registration still
+ *   outstanding) and must never be described as Ltd — this was live
+ *   on every page.
  * v5 — Added Upgrade to NAV_LINKS now /upgrade/ is a real page (content
  *   complete; checkout wiring is separate infra work, not a reason to
  *   withhold the nav link — page renders real content, not a 404).
@@ -148,7 +152,7 @@
       '<footer class="site-footer">' +
         '<div class="site-footer__inner">' +
           '<ul class="site-footer__links">' + linksHtml + "</ul>" +
-          '<p class="site-footer__copy">&copy; ' + year + ' Build New Habits Ltd. Alongside is a trading name of Build New Habits Ltd.</p>' +
+          '<p class="site-footer__copy">&copy; ' + year + ' Build New Habits. Alongside is a trading name of Build New Habits.</p>' +
         "</div>" +
       "</footer>";
   }

@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <!--
   upgrade/index.html
-  03 Aug 2026 v1
+  03 Aug 2026 v2
 
+  v2 — Colour/interest pass per Graeme's critique: gold on "Personal
+    tier" and the four what-changes lead phrases, teal wellbeing-
+    always-free note added, pricing note given real visual weight
+    (card treatment, larger text) and its closing line goldened.
   v1 — Initial build, from alongside_upgrade_page_architecture_09jul2026_v1
     (confirmed and locked). Content is verbatim from that document.
 
@@ -36,7 +40,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ready to go deeper? | Alongside</title>
   <meta name="description" content="Personal tier gives the coach more to work with. The deeper the relationship, the better it understands you.">
-  <link rel="stylesheet" href="../css/site.css?v=11">
+  <link rel="stylesheet" href="../css/site.css?v=12">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -56,7 +60,7 @@
         </p>
 
         <p class="upgrade-hero__shift">
-          Personal tier gives the coach more to work with.
+          <span class="text-gold">Personal tier</span> gives the coach more to work with.
           The deeper the relationship, the better it understands you.
         </p>
       </section>
@@ -65,20 +69,20 @@
         <h2 id="changes-title" class="visually-hidden">What changes with Personal</h2>
 
         <p class="upgrade-changes__item">
-          Your sessions become yours — not a template, but a programme built
+          <span class="text-gold">Your sessions become yours</span> — not a template, but a programme built
           around your goals, your week, your pace.
         </p>
         <p class="upgrade-changes__item">
-          Your progress becomes a conversation — patterns noticed, trends
+          <span class="text-gold">Your progress becomes a conversation</span> — patterns noticed, trends
           named, the coach reflecting back what it sees across weeks, not
           just today.
         </p>
         <p class="upgrade-changes__item">
-          Your exercise library opens fully — every movement available,
+          <span class="text-gold">Your exercise library opens fully</span> — every movement available,
           matched to where you actually are.
         </p>
         <p class="upgrade-changes__item">
-          Your programme builds — week on week, phase by phase, going
+          <span class="text-gold">Your programme builds</span> — week on week, phase by phase, going
           somewhere rather than just showing up.
         </p>
       </section>
@@ -88,6 +92,11 @@
         <p>This isn't a commitment to us. It's a commitment to yourself.</p>
         <p>And you can change your mind.</p>
       </section>
+
+      <p class="upgrade-wellbeing-note">
+        Wellbeing and mental health support stay standard at every tier —
+        we don't want to restrict care for your mind to what you can pay for.
+      </p>
 
       <section aria-labelledby="pricing-title" class="pricing-section">
         <h2 id="pricing-title" class="visually-hidden">Pricing</h2>
@@ -106,10 +115,10 @@
           </div>
         </div>
 
-        <p class="pricing-note">
+        <p class="pricing-note--emphasis">
           That's it. And five percent of everything you pay goes to causes
-          our community chooses. Your subscription does more than you might
-          think.
+          our community chooses.
+          <span class="text-gold">Your subscription does more than you might think.</span>
         </p>
 
         <div class="upgrade-cta">
@@ -131,6 +140,6 @@
   <div id="site-footer"></div>
 
   <script src="../js/layout.js?v=1"></script>
-  <script src="../js/site.js?v=5"></script>
+  <script src="../js/site.js?v=6"></script>
 </body>
 </html>
