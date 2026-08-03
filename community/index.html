@@ -1,8 +1,24 @@
 <!DOCTYPE html>
 <!--
   community/index.html
-  03 Aug 2026 v9
+  03 Aug 2026 v10
 
+  v10 — Per Graeme's direct feedback (twice now on the charter):
+    removed the "What belongs here"/"What doesn't" charter block
+    entirely - flagged as confusing and not doing anything useful.
+    Content preserved here, not deleted from history, in case it's
+    wanted again once there's an actual live space for it to describe:
+    "What belongs here: Identity, struggle, what worked for me, asking
+    for support, celebrating quietly. What doesn't: Counts, comparisons,
+    challenges, weight numbers, before/after content."
+    Hero heading centred. "Three ways" given an explanatory intro line
+    (it wasn't clear what the section was for). "Share the impact"
+    rewritten to cover both meanings Graeme intended - inviting others,
+    AND sending in your own story (mailto link, explicit permission
+    language for reuse on socials/website/marketing). "Carry the
+    signal" rewritten - was too narrow to "talk about our philosophy";
+    now the actual evangelism call-to-action Graeme described. Closing
+    line: "Alongside" now teal. site.css ?v= bumped to 18.
   v9 — No markup change; site.css ?v= bumped to 17 (comparison table
     header/divider polish, areas-explained section - see site.css v17
     changelog).
@@ -40,7 +56,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Community | Alongside</title>
   <meta name="description" content="Help us grow something worth growing. Shared values, not competitive performance.">
-  <link rel="stylesheet" href="../css/site.css?v=17">
+  <link rel="stylesheet" href="../css/site.css?v=18">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -50,31 +66,17 @@
   <main id="main-content">
     <div class="container">
 
-      <section aria-labelledby="page-title">
+      <section aria-labelledby="page-title" style="text-align: center;">
         <h1 id="page-title">Help us grow something worth growing.</h1>
         <p class="form-note">Shared values, not competitive performance.</p>
       </section>
 
-      <section aria-labelledby="charter-title">
-        <h2 id="charter-title" class="visually-hidden">The charter</h2>
-        <p class="form-note" style="text-align: center; margin-bottom: var(--space-4);">
-          This is the culture we're building toward, together — not a live
-          space yet, just the mailing list for now.
-        </p>
-        <div class="charter card">
-          <div class="charter__group charter__group--belongs">
-            <h3>What belongs here</h3>
-            <p>Identity, struggle, what worked for me, asking for support, celebrating quietly.</p>
-          </div>
-          <div class="charter__group charter__group--doesnt">
-            <h3>What doesn't</h3>
-            <p>Counts, comparisons, challenges, weight numbers, before/after content.</p>
-          </div>
-        </div>
-      </section>
-
       <section aria-labelledby="ways-title">
         <h2 id="ways-title">Three ways</h2>
+        <p class="form-note" style="text-align: center; margin-bottom: var(--space-5);">
+          If Alongside means something to you, here's how you can help it
+          grow — no algorithm, no pressure, just word of mouth.
+        </p>
         <div class="three-ways">
           <div class="three-ways__item">
             <p class="three-ways__title">Show up</p>
@@ -90,10 +92,24 @@
               Copy link to share
             </button>
             <p class="three-ways__share-status" id="share-link-status" role="status" aria-live="polite"></p>
+            <p class="three-ways__body" style="margin-top: var(--space-4);">
+              Or tell us: what has Alongside actually done for you? Send a
+              few words to
+              <a class="site-footer__link" href="mailto:hello@buildnewhabits.co.uk?subject=What%20Alongside%20did%20for%20me">hello@buildnewhabits.co.uk</a>.
+              With your permission, we'll share it — on our socials, our
+              website, or in how we talk about this work. Without it, it's
+              just for us, so we know we're getting this right.
+            </p>
           </div>
           <div class="three-ways__item">
             <p class="three-ways__title">Carry the signal</p>
-            <p class="three-ways__body">Talk about what Alongside actually believes — no shame, no comparison — wherever that conversation already happens for you.</p>
+            <p class="three-ways__body">
+              If you believe in what we're building — coaching that actually
+              adapts to you, no shame, no comparison — say so. Tell people.
+              The impact we want to have in the world starts with the people
+              who already feel it, passing it on. Let the community grow
+              because you were part of growing it.
+            </p>
           </div>
         </div>
       </section>
@@ -134,7 +150,7 @@
       </section>
 
       <section aria-label="Closing statement">
-        <p class="close-statement">We hope to work Alongside you.</p>
+        <p class="close-statement">We hope to work <span class="text-teal">Alongside</span> you.</p>
       </section>
 
     </div>

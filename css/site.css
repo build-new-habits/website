@@ -1,6 +1,12 @@
 /* site.css
- * 03 Aug 2026 v17
+ * 03 Aug 2026 v18
  *
+ * v18 — Teal splash pass, per Graeme's request to review where teal
+ *   headings could add colour across the site: h2 is now teal by
+ *   default site-wide (was inheriting plain white). h1 stays white/full
+ *   weight for primary hierarchy; gold stays reserved for Personal-tier
+ *   signalling specifically, not general headings. .three-ways__title
+ *   also teal, per explicit instruction.
  * v17 — Comparison table polish per Graeme's feedback: column headers
  *   bigger (text-lg -> text-xl) with a header divider; row headers
  *   ("Sessions", "Exercise library" etc.) now text-secondary, visually
@@ -310,6 +316,7 @@ h2 {
   font-size: var(--text-xl);
   font-weight: var(--font-semibold);
   line-height: var(--leading-tight);
+  color: var(--color-primary-light);
 }
 
 /* Visible keyboard focus everywhere — WCAG 2.2 AA */
@@ -962,6 +969,7 @@ html[data-layout="desktop"] .cause-cards {
 .three-ways__title {
   font-weight: var(--font-semibold);
   font-size: var(--text-lg);
+  color: var(--color-primary-light);
   margin: 0 0 var(--space-2) 0;
 }
 

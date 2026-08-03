@@ -1,8 +1,29 @@
 <!DOCTYPE html>
 <!--
   who-its-for/index.html
-  03 Aug 2026 v5
+  03 Aug 2026 v6
 
+  v6 — Two changes, per explicit instruction from Graeme:
+    (1) Plain-English pass on "Areas explained" - the previous wording
+    assumed the reader already knew what a "session" or "session type"
+    was (Graeme's own test: "I know because it is here in this chat").
+    Every area now defines its term before comparing tiers.
+    (2) DELIBERATE POLICY REVERSAL, flagged clearly at the time: the
+    "Coming soon" tags added in v5 (for exercise-library level-
+    progression and the generative/periodised programme engine, both
+    confirmed not built) have been removed. Graeme's explicit
+    instruction: state these as current claims about the product, even
+    though they are not yet built, so the website itself becomes the
+    accountability spec for what the app should do - if it later proves
+    impossible, the website is the easier thing to change.
+    THIS IS A REAL RISK, NOT JUST A STYLE CHOICE, once checkout goes
+    live: /upgrade's payment flow is still disabled (no money changes
+    hands today), but if this wording is still live when Stripe/
+    Supabase checkout ships, real paying users will be told they get
+    features (level-matched exercise progression, a periodised
+    programme) that don't exist. Logged in the master schedule as a
+    named item to resolve before BUILD-9/beta, not silently carried
+    forward.
   v5 — MAJOR CORRECTION, checked against live code (js/views/gym-
     programme.js, js/session-builder.js, js/views/session-builder-ui.js,
     js/data/exercises/strength.js, js/views/progress.js in alongside-app
@@ -73,7 +94,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Who it's for | Alongside</title>
   <meta name="description" content="Four people. Four different reasons mainstream fitness apps failed them. See how Alongside actually meets each one.">
-  <link rel="stylesheet" href="../css/site.css?v=17">
+  <link rel="stylesheet" href="../css/site.css?v=18">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -184,7 +205,7 @@
                   <li><span class="tier-tag tier-tag--free">Free</span>No before/after, no calorie language, anywhere in the product.</li>
                   <li><span class="tier-tag tier-tag--personal">Personal</span>Every session type and every duration, so a workout can actually match how much time and energy she has that day — not always the same 30-minute slot.</li>
                   <li><span class="tier-tag tier-tag--personal">Personal</span>Progress is framed as consistency and trend, never a number to chase.</li>
-                  <li><span class="tier-tag tier-tag--personal">Coming soon</span>A generative programme that builds week on week toward her own goals, instead of always starting fresh.</li>
+                  <li><span class="tier-tag tier-tag--personal">Personal</span>A generative programme builds week on week toward her own goals, instead of always starting fresh.</li>
                 </ul>
               </div>
               <div class="persona-card__narrative">
@@ -213,7 +234,7 @@
                   <li><span class="tier-tag tier-tag--free">Free</span>Exercise history and "returning after" context let onboarding build from his real background.</li>
                   <li><span class="tier-tag tier-tag--free">Free</span>Condition filtering and burnout detection are free forever — never a feature he has to pay to access safely.</li>
                   <li><span class="tier-tag tier-tag--personal">Personal</span>All 7 session types and every duration, so his return can be shaped around what his body can genuinely handle each day.</li>
-                  <li><span class="tier-tag tier-tag--personal">Coming soon</span>A generative programme that lets his return progress phase by phase, instead of repeating the same starting point.</li>
+                  <li><span class="tier-tag tier-tag--personal">Personal</span>A generative programme lets his return progress phase by phase, instead of repeating the same starting point.</li>
                 </ul>
               </div>
               <div class="persona-card__narrative">
@@ -235,23 +256,23 @@
         <dl class="areas-explained">
           <div class="areas-explained__item">
             <dt>Sessions</dt>
-            <dd>How your workout is structured — Full Body only at a fixed 30 minutes on Free, or full choice across every session type and length on Personal.</dd>
+            <dd>A session is one workout — the exercises the coach puts together for you to do in one sitting. There are seven kinds, each focused on something different (like Full Body, Upper Body, or Cardio). On Free, you always get the Full Body kind, at a fixed 30 minutes. On Personal, you choose which of the seven you want, and how long you've got.</dd>
           </div>
           <div class="areas-explained__item">
             <dt>Exercise library</dt>
-            <dd>The pool of exercises the coach can draw from — currently the same full pool on both tiers. Level-based progression (matching your fitness level and building from there) is coming to Personal tier.</dd>
+            <dd>This is the full set of exercises the coach can choose from — hundreds of movements, each rated from easier to harder. On Personal, the coach matches exercises to your level and moves you up as you're ready, instead of leaving that to guesswork.</dd>
           </div>
           <div class="areas-explained__item">
             <dt>Programmes</dt>
-            <dd>Right now, every session is built fresh by the same session builder on both tiers. A generative multi-week programme — one that actually progresses week on week — is coming to Personal tier.</dd>
+            <dd>A programme is how your sessions connect to each other over time, not just what happens in one sitting. On Personal, the coach builds a programme that progresses week by week — not just a fresh session each time, but one that's going somewhere.</dd>
           </div>
           <div class="areas-explained__item">
             <dt>Progress</dt>
-            <dd>How much insight you get into your own patterns — a simple rolling 7-day log on Free, or trend charts and pattern insights (7/30/90-day) on Personal.</dd>
+            <dd>How much insight you get into your own patterns. On Free, you see the last 7 days. On Personal, you can look back 30 or 90 days too, and the coach points out patterns it's noticed.</dd>
           </div>
           <div class="areas-explained__item">
             <dt>Coach behaviour</dt>
-            <dd>Whether the coach responds to today only, or actively remembers and references your patterns over time.</dd>
+            <dd>On Free, the coach responds to how you are today. On Personal, it also remembers — noticing patterns across weeks and bringing them up, not just reacting in the moment.</dd>
           </div>
         </dl>
 
@@ -274,12 +295,12 @@
               <tr>
                 <th scope="row">Exercise library</th>
                 <td>Full pool, all levels</td>
-                <td>Full pool, all levels <span class="tier-tag tier-tag--personal" style="margin-left:0;">Coming soon</span> — level-based progression</td>
+                <td>Full pool, matched and progressed to your level</td>
               </tr>
               <tr>
                 <th scope="row">Programmes</th>
-                <td>Session builder only</td>
-                <td>Session builder <span class="tier-tag tier-tag--personal" style="margin-left:0;">Coming soon</span> — multi-week generative programmes with real periodisation</td>
+                <td>A fresh session, built for how you are today</td>
+                <td>A programme that builds week on week, with real periodisation</td>
               </tr>
               <tr>
                 <th scope="row">Progress</th>
