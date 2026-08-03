@@ -1,6 +1,12 @@
 /* site.css
- * 03 Aug 2026 v9
+ * 03 Aug 2026 v10
  *
+ * v10 — coach-bubble__context colour changed from --color-text-muted
+ *   (4.67:1 on bg-card — technically AA-passing but Graeme flagged it
+ *   as "close for comfort") to --color-primary-light teal (7.00:1),
+ *   per mockup review. Deliberately not gold: gold is reserved as the
+ *   paid-tier marker across the whole product family, and this element
+ *   is free/universal — using it here would create a false tier signal.
  * v9 — Scroll-arrow repositioning, per live-screenshot review. The arrow
  *   was position:absolute, bottom: var(--space-5) — pinned to the very
  *   bottom of the ~100vh hero section, disconnected from the Pause
@@ -1133,7 +1139,7 @@ html[data-layout="desktop"] .cause-cards {
 .coach-bubble__context {
   display: block;
   font-size: var(--text-xs);
-  color: var(--color-text-muted);
+  color: var(--color-primary-light);
   margin-bottom: var(--space-2);
 }
 
