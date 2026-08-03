@@ -1,8 +1,22 @@
 <!DOCTYPE html>
 <!--
   who-its-for/index.html
-  03 Aug 2026 v2
+  03 Aug 2026 v3
 
+  v3 — Per Graeme's feedback: "Free vs Personal." heading now split-
+    coloured (teal/gold) matching the table headers. Table: Free header
+    teal + bigger, Personal gold + bigger; row labels converted from
+    <td> to proper <th scope="row"> (real accessibility fix, not just
+    styling - screen readers previously had no programmatic link
+    between "Sessions" and its two data cells). Persona cards
+    restructured: "How Alongside helps" now tagged Free/Personal per
+    line instead of one undifferentiated list (previously implied
+    everything was free-tier) - Personal-tier additions are grounded in
+    the comparison table's real gaps (full exercise library, generative
+    programmes, trend view) applied to each persona's context, not
+    invented features. Added a short "How it felt, over time" narrative
+    per persona - reflective, clearly part of the persona walkthrough,
+    not presented as a real testimonial.
   v2 — Restructured into the genuine "all-in-one Move info page" per
     Graeme's instruction: product description added at top (was
     persona-tabs + comparison table only, with no product framing).
@@ -28,7 +42,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Who it's for | Alongside</title>
   <meta name="description" content="Four people. Four different reasons mainstream fitness apps failed them. See how Alongside actually meets each one.">
-  <link rel="stylesheet" href="../css/site.css?v=14">
+  <link rel="stylesheet" href="../css/site.css?v=16">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -77,10 +91,15 @@
               <div>
                 <span class="persona-card__label">How Alongside helps</span>
                 <ul class="persona-card__list">
-                  <li>Credits, not streaks — nothing resets, nothing is broken by a missed week.</li>
-                  <li>Genuine session-to-session variation, not a reshuffled pool.</li>
-                  <li>A short, conversational check-in — energy, mood, pain, time — not a form.</li>
+                  <li><span class="tier-tag tier-tag--free">Free</span>Credits, not streaks — nothing resets, nothing is broken by a missed week.</li>
+                  <li><span class="tier-tag tier-tag--free">Free</span>A short, conversational check-in — energy, mood, pain, time — not a form.</li>
+                  <li><span class="tier-tag tier-tag--personal">Personal</span>The full exercise library means real day-to-day novelty, not the same rotating basics.</li>
+                  <li><span class="tier-tag tier-tag--personal">Personal</span>The coach starts noticing her own patterns — when a hyperfocus curve usually breaks — instead of only responding to today.</li>
                 </ul>
+              </div>
+              <div class="persona-card__narrative">
+                <span class="persona-card__label">How it felt, over time</span>
+                <p>Three weeks in, she noticed the coach hadn't asked her to explain the gap the one week she'd disappeared. It just picked up where she'd left off. That was the moment it stopped feeling like every other app she'd abandoned.</p>
               </div>
             </div>
           </div>
@@ -100,10 +119,16 @@
               <div>
                 <span class="persona-card__label">How Alongside helps</span>
                 <ul class="persona-card__list">
-                  <li>Coaching tone and exercise selection adapt to perimenopause/menopause status and symptoms.</li>
-                  <li>No assumed cycle pattern — the daily check-in drives adaptation, not a fixed 28-day model.</li>
-                  <li>Cycle tracking is optional, never required — skip it with no penalty.</li>
+                  <li><span class="tier-tag tier-tag--free">Free</span>Coaching tone and exercise selection adapt to perimenopause/menopause status and symptoms.</li>
+                  <li><span class="tier-tag tier-tag--free">Free</span>No assumed cycle pattern — the daily check-in drives adaptation, not a fixed 28-day model.</li>
+                  <li><span class="tier-tag tier-tag--free">Free</span>Cycle tracking is optional, never required — skip it with no penalty.</li>
+                  <li><span class="tier-tag tier-tag--personal">Personal</span>Trend view shows how her energy has actually moved week to week, not just today.</li>
+                  <li><span class="tier-tag tier-tag--personal">Personal</span>The coach starts naming patterns across weeks, not just reacting to each day in isolation.</li>
                 </ul>
+              </div>
+              <div class="persona-card__narrative">
+                <span class="persona-card__label">How it felt, over time</span>
+                <p>She'd stopped expecting anyone, let alone an app, to take the unpredictability seriously. What changed her mind wasn't a big feature — it was the coach adjusting a session on a bad brain-fog day without her having to explain why.</p>
               </div>
             </div>
           </div>
@@ -123,10 +148,16 @@
               <div>
                 <span class="persona-card__label">How Alongside helps</span>
                 <ul class="persona-card__list">
-                  <li>Pattern-detection triggers Recovery Mode before burnout lands.</li>
-                  <li>Cycle-phase adaptation applies to regular cycles too, not just perimenopause.</li>
-                  <li>No before/after, no calorie language, anywhere in the product.</li>
+                  <li><span class="tier-tag tier-tag--free">Free</span>Pattern-detection triggers Recovery Mode before burnout lands.</li>
+                  <li><span class="tier-tag tier-tag--free">Free</span>Cycle-phase adaptation applies to regular cycles too, not just perimenopause.</li>
+                  <li><span class="tier-tag tier-tag--free">Free</span>No before/after, no calorie language, anywhere in the product.</li>
+                  <li><span class="tier-tag tier-tag--personal">Personal</span>A generative programme builds week on week toward her own goals, instead of a fixed starter plan.</li>
+                  <li><span class="tier-tag tier-tag--personal">Personal</span>Progress is framed as consistency and trend, never a number to chase.</li>
                 </ul>
+              </div>
+              <div class="persona-card__narrative">
+                <span class="persona-card__label">How it felt, over time</span>
+                <p>The thing that stayed with her wasn't a single workout — it was going back after a rough two weeks and finding nothing had reset. No lost streak to mourn. Just the next session, waiting.</p>
               </div>
             </div>
           </div>
@@ -146,10 +177,15 @@
               <div>
                 <span class="persona-card__label">How Alongside helps</span>
                 <ul class="persona-card__list">
-                  <li>Three-tier condition safety filtering — every exercise gated safe, caution, or blocked.</li>
-                  <li>Exercise history and "returning after" context let onboarding build from his real background.</li>
-                  <li>Condition filtering and burnout detection are free forever — never a feature he has to pay to access safely.</li>
+                  <li><span class="tier-tag tier-tag--free">Free</span>Three-tier condition safety filtering — every exercise gated safe, caution, or blocked.</li>
+                  <li><span class="tier-tag tier-tag--free">Free</span>Exercise history and "returning after" context let onboarding build from his real background.</li>
+                  <li><span class="tier-tag tier-tag--free">Free</span>Condition filtering and burnout detection are free forever — never a feature he has to pay to access safely.</li>
+                  <li><span class="tier-tag tier-tag--personal">Personal</span>The full exercise database and a generative programme let his return progress phase by phase, instead of repeating the same safe starter set.</li>
                 </ul>
+              </div>
+              <div class="persona-card__narrative">
+                <span class="persona-card__label">How it felt, over time</span>
+                <p>He'd expected another blanket disclaimer. What he got instead was a plan that actually knew which exercises to avoid for his back — and, a few months on, one that had quietly moved him past where he'd stalled the last two times he tried.</p>
               </div>
             </div>
           </div>
@@ -157,7 +193,7 @@
       </section>
 
       <section aria-labelledby="comparison-title">
-        <h2 id="comparison-title" style="text-align: center;">Free vs Personal.</h2>
+        <h2 id="comparison-title" style="text-align: center;"><span class="upgrade-product-label--teal">Free</span> vs <span class="upgrade-product-label--gold">Personal</span>.</h2>
         <p class="persona-intro">
           Safety and wellbeing are never part of this comparison — they're
           standard at every tier, always.
@@ -169,38 +205,38 @@
             <thead>
               <tr>
                 <th scope="col">Area</th>
-                <th scope="col">Free</th>
+                <th scope="col" class="comparison-table__free">Free</th>
                 <th scope="col" class="comparison-table__personal">Personal</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Sessions</td>
+                <th scope="row">Sessions</th>
                 <td>One fixed template</td>
                 <td>All 7 session types, per-session equipment override</td>
               </tr>
               <tr>
-                <td>Exercise library</td>
+                <th scope="row">Exercise library</th>
                 <td>Difficulty level 1 only</td>
                 <td>Full exercise database</td>
               </tr>
               <tr>
-                <td>Programmes</td>
+                <th scope="row">Programmes</th>
                 <td>Hardcoded programme only</td>
                 <td>Generative engine — named sessions, week-on-week progression</td>
               </tr>
               <tr>
-                <td>Progress</td>
+                <th scope="row">Progress</th>
                 <td>Basic view</td>
                 <td>Trend analysis, correlation insights, coach insight cards</td>
               </tr>
               <tr>
-                <td>Coach behaviour</td>
+                <th scope="row">Coach behaviour</th>
                 <td>Warm, adaptive, meets you today</td>
                 <td>Warm, adaptive, remembers across time</td>
               </tr>
               <tr>
-                <td>Safety and wellbeing</td>
+                <th scope="row">Safety and wellbeing</th>
                 <td>Always full — never gated</td>
                 <td>Always full — never gated</td>
               </tr>

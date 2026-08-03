@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <!--
   community/index.html
-  03 Aug 2026 v7
+  03 Aug 2026 v8
 
+  v8 — "What belongs here"/"What doesn't" charter reframed as forward-
+    looking (honest that only a mailing list exists today, not a live
+    posting space) - flagged by Graeme in an earlier session, not
+    actioned until now. "Three ways" rebuilt from three bare words into
+    real content per item; "Share the impact" gets a working copy-link
+    button (js/community.js, new). site.css ?v= bumped to 16.
   v7 — No markup change; site.css ?v= bumped to 14 (gold token
     lightened, see site.css v14 changelog).
   v6 — No markup change; site.css ?v= bumped to 12, site.js ?v= bumped
@@ -31,7 +37,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Community | Alongside</title>
   <meta name="description" content="Help us grow something worth growing. Shared values, not competitive performance.">
-  <link rel="stylesheet" href="../css/site.css?v=14">
+  <link rel="stylesheet" href="../css/site.css?v=16">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -48,6 +54,10 @@
 
       <section aria-labelledby="charter-title">
         <h2 id="charter-title" class="visually-hidden">The charter</h2>
+        <p class="form-note" style="text-align: center; margin-bottom: var(--space-4);">
+          This is the culture we're building toward, together — not a live
+          space yet, just the mailing list for now.
+        </p>
         <div class="charter card">
           <div class="charter__group charter__group--belongs">
             <h3>What belongs here</h3>
@@ -63,9 +73,25 @@
       <section aria-labelledby="ways-title">
         <h2 id="ways-title">Three ways</h2>
         <div class="three-ways">
-          <p class="three-ways__item">Show up</p>
-          <p class="three-ways__item">Share the impact</p>
-          <p class="three-ways__item">Carry the signal</p>
+          <div class="three-ways__item">
+            <p class="three-ways__title">Show up</p>
+            <p class="three-ways__body">Use Alongside the way that works for you today. That's already enough.</p>
+          </div>
+          <div class="three-ways__item">
+            <p class="three-ways__title">Share the impact</p>
+            <p class="three-ways__body">
+              Tell someone who needs this that it exists. A quiet
+              recommendation carries more trust than any ad we could run.
+            </p>
+            <button type="button" class="btn btn--ghost three-ways__share-btn" id="share-link-btn" data-share-url="https://build-new-habits.github.io/website/">
+              Copy link to share
+            </button>
+            <p class="three-ways__share-status" id="share-link-status" role="status" aria-live="polite"></p>
+          </div>
+          <div class="three-ways__item">
+            <p class="three-ways__title">Carry the signal</p>
+            <p class="three-ways__body">Talk about what Alongside actually believes — no shame, no comparison — wherever that conversation already happens for you.</p>
+          </div>
         </div>
       </section>
 
@@ -115,5 +141,6 @@
 
   <script src="../js/layout.js?v=1"></script>
   <script src="../js/site.js?v=6"></script>
+  <script src="../js/community.js?v=1"></script>
 </body>
 </html>
