@@ -1,6 +1,24 @@
 /* site.css
- * 10 Aug 2026 v19
+ * 10 Aug 2026 v20
  *
+ * v20 — Philosophy page emphasis pass, per Graeme. Two changes:
+ *   (a) Power statements unified — all five now bold and teal. Beat 7's
+ *   close ("helped you Move") was the only one still white; it is now
+ *   teal like the rest, and turn/declaration/landing/close all move from
+ *   semibold to bold. Deliberately NOT extended further ("Something
+ *   happens when you feel understood", "Not fixed. Not solved.
+ *   Understood.") — if six or seven lines are teal, none of them read as
+ *   emphasis any more, they just become a second body colour.
+ *   (b) New divider between beats: 60px centred teal rule. Graeme asked
+ *   for gold; recommended against and agreed. Gold is the Personal-tier
+ *   marker across every product, and this is the page carrying the
+ *   belief that "everyone deserves world-class support. Not a cut-down
+ *   version. Not a basic tier." The paid-tier colour on that page
+ *   undercuts the claim it is making. Same reasoning as the 03 Aug
+ *   coach-bubble decision, where gold was rejected for a free/universal
+ *   element and teal chosen. Spacing rebalanced space-12 -> space-10
+ *   above and below the mark, so the total pause grows slightly rather
+ *   than doubling.
  * v19 — Philosophy page built (first new page since /upgrade/ and
  *   /who-its-for/ on 03 Aug). New .philosophy block at the end of this
  *   file. Deliberately looser vertical rhythm than anywhere else on the
@@ -1777,13 +1795,30 @@ html[data-layout="desktop"] .cause-cards {
   margin: 0 0 var(--space-5) 0;
 }
 
-/* The pause between beats. Larger than feels comfortable — intentionally. */
+/* The pause between beats. Larger than feels comfortable — intentionally.
+   The divider is a short centred mark, not a full-width rule: full width
+   reads as "new article section" and invites skimming, which is the one
+   thing this page cannot survive. Short and centred reads as a breath.
+   Teal, not gold — gold is the Personal-tier marker site-wide, and this
+   is the page that says everyone deserves the same quality of attention.
+   Purely decorative: generated content with no text, so it is not
+   announced by screen readers and needs no aria treatment. */
 .philosophy__beat + .philosophy__beat {
-  margin-top: var(--space-12);
+  margin-top: var(--space-10);
+}
+
+.philosophy__beat + .philosophy__beat::before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-light);
+  margin: 0 auto var(--space-10) auto;
 }
 
 .philosophy__beat--close {
-  margin-top: var(--space-12);
+  margin-top: var(--space-10);
 }
 
 /* BEAT 1 — the question sits alone, generous space above and below.
@@ -1802,7 +1837,7 @@ html[data-layout="desktop"] .cause-cards {
 .philosophy__turn {
   margin-top: var(--space-8);
   color: var(--color-primary-light);
-  font-weight: var(--font-semibold);
+  font-weight: var(--font-bold);
   line-height: var(--leading-relaxed);
 }
 
@@ -1814,7 +1849,7 @@ html[data-layout="desktop"] .cause-cards {
 .philosophy__declaration {
   margin-top: var(--space-8);
   font-size: var(--text-xl);
-  font-weight: var(--font-semibold);
+  font-weight: var(--font-bold);
   color: var(--color-primary-light);
 }
 
@@ -1825,7 +1860,7 @@ html[data-layout="desktop"] .cause-cards {
 
 .philosophy__landing {
   font-size: var(--text-xl);
-  font-weight: var(--font-semibold);
+  font-weight: var(--font-bold);
   color: var(--color-primary-light);
   margin-top: var(--space-6);
 }
@@ -1845,9 +1880,9 @@ html[data-layout="desktop"] .cause-cards {
 /* BEAT 7 — generous space before it; she sits with this line. */
 .philosophy__close {
   font-size: var(--text-2xl);
-  font-weight: var(--font-semibold);
+  font-weight: var(--font-bold);
   line-height: var(--leading-normal);
-  color: var(--color-text);
+  color: var(--color-primary-light);
   margin-bottom: var(--space-10);
 }
 
