@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <!--
   about/index.html
-  10 Aug 2026 v1
+  10 Aug 2026 v2
 
+  v2 — Back link changed from an absolute "/website/" to a relative
+    "../", so it resolves correctly under both the github.io path prefix
+    and the custom domain root. site.js ?v= bumped to 9.
   v1 — Initial build, from alongside_about_page_architecture_09jul2026_v1.
     The copy in that document is marked "The Copy — Confirmed and Locked"
     and is reproduced here verbatim. Nothing added, nothing trimmed.
@@ -135,7 +138,7 @@
         </section>
 
         <p class="about__back">
-          <a href="/website/"><span aria-hidden="true">&larr; </span>Back to Alongside</a>
+          <a href="../"><span aria-hidden="true">&larr; </span>Back to Alongside</a>
         </p>
 
       </article>
@@ -145,6 +148,6 @@
   <div id="site-footer"></div>
 
   <script src="../js/layout.js?v=1"></script>
-  <script src="../js/site.js?v=8"></script>
+  <script src="../js/site.js?v=9"></script>
 </body>
 </html>

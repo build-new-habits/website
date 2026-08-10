@@ -1,6 +1,18 @@
 /* site.js
- * 10 Aug 2026 v8
+ * 10 Aug 2026 v9
  *
+ * v9 — Domain-migration prep. Every nav/brand link is now built from a
+ *   BASE_PATH detected at runtime rather than hardcoding "/website/".
+ *   GitHub Pages serves this repo as a PROJECT site, under a /website/
+ *   path prefix; a custom domain (buildnewhabits.co.uk) serves the same
+ *   files at the root. Hardcoding either one breaks the other. Detecting
+ *   the host means the switch-over needs no code change here at all, and
+ *   crucially means this commit does NOT break the live github.io site
+ *   in the meantime. The three hardcoded links in page markup have been
+ *   made relative for the same reason.
+ *   Still to do AT switch-over, deliberately not done now because each
+ *   would break the live site today: add a CNAME file, and repoint
+ *   sitemap.xml + robots.txt at the real domain.
  * v8 — About added to NAV_LINKS now /about/ is a real page. Placed last,
  *   after Upgrade: it is the page about the person rather than the
  *   product, and the locked architecture is explicit that it carries no
@@ -49,13 +61,21 @@
 (function () {
   "use strict";
 
+  // Path prefix, resolved at runtime. On *.github.io this repo is a
+  // project site served under /website/. On the custom domain it is
+  // served at the root. Nothing else in this file should ever hardcode
+  // either form — build paths as BASE_PATH + "/page/".
+  var BASE_PATH = /(^|\.)github\.io$/.test(window.location.hostname)
+    ? "/website"
+    : "";
+
   var NAV_LINKS = [
-    { label: "Philosophy", href: "/website/philosophy/" },
-    { label: "Products", href: "/website/products/" },
-    { label: "Community", href: "/website/community/" },
-    { label: "Impact", href: "/website/impact/" },
-    { label: "Upgrade", href: "/website/upgrade/" },
-    { label: "About", href: "/website/about/" }
+    { label: "Philosophy", href: BASE_PATH + "/philosophy/" },
+    { label: "Products", href: BASE_PATH + "/products/" },
+    { label: "Community", href: BASE_PATH + "/community/" },
+    { label: "Impact", href: BASE_PATH + "/impact/" },
+    { label: "Upgrade", href: BASE_PATH + "/upgrade/" },
+    { label: "About", href: BASE_PATH + "/about/" }
   ];
 
   var FOOTER_LINKS = [
@@ -89,7 +109,7 @@
     mount.innerHTML =
       '<nav class="site-nav" aria-label="Primary">' +
         '<div class="site-nav__inner">' +
-          '<a class="site-nav__brand" href="/website/">Alongside</a>' +
+          '<a class="site-nav__brand" href="' + (BASE_PATH || "") + '/">Alongside</a>' +
           '<div class="site-nav__right">' +
             '<ul class="site-nav__links" id="nav-links">' + linksHtml + "</ul>" +
             '<div class="site-nav__controls">' +
