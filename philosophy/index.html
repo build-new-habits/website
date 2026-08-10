@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<!--
+  philosophy/index.html
+  10 Aug 2026 v1
+
+  v1 — Initial build, from alongside_philosophy_page_architecture_10jul2026_v3
+    (all seven beats CONFIRMED AND LOCKED). Body copy is verbatim from that
+    document. No copy was written, trimmed or reordered in this build.
+
+  Alongside — Philosophy page.
+  Route: /philosophy/
+
+  Build notes — the two places this file goes beyond the locked document,
+  both flagged to Graeme rather than decided silently:
+
+  1. The h1 ("Philosophy"). The architecture document specifies no page
+     title. A page needs exactly one h1 for WCAG 2.2 AA heading structure,
+     so a label was used rather than invented copy — "Philosophy" matches
+     the nav link and makes no claim the locked document doesn't make.
+     Trivially changeable if Graeme wants different words here.
+
+  2. Beat 4 is in first person ("There are three things I believe"), while
+     the rest of the page is "we". That is exactly as locked — the design
+     note says "Graeme's voice throughout". No attribution line has been
+     added, because none is in the locked document and inventing one
+     ("- Graeme, founder") would be new copy. Open question for Graeme:
+     the reader currently meets an unintroduced "I".
+
+  Heading structure: one visible h1, then a visually-hidden h2 per beat.
+  The locked design principles require pure prose with no visual headings
+  and no bullets ("Space is content"), but the same document's WCAG section
+  requires a logical heading structure for screen reader navigation. Hidden
+  h2s satisfy both — screen reader users can navigate beat to beat, sighted
+  readers see the uninterrupted prose the page is designed around.
+
+  No animation anywhere on this page. Beat 1's design note ("No animation
+  on this beat. The stillness is intentional.") is honoured site-wide here,
+  which also satisfies the WCAG requirement for no auto-playing animation.
+
+  Deliberately absent, per the locked design principles: feature
+  comparisons, competitor references, bullet points, and any conversion
+  CTA. The page reveals; it does not convert. The only outbound link is
+  Beat 6's Impact link, which is in the locked copy.
+-->
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Philosophy | Alongside</title>
+  <meta name="description" content="The beliefs that shaped every decision in Alongside. Behaviour is communication. Everyone deserves world-class support. We are not separate.">
+  <link rel="stylesheet" href="../css/site.css?v=19">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div id="site-nav"></div>
+
+  <main id="main-content">
+    <div class="container">
+      <article class="philosophy">
+
+        <h1 id="page-title">Philosophy</h1>
+
+        <!-- BEAT 1 — Context, invitation, warmth, then the question -->
+        <section class="philosophy__beat" aria-labelledby="beat-1">
+          <h2 id="beat-1" class="visually-hidden">Before anything else</h2>
+
+          <p class="philosophy__lead">
+            The coach in Alongside is designed to understand you. Not a version
+            of you from last month, or who you're trying to become. You, today.
+            Your history, your energy, your mood, your struggles.
+          </p>
+
+          <p class="philosophy__lead">
+            Because we come to each day differently. And a coach worth having
+            knows that.
+          </p>
+
+          <p class="philosophy__lead">
+            So before anything else — we'd like to ask you something.
+          </p>
+
+          <p class="philosophy__question">How do you feel?</p>
+        </section>
+
+        <!-- BEAT 2 — The ripple -->
+        <section class="philosophy__beat" aria-labelledby="beat-2">
+          <h2 id="beat-2" class="visually-hidden">How it moves through a day</h2>
+
+          <p>Because how you feel doesn't stay in one place.</p>
+
+          <p>
+            It moves through your day — and it costs. Everything costs energy.
+            Some things cost a little. Some cost more. Some days, a conversation
+            that would normally be nothing takes everything you've got. The same
+            task, the same person, the same room — different day, different cost.
+            That's not inconsistency. That's how human nervous systems actually
+            work.
+          </p>
+
+          <p>
+            And when we keep spending without restoring — when we push through
+            the empty feeling and keep going anyway — something starts to shift.
+            Not just tiredness. Something deeper. The way we respond to people.
+            The way we show up. The things we start to lose.
+          </p>
+
+          <p>
+            Burnout isn't a dramatic collapse. It arrives quietly, as a kind of
+            depletion that ordinary rest doesn't fix. As the feeling that you've
+            been running too hard for too long, in the wrong gear, and something
+            in you is starting to show the strain.
+          </p>
+
+          <p class="philosophy__turn">
+            How you feel is where it starts.<br>
+            And how you feel is where it turns around.
+          </p>
+        </section>
+
+        <!-- BEAT 3 — The imagine -->
+        <section class="philosophy__beat" aria-labelledby="beat-3">
+          <h2 id="beat-3" class="visually-hidden">Imagine</h2>
+
+          <p class="philosophy__imagine">
+            Imagine if you had a coach who didn't need you to explain yourself.
+          </p>
+
+          <p class="philosophy__imagine">
+            Who noticed. Who adapted. Who met the day you were actually having
+            — not the one you'd planned.
+          </p>
+
+          <p class="philosophy__declaration">That's what Alongside is.</p>
+        </section>
+
+        <!-- BEAT 4 — The three beliefs -->
+        <section class="philosophy__beat" aria-labelledby="beat-4">
+          <h2 id="beat-4" class="visually-hidden">Three beliefs</h2>
+
+          <p>
+            There are three things I believe that shaped every decision in this
+            product.
+          </p>
+
+          <p>
+            The first is that behaviour is communication. When someone
+            disappears from an app for two weeks, they haven't failed. They've
+            been communicating something — exhaustion, pain, a season of life
+            that demanded everything else. The right response is curiosity, not
+            punishment.
+          </p>
+
+          <p>
+            I've always been curious about people. Genuinely, embarrassingly
+            curious. I'll sit in a cafe with my family and completely lose the
+            thread of the conversation because I'm watching the table across the
+            room — the way two people hold hands while they read the menu, the
+            way someone listens to their friend, really listens, without waiting
+            for their turn to speak. I find myself wondering what their morning
+            was like. What they're like when nobody's watching.
+          </p>
+
+          <p>
+            And then I think: if I knew that — if I actually knew something
+            about their day, their history, what they were carrying — how would
+            I treat them differently? I think I'd be more patient. More
+            generous. I'd ask better questions. I'd make more room inside
+            myself.
+          </p>
+
+          <p>
+            That's what Alongside tries to do. Not just respond to what you do
+            — but wonder about why. And let that wondering change how it shows
+            up for you.
+          </p>
+
+          <p>
+            The second is that everyone deserves world-class support. Not a
+            cut-down version. Not a basic tier that manages them until they're
+            ready for something better. Everyone who comes to Alongside —
+            whatever their body, their history, their diagnosis, their energy on
+            any given day — deserves the same quality of attention. That's not
+            idealism. That's the minimum.
+          </p>
+
+          <p>
+            The third is that we are not separate. Not from each other. Not from
+            the natural world. Not from the consequences of how we treat both.
+            Movement isn't just about the body. It's about how we reconnect —
+            with ourselves, with other people, with something larger than our
+            daily routine. The causes Alongside supports exist because of this
+            belief. They're not charity. They're the belief made visible.
+          </p>
+        </section>
+
+        <!-- BEAT 5 — The theory of change -->
+        <section class="philosophy__beat" aria-labelledby="beat-5">
+          <h2 id="beat-5" class="visually-hidden">What changes</h2>
+
+          <div class="philosophy__movement">
+            <p>Something happens when you feel understood.</p>
+
+            <p>Not fixed. Not solved. Understood.</p>
+
+            <p>
+              The coach noticed you were struggling before it suggested
+              anything. It adjusted. It met the day you were actually having.
+              And over time — quietly, imperfectly — something shifts. You start
+              to trust your body a little more. You stop calling missed sessions
+              failure. You come back more easily. You stay.
+            </p>
+          </div>
+
+          <div class="philosophy__movement">
+            <p>And then you start to carry something.</p>
+
+            <p>
+              Not the fitness. Something underneath it. A slightly different way
+              of meeting difficulty. The colleague who snaps, the stranger who
+              seems closed off, the moment that would usually cost you the rest
+              of your day — you find you have more room inside yourself. Not
+              because the world got easier. Because you did.
+            </p>
+
+            <p>
+              You can't stop people from being who they are. But you can choose
+              who you are in response. And that choice — made in thirty seconds,
+              made quietly, made without anyone noticing — that's what Alongside
+              is building toward.
+            </p>
+          </div>
+
+          <div class="philosophy__movement">
+            <p>
+              We can't promise this happens for everyone. We won't claim that.
+            </p>
+
+            <p>
+              But we're building toward a world where more people feel equipped
+              to be the steady one. The curious one. The one who wonders before
+              they react.
+            </p>
+
+            <p class="philosophy__landing">The ambassador of change.</p>
+
+            <p class="philosophy__landing">One session at a time.</p>
+          </div>
+        </section>
+
+        <!-- BEAT 6 — The five percent -->
+        <section class="philosophy__beat" aria-labelledby="beat-6">
+          <h2 id="beat-6" class="visually-hidden">The five percent</h2>
+
+          <p>
+            A minimum of five percent of everything Alongside earns goes to
+            causes our community believes in.
+          </p>
+
+          <p>
+            Not as charity. Not as a footnote. As a founding commitment — built
+            into the business from day one, before there was any revenue to
+            give.
+          </p>
+
+          <p>
+            Every quarter, three causes. Each one chosen because it reflects
+            something Alongside stands for — dignity, support, our connection to
+            the world around us. You vote with your credits. You decide where it
+            goes.
+          </p>
+
+          <p>
+            As the community grows, so does the commitment. A minimum of five
+            percent is the floor. Not the ceiling.
+          </p>
+
+          <p class="philosophy__impact-link">
+            <a href="/website/impact/">To find out more, visit our Impact page<span aria-hidden="true"> &rarr;</span></a>
+          </p>
+        </section>
+
+        <!-- BEAT 7 — The close -->
+        <section class="philosophy__beat philosophy__beat--close" aria-labelledby="beat-7">
+          <h2 id="beat-7" class="visually-hidden">In closing</h2>
+
+          <p class="philosophy__close">
+            Imagine a relationship with a coach that understood you, that
+            supported you through difficult moments, and helped you Move.
+          </p>
+        </section>
+
+      </article>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../js/layout.js?v=1"></script>
+  <script src="../js/site.js?v=7"></script>
+</body>
+</html>

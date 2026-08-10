@@ -1,6 +1,22 @@
 /* site.css
- * 03 Aug 2026 v18
+ * 10 Aug 2026 v19
  *
+ * v19 — Philosophy page built (first new page since /upgrade/ and
+ *   /who-its-for/ on 03 Aug). New .philosophy block at the end of this
+ *   file. Deliberately looser vertical rhythm than anywhere else on the
+ *   site — space-12 between beats, space-12/space-10 around Beat 1's
+ *   question — because the locked page architecture treats white space
+ *   as content, not decoration ("more than feels comfortable. The pause
+ *   is part of the meaning"). Measure narrowed to 34rem for this page
+ *   only: it is pure prose with no cards or tables, so the 640px
+ *   container used elsewhere runs too wide to read comfortably. No
+ *   animation defined anywhere in this block, per Beat 1's design note
+ *   and the page's own WCAG requirements. Colours used: --color-text
+ *   (14.48:1 on bg-deep) for prose, --color-primary-light teal
+ *   (12.07:1) for the question, turn, declaration and landing lines.
+ *   Gold deliberately not used anywhere on this page — it is the
+ *   Personal-tier marker site-wide and nothing on the philosophy page
+ *   is tier-gated.
  * v18 — Teal splash pass, per Graeme's request to review where teal
  *   headings could add colour across the site: h2 is now teal by
  *   default site-wide (was inheriting plain white). h1 stays white/full
@@ -1732,4 +1748,111 @@ html[data-layout="desktop"] .cause-cards {
   margin: 0;
   color: var(--color-text-secondary);
   line-height: var(--leading-relaxed);
+}
+
+/* ========================================
+   PHILOSOPHY PAGE
+   Space is content. The vertical rhythm here is deliberately much
+   looser than anywhere else on the site — the pauses between beats
+   are part of the meaning, per the locked page architecture.
+   No animation anywhere on this page, by design.
+   ======================================== */
+
+.philosophy {
+  /* Slightly narrower than --content-max-width: this page is pure prose
+     and a tighter measure (~60-70 chars) reads better than the 640px
+     used for card/table layouts elsewhere. */
+  max-width: 34rem;
+  margin: 0 auto;
+}
+
+.philosophy h1 {
+  margin-bottom: var(--space-10);
+}
+
+.philosophy p {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text);
+  margin: 0 0 var(--space-5) 0;
+}
+
+/* The pause between beats. Larger than feels comfortable — intentionally. */
+.philosophy__beat + .philosophy__beat {
+  margin-top: var(--space-12);
+}
+
+.philosophy__beat--close {
+  margin-top: var(--space-12);
+}
+
+/* BEAT 1 — the question sits alone, generous space above and below.
+   No animation: the stillness is the point. */
+.philosophy__question {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-primary-light);
+  text-align: center;
+  margin: var(--space-12) 0 var(--space-10) 0;
+}
+
+/* BEAT 2 — the two closing lines sit apart from the paragraph above. */
+.philosophy__turn {
+  margin-top: var(--space-8);
+  color: var(--color-primary-light);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-relaxed);
+}
+
+/* BEAT 3 — three separate thoughts, not one paragraph. */
+.philosophy__imagine {
+  margin-bottom: var(--space-6);
+}
+
+.philosophy__declaration {
+  margin-top: var(--space-8);
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  color: var(--color-primary-light);
+}
+
+/* BEAT 5 — three movements: inside, outward, world. */
+.philosophy__movement + .philosophy__movement {
+  margin-top: var(--space-10);
+}
+
+.philosophy__landing {
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  color: var(--color-primary-light);
+  margin-top: var(--space-6);
+}
+
+/* BEAT 6 — the only outbound link on the page. */
+.philosophy__impact-link {
+  margin-top: var(--space-7);
+}
+
+.philosophy__impact-link a {
+  color: var(--color-primary-light);
+  font-weight: var(--font-semibold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* BEAT 7 — generous space before it; she sits with this line. */
+.philosophy__close {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-normal);
+  color: var(--color-text);
+  margin-bottom: var(--space-10);
+}
+
+@media (min-width: 768px) {
+  .philosophy__question {
+    font-size: var(--text-4xl);
+  }
 }
