@@ -1,6 +1,15 @@
 /* site.js
- * 03 Aug 2026 v6
+ * 10 Aug 2026 v7
  *
+ * v7 — Philosophy added to NAV_LINKS now /philosophy/ is a real page.
+ *   Placed FIRST in the nav, ahead of Products: the journey the site is
+ *   trying to create is belief -> what we make -> who is here -> what it
+ *   funds -> how to go deeper. Philosophy is family-wide (Build New
+ *   Habits, not Move-specific), which is what earns it a nav slot;
+ *   /who-its-for/ stays deliberately un-navved and reachable only via
+ *   the gold button under the Move card on Products, because it is
+ *   Move-only content and this site covers the whole product family.
+ *   Nav order is a judgement call, easily reordered.
  * v6 — Footer fix: removed "Ltd" from the copyright line. Build New
  *   Habits is an unregistered sole trader (HMRC registration still
  *   outstanding) and must never be described as Ltd — this was live
@@ -21,15 +30,19 @@
  * points, so nav/footer markup lives in exactly one place. Handles mobile
  * nav toggle and active-link state. No build step, no dependencies.
  *
- * Nav links ONLY the pages that are actually live. Do not add Philosophy,
- * About, Upgrade, Safety, or Impact links until those pages are real —
- * a nav link to a 404 is worse than no link.
+ * Nav links ONLY the pages that are actually live. Do not add About or
+ * Safety links until those pages are real — a nav link to a 404 is worse
+ * than no link. (Philosophy, Upgrade and Impact have since been built and
+ * are linked. About and Safety architectures are locked but unbuilt;
+ * Safety additionally must not go live until BIZ-6's safeguarding
+ * reviewers have signed it off.)
  */
 
 (function () {
   "use strict";
 
   var NAV_LINKS = [
+    { label: "Philosophy", href: "/website/philosophy/" },
     { label: "Products", href: "/website/products/" },
     { label: "Community", href: "/website/community/" },
     { label: "Impact", href: "/website/impact/" },
