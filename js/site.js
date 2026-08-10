@@ -1,6 +1,14 @@
 /* site.js
- * 10 Aug 2026 v7
+ * 10 Aug 2026 v8
  *
+ * v8 — About added to NAV_LINKS now /about/ is a real page. Placed last,
+ *   after Upgrade: it is the page about the person rather than the
+ *   product, and the locked architecture is explicit that it carries no
+ *   CTA and is not a conversion element — so it should not sit in the
+ *   middle of the product journey. Nav is now six items, which is
+ *   getting tight on narrow phones; if it wraps badly, About is the
+ *   natural candidate to move to FOOTER_LINKS instead. Flagged rather
+ *   than pre-emptively decided.
  * v7 — Philosophy added to NAV_LINKS now /philosophy/ is a real page.
  *   Placed FIRST in the nav, ahead of Products: the journey the site is
  *   trying to create is belief -> what we make -> who is here -> what it
@@ -30,12 +38,12 @@
  * points, so nav/footer markup lives in exactly one place. Handles mobile
  * nav toggle and active-link state. No build step, no dependencies.
  *
- * Nav links ONLY the pages that are actually live. Do not add About or
- * Safety links until those pages are real — a nav link to a 404 is worse
- * than no link. (Philosophy, Upgrade and Impact have since been built and
- * are linked. About and Safety architectures are locked but unbuilt;
- * Safety additionally must not go live until BIZ-6's safeguarding
- * reviewers have signed it off.)
+ * Nav links ONLY the pages that are actually live. A nav link to a 404 is
+ * worse than no link. Safety is now the only remaining unbuilt page
+ * architecture, and it must not be linked — or built and published —
+ * until BIZ-6's three safeguarding reviewer roles are filled. It carries
+ * crisis routing; publishing that unreviewed is a real-world risk, not a
+ * process formality.
  */
 
 (function () {
@@ -46,7 +54,8 @@
     { label: "Products", href: "/website/products/" },
     { label: "Community", href: "/website/community/" },
     { label: "Impact", href: "/website/impact/" },
-    { label: "Upgrade", href: "/website/upgrade/" }
+    { label: "Upgrade", href: "/website/upgrade/" },
+    { label: "About", href: "/website/about/" }
   ];
 
   var FOOTER_LINKS = [

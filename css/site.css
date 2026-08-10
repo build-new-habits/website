@@ -1,6 +1,14 @@
 /* site.css
- * 10 Aug 2026 v21
+ * 10 Aug 2026 v22
  *
+ * v22 — About page built. New .about block at the end of this file.
+ *   Deliberately the plainest styling on the site: no emphasis colours,
+ *   no dividers, no cards, per the locked design note that this page
+ *   carries no coach voice and no Alongside design language beyond the
+ *   wordmark. Every modifier scoped as `.about .about__x` from the
+ *   outset, applying the v21 lesson rather than repeating it.
+ *   .about__photo is defined but unused — the founder photograph does
+ *   not exist yet and no placeholder image was added.
  * v21 — REAL BUG FIX, found by Graeme on device. Every paragraph-level
  *   emphasis rule on the philosophy page has been silently losing to the
  *   body-text rule since v19. `.philosophy p` is specificity 0,1,1 (one
@@ -1907,4 +1915,73 @@ html[data-layout="desktop"] .cause-cards {
   .philosophy .philosophy__question {
     font-size: var(--text-4xl);
   }
+}
+
+/* ========================================
+   ABOUT PAGE
+   Deliberately the plainest page on the site. The locked architecture
+   says: no coach voice, no Alongside design language beyond the
+   wordmark, no headings within the copy, no CTA. So there are no
+   emphasis colours, no dividers and no cards here — the restraint is
+   the design.
+
+   NOTE ON SPECIFICITY (learned the hard way on the philosophy page,
+   site.css v21): `.about p` is 0,1,1 and will outrank any single-class
+   modifier inside this block. Every modifier below is therefore scoped
+   as `.about .about__x` (0,2,0). Do not add an unscoped
+   `.about__something` rule that tries to override colour, size or
+   margin — it will silently lose.
+   ======================================== */
+
+.about {
+  max-width: 34rem;
+  margin: 0 auto;
+}
+
+.about h1 {
+  margin-bottom: var(--space-8);
+}
+
+.about p {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text);
+  margin: 0 0 var(--space-5) 0;
+}
+
+.about section + section {
+  margin-top: var(--space-8);
+}
+
+/* The photograph, when it lands. Sits above the h1 — she sees Graeme
+   before she reads him. No <img> present yet; this rule is ready. */
+.about__photo {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-8);
+}
+
+.about .about__opening {
+  font-size: var(--text-xl);
+  line-height: var(--leading-normal);
+}
+
+/* The sign-off, then silence. Not styled as a flourish. */
+.about .about__signoff {
+  margin-top: var(--space-7);
+  font-weight: var(--font-semibold);
+}
+
+/* The only link on the page, and deliberately quiet — not a conversion
+   element, per the locked design notes. */
+.about .about__back {
+  margin-top: var(--space-10);
+  font-size: var(--text-base);
+}
+
+.about .about__back a {
+  color: var(--color-text-secondary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }

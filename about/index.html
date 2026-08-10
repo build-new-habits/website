@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!--
+  about/index.html
+  10 Aug 2026 v1
+
+  v1 — Initial build, from alongside_about_page_architecture_09jul2026_v1.
+    The copy in that document is marked "The Copy — Confirmed and Locked"
+    and is reproduced here verbatim. Nothing added, nothing trimmed.
+
+  Alongside — About page.
+  Route: /about/
+
+  Design notes honoured from the locked document:
+  - No coach voice. No Alongside design language beyond the wordmark in
+    the shared nav. This page is deliberately plainer than every other
+    page on the site — no teal emphasis lines, no dividers, no cards.
+  - No CTA at the bottom. No button, no "get early access". Just the
+    sign-off and silence, then one quiet back link.
+  - No bullet points. No headings within the copy. Pure prose.
+  - The sign-off is "Graeme" alone, as written.
+
+  THE PHOTOGRAPH — deliberately not built yet.
+  The locked document specifies a photograph above or beside the copy
+  ("She sees Graeme before she reads him"): Graeme looking out over the
+  Somerset countryside, outward-facing, connected to place. That image
+  does not exist yet. A grey placeholder box would read as a broken page
+  rather than an unfinished one, so no <img> has been added. The markup
+  and CSS are structured so the real photograph drops straight in above
+  the h1 with no other change. Locked alt text is already recorded in
+  the architecture document and should be used verbatim when it lands.
+
+  The h1 ("About") is a label, not copy. The locked document specifies no
+  page title, and a page needs exactly one h1 for WCAG 2.2 AA heading
+  structure — same call made on the philosophy page. Easily changed.
+
+  Section headings are visually hidden: the locked design notes forbid
+  headings within the copy, while WCAG requires a navigable heading
+  structure. Hidden h2s satisfy both.
+
+  Note: the architecture document's own header says "Build New Habits
+  Ltd". Build New Habits is an unregistered sole trader — that wording is
+  deliberately not reproduced anywhere on this page.
+-->
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Alongside</title>
+  <meta name="description" content="I built Alongside because I needed it and it didn't exist. Graeme, founder of Build New Habits.">
+  <link rel="stylesheet" href="../css/site.css?v=22">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div id="site-nav"></div>
+
+  <main id="main-content">
+    <div class="container">
+      <article class="about">
+
+        <!-- PHOTOGRAPH DROPS IN HERE, above the h1. See the build note above. -->
+
+        <h1 id="page-title">About</h1>
+
+        <section aria-labelledby="about-1">
+          <h2 id="about-1" class="visually-hidden">Why I built it</h2>
+
+          <p class="about__opening">
+            I built Alongside because I needed it and it didn't exist.
+          </p>
+
+          <p>
+            I was injured. I'd been playing football, running, tennis — trying
+            to keep myself fit. And then I couldn't. The injury changed
+            everything, and nothing I found could adapt with me. Apps kept
+            telling me to push. AI gave me generic answers. I couldn't afford a
+            physio. And walking into a club or booking an appointment — the
+            energy that takes, the exposure of it — that wasn't something I
+            could do easily.
+          </p>
+
+          <p>
+            I just needed something that understood where I was. That could
+            work around what I could give, not demand something I couldn't.
+          </p>
+
+          <p>It didn't exist. So I built it.</p>
+        </section>
+
+        <section aria-labelledby="about-2">
+          <h2 id="about-2" class="visually-hidden">The rest of it</h2>
+
+          <p>But the injury was only part of it.</p>
+
+          <p>
+            I've spent a lot of my life feeling like the rules changed when I
+            wasn't looking. Feeling judged. Feeling like I was supposed to just
+            know things that nobody taught me. Feeling shame when I couldn't
+            keep up, or couldn't adapt, or had to stop.
+          </p>
+
+          <p>
+            I know what it feels like to not be thought about. To be
+            simplified. To feel worthless and forgotten in a system that wasn't
+            built for you.
+          </p>
+
+          <p>
+            Alongside was built to reject that. To reject the notion of
+            'normal'. We're all normal — perfectly, differently, normal.
+          </p>
+        </section>
+
+        <section aria-labelledby="about-3">
+          <h2 id="about-3" class="visually-hidden">What it comes from</h2>
+
+          <p>Every decision in this product comes from that place.</p>
+
+          <p>
+            No streaks. No punishment for absence. No comparison to who you
+            were last week. A coach that speaks to you first, before it asks
+            anything of you. A coach that changes what it offers when you're
+            struggling — not because you asked it to, but because it noticed.
+          </p>
+
+          <p>
+            This is a product built from love and care. For the people the
+            other apps forgot about. For the version of me that needed this and
+            couldn't find it.
+          </p>
+
+          <p>I hope you find it useful.</p>
+
+          <p class="about__signoff">Graeme</p>
+        </section>
+
+        <p class="about__back">
+          <a href="/website/"><span aria-hidden="true">&larr; </span>Back to Alongside</a>
+        </p>
+
+      </article>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../js/layout.js?v=1"></script>
+  <script src="../js/site.js?v=8"></script>
+</body>
+</html>

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   sitemap.xml
-  10 Aug 2026 v4
+  10 Aug 2026 v5
 
+  v5 — About added.
   v4 — Philosophy added. Also fixes a real gap found while checking this
     file: /upgrade/ and /who-its-for/ both shipped on 03 Aug and were
     never added here, so the sitemap has been under-listing the live site
@@ -14,7 +15,8 @@
   Alongside — website sitemap.
   Only lists pages that are actually live. Add a <url> entry as each new
   page ships — do not pre-list pages still blocked or unbuilt. (Currently
-  unbuilt and correctly absent: /about/ and /safety/.)
+  unbuilt and correctly absent: /safety/, which is additionally blocked on
+  BIZ-6 safeguarding sign-off and must not be listed here until reviewed.)
   URLs point at the GitHub Pages hosting URL for this session. Update to
   the real domain once it's connected (post-Home-launch, per website
   planning doc — not this session).
@@ -39,6 +41,10 @@
   <url>
     <loc>https://build-new-habits.github.io/website/impact/</loc>
     <lastmod>2026-07-20</lastmod>
+  </url>
+  <url>
+    <loc>https://build-new-habits.github.io/website/about/</loc>
+    <lastmod>2026-08-10</lastmod>
   </url>
   <url>
     <loc>https://build-new-habits.github.io/website/upgrade/</loc>
