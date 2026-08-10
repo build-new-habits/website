@@ -1,8 +1,18 @@
 <!DOCTYPE html>
 <!--
   philosophy/index.html
-  10 Aug 2026 v2
+  10 Aug 2026 v3
 
+  v3 — Speech marks added around "How do you feel?", per Graeme: it is a
+    question being asked, so it should read as spoken. NOTE FOR THE
+    ARCHITECTURE DOC: this is a change to locked Beat 1 copy. The locked
+    document specifies the last word and the question mark as
+    non-negotiable but says nothing about quotation marks. This should be
+    carried into a v4 of alongside_philosophy_page_architecture so the
+    locked copy and the live page do not drift apart.
+    Also: site.css ?v= bumped to 21 (real specificity bug fix - every
+    emphasis rule on this page had been losing to the body-text rule
+    since v19; see site.css v21 changelog).
   v2 — No markup change; site.css ?v= bumped to 20 (Philosophy page
     emphasis pass: power statements unified to bold teal, new centred
     teal divider between beats - see site.css v20 changelog).
@@ -51,7 +61,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Philosophy | Alongside</title>
   <meta name="description" content="The beliefs that shaped every decision in Alongside. Behaviour is communication. Everyone deserves world-class support. We are not separate.">
-  <link rel="stylesheet" href="../css/site.css?v=20">
+  <link rel="stylesheet" href="../css/site.css?v=21">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -83,7 +93,7 @@
             So before anything else — we'd like to ask you something.
           </p>
 
-          <p class="philosophy__question">How do you feel?</p>
+          <p class="philosophy__question">&ldquo;How do you feel?&rdquo;</p>
         </section>
 
         <!-- BEAT 2 — The ripple -->

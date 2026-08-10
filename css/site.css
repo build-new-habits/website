@@ -1,6 +1,23 @@
 /* site.css
- * 10 Aug 2026 v20
+ * 10 Aug 2026 v21
  *
+ * v21 — REAL BUG FIX, found by Graeme on device. Every paragraph-level
+ *   emphasis rule on the philosophy page has been silently losing to the
+ *   body-text rule since v19. `.philosophy p` is specificity 0,1,1 (one
+ *   class + one element); `.philosophy__question` and friends are 0,1,0
+ *   (one class). The body rule therefore won on colour, font-size AND
+ *   margin — so the question, the turn, the declaration, the landing
+ *   lines and the close all rendered as plain white body text at body
+ *   size with body spacing. The page has been a flat wall of uniform
+ *   prose since it shipped. The Impact link looked correct only by
+ *   coincidence: `a` is teal site-wide from the base stylesheet, so it
+ *   was never evidence the page styles were applying. Fixed by scoping
+ *   all seven modifiers as `.philosophy .philosophy__x` (0,2,0), which
+ *   beats 0,1,1. No visual design changed in this version — v19 and v20
+ *   are simply visible for the first time.
+ *   Worth carrying forward: a `.block element` base rule will outrank
+ *   every single-class modifier inside that block. Either scope the
+ *   modifiers or do not set colour/size/margin on the element selector.
  * v20 — Philosophy page emphasis pass, per Graeme. Two changes:
  *   (a) Power statements unified — all five now bold and teal. Beat 7's
  *   close ("helped you Move") was the only one still white; it is now
@@ -1823,7 +1840,7 @@ html[data-layout="desktop"] .cause-cards {
 
 /* BEAT 1 — the question sits alone, generous space above and below.
    No animation: the stillness is the point. */
-.philosophy__question {
+.philosophy .philosophy__question {
   font-size: var(--text-3xl);
   font-weight: var(--font-bold);
   line-height: var(--leading-tight);
@@ -1834,7 +1851,7 @@ html[data-layout="desktop"] .cause-cards {
 }
 
 /* BEAT 2 — the two closing lines sit apart from the paragraph above. */
-.philosophy__turn {
+.philosophy .philosophy__turn {
   margin-top: var(--space-8);
   color: var(--color-primary-light);
   font-weight: var(--font-bold);
@@ -1842,11 +1859,11 @@ html[data-layout="desktop"] .cause-cards {
 }
 
 /* BEAT 3 — three separate thoughts, not one paragraph. */
-.philosophy__imagine {
+.philosophy .philosophy__imagine {
   margin-bottom: var(--space-6);
 }
 
-.philosophy__declaration {
+.philosophy .philosophy__declaration {
   margin-top: var(--space-8);
   font-size: var(--text-xl);
   font-weight: var(--font-bold);
@@ -1858,7 +1875,7 @@ html[data-layout="desktop"] .cause-cards {
   margin-top: var(--space-10);
 }
 
-.philosophy__landing {
+.philosophy .philosophy__landing {
   font-size: var(--text-xl);
   font-weight: var(--font-bold);
   color: var(--color-primary-light);
@@ -1866,11 +1883,11 @@ html[data-layout="desktop"] .cause-cards {
 }
 
 /* BEAT 6 — the only outbound link on the page. */
-.philosophy__impact-link {
+.philosophy .philosophy__impact-link {
   margin-top: var(--space-7);
 }
 
-.philosophy__impact-link a {
+.philosophy .philosophy__impact-link a {
   color: var(--color-primary-light);
   font-weight: var(--font-semibold);
   text-decoration: underline;
@@ -1878,7 +1895,7 @@ html[data-layout="desktop"] .cause-cards {
 }
 
 /* BEAT 7 — generous space before it; she sits with this line. */
-.philosophy__close {
+.philosophy .philosophy__close {
   font-size: var(--text-2xl);
   font-weight: var(--font-bold);
   line-height: var(--leading-normal);
@@ -1887,7 +1904,7 @@ html[data-layout="desktop"] .cause-cards {
 }
 
 @media (min-width: 768px) {
-  .philosophy__question {
+  .philosophy .philosophy__question {
     font-size: var(--text-4xl);
   }
 }
