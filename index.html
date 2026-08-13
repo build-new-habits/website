@@ -29,6 +29,13 @@
     lightened, see site.css v14 changelog).
   v7 — No markup change; site.css ?v= bumped to 12, site.js ?v= bumped
     to 6 (footer "Ltd" removed - sole trader, never Ltd).
+
+    12 Aug 2026 — LEGAL-1. The footer was fixed in site.js v6, but "Build
+    New Habits Ltd" survived here in the mailing-list CONSENT LABEL, which
+    is the one place on the site where it is a legal declaration rather
+    than decoration: it names the party a person is consenting to receive
+    email from. Build New Habits is an unregistered sole trader (BIZ-1
+    outstanding). Removed. Whole-site grep confirms no other instance.
   v6 — No markup change; site.css ?v= bumped to 11 and site.js ?v= bumped
     to 5, to match the WCAG contrast fixes, scroll-arrow reposition,
     coach-bubble colour change, and Upgrade nav link added this session
@@ -301,7 +308,7 @@
           </div>
           <div class="closing-capture__consent">
             <input type="checkbox" id="capture-consent" name="consent" disabled>
-            <label for="capture-consent">I agree to receive emails from Build New Habits Ltd. I can unsubscribe at any time.</label>
+            <label for="capture-consent">I agree to receive emails from Build New Habits. I can unsubscribe at any time.</label>
           </div>
           <button type="submit" class="btn btn--disabled" aria-disabled="true" disabled>I'm ready</button>
           <p class="form-hint" id="capture-hint">
