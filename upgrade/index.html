@@ -67,14 +67,18 @@
   for the Community page's mailing-list signup. Wiring the real
   checkout flow is separate infra work, not a copy/content task.
 
-  Pricing confirmed from alongside_pricing_model_20jun2026_v2 (current,
-  live model): £7.99/month standard, £49.99/year (launch year, to
-  30 Nov 2026). Page copy intentionally does not mention the £4.99
-  three-month intro rate or the Year 2 increase to £59.99 — the locked
-  page architecture is deliberately minimal ("£7.99 a month. £49.99 for
-  the year. That's it.") and those details are a checkout-flow concern,
-  not page copy, per that document's own "honest, calm, no pressure"
-  design note.
+  Pricing: £7.99/month, £59.99/year, from the pricing model v3 (18 Aug
+  2026) and matching js/views/upgrade.js's PRICE_ANNUAL constant, which
+  is the source of truth. No expiry — Year 2 pricing is deferred to
+  Year 2. The £4.99 three-month intro is REMOVED entirely (it placed a
+  60% price rise at month four); a free trial replaces it, and trial
+  mechanics are a checkout-flow concern, not page copy, per the locked
+  architecture's "honest, calm, no pressure" design note.
+
+  ⚠️ This paragraph previously described the £4.99 intro and a Year 2
+  increase as current. Both are gone. A stale note in a header is how a
+  retired price gets quoted as live — the exact fault verify-price.mjs
+  was written for on 18 Aug.
 -->
 <html lang="en-GB">
 <head>
