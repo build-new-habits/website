@@ -1,4 +1,12 @@
 /* site.css
+ * 18 Aug 2026 v23
+ *
+ * v23 — NAME-1. .tier-tag--personal renamed .tier-tag--plan. The paid
+ *   tier is "the Plan" across the product family from 18 Aug; the app
+ *   shipped the rename the same day (js/auth.js v2) and a public site
+ *   saying "Personal" beside an app saying "Plan" is two names for one
+ *   tier, which is exactly what that decision existed to prevent.
+ *
  * 10 Aug 2026 v22
  *
  * v22 — About page built. New .about block at the end of this file.
@@ -1686,7 +1694,10 @@ html[data-layout="desktop"] .cause-cards {
   border: 1px solid var(--color-primary-light);
 }
 
-.tier-tag--personal {
+/* NAME-1, 18 Aug 2026. Renamed with the copy it styles. A class called
+   --personal printing the word "Plan" is the next reader's confusion,
+   and this is the whole of its usage: two files, one rule. */
+.tier-tag--plan {
   color: var(--color-gold);
   border: 1px solid var(--color-gold);
 }
@@ -1733,7 +1744,7 @@ html[data-layout="desktop"] .cause-cards {
   color: var(--color-primary-light);
 }
 
-.comparison-table thead th.comparison-table__personal {
+.comparison-table thead th.comparison-table__plan {
   color: var(--color-gold);
 }
 

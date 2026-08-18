@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <!--
   who-its-for/index.html
+  18 Aug 2026 v12
+
+  v12 — NAME-1. The paid tier is "the Plan", not "Personal". Graeme's
+    decision, 18 Aug; the app shipped it the same day (js/auth.js v2).
+    Copy and two class names only — no layout, no content, no tier
+    boundary changed. Class .tier-tag--personal is now .tier-tag--plan
+    and .comparison-table__personal is .comparison-table__plan, both
+    renamed in css/site.css v23 alongside the copy they style.
+
   10 Aug 2026 v11
 
   v11 — No markup change; site.js ?v= bumped to 9 (nav links now built
@@ -159,8 +168,8 @@
                 <ul class="persona-card__list">
                   <li><span class="tier-tag tier-tag--free">Free</span>Credits, not streaks — nothing resets, nothing is broken by a missed week.</li>
                   <li><span class="tier-tag tier-tag--free">Free</span>A short, conversational check-in — energy, mood, pain, time — not a form.</li>
-                  <li><span class="tier-tag tier-tag--personal">Personal</span>The other six session types open up — Glute Focus, Upper Body, Cardio, and more — so a session can genuinely look different, not the same Full Body slot every time.</li>
-                  <li><span class="tier-tag tier-tag--personal">Personal</span>The coach starts noticing her own patterns — when a hyperfocus curve usually breaks — instead of only responding to today.</li>
+                  <li><span class="tier-tag tier-tag--plan">Plan</span>The other six session types open up — Glute Focus, Upper Body, Cardio, and more — so a session can genuinely look different, not the same Full Body slot every time.</li>
+                  <li><span class="tier-tag tier-tag--plan">Plan</span>The coach starts noticing her own patterns — when a hyperfocus curve usually breaks — instead of only responding to today.</li>
                 </ul>
               </div>
               <div class="persona-card__narrative">
@@ -188,8 +197,8 @@
                   <li><span class="tier-tag tier-tag--free">Free</span>Coaching tone and exercise selection adapt to perimenopause/menopause status and symptoms.</li>
                   <li><span class="tier-tag tier-tag--free">Free</span>No assumed cycle pattern — the daily check-in drives adaptation, not a fixed 28-day model.</li>
                   <li><span class="tier-tag tier-tag--free">Free</span>Cycle tracking is optional, never required — skip it with no penalty.</li>
-                  <li><span class="tier-tag tier-tag--personal">Personal</span>Trend view shows how her energy has actually moved week to week, not just today.</li>
-                  <li><span class="tier-tag tier-tag--personal">Personal</span>The coach starts naming patterns across weeks, not just reacting to each day in isolation.</li>
+                  <li><span class="tier-tag tier-tag--plan">Plan</span>Trend view shows how her energy has actually moved week to week, not just today.</li>
+                  <li><span class="tier-tag tier-tag--plan">Plan</span>The coach starts naming patterns across weeks, not just reacting to each day in isolation.</li>
                 </ul>
               </div>
               <div class="persona-card__narrative">
@@ -217,9 +226,9 @@
                   <li><span class="tier-tag tier-tag--free">Free</span>Pattern-detection triggers Recovery Mode before burnout lands.</li>
                   <li><span class="tier-tag tier-tag--free">Free</span>Cycle-phase adaptation applies to regular cycles too, not just perimenopause.</li>
                   <li><span class="tier-tag tier-tag--free">Free</span>No before/after, no calorie language, anywhere in the product.</li>
-                  <li><span class="tier-tag tier-tag--personal">Personal</span>Every session type and every duration, so a workout can actually match how much time and energy she has that day — not always the same 30-minute slot.</li>
-                  <li><span class="tier-tag tier-tag--personal">Personal</span>Progress is framed as consistency and trend, never a number to chase.</li>
-                  <li><span class="tier-tag tier-tag--personal">Personal</span>A generative programme builds week on week toward her own goals, instead of always starting fresh.</li>
+                  <li><span class="tier-tag tier-tag--plan">Plan</span>Every session type and every duration, so a workout can actually match how much time and energy she has that day — not always the same 30-minute slot.</li>
+                  <li><span class="tier-tag tier-tag--plan">Plan</span>Progress is framed as consistency and trend, never a number to chase.</li>
+                  <li><span class="tier-tag tier-tag--plan">Plan</span>A generative programme builds week on week toward her own goals, instead of always starting fresh.</li>
                 </ul>
               </div>
               <div class="persona-card__narrative">
@@ -247,8 +256,8 @@
                   <li><span class="tier-tag tier-tag--free">Free</span>Three-tier condition safety filtering — every exercise gated safe, caution, or blocked.</li>
                   <li><span class="tier-tag tier-tag--free">Free</span>Exercise history and "returning after" context let onboarding build from his real background.</li>
                   <li><span class="tier-tag tier-tag--free">Free</span>Condition filtering and burnout detection are free forever — never a feature he has to pay to access safely.</li>
-                  <li><span class="tier-tag tier-tag--personal">Personal</span>All 7 session types and every duration, so his return can be shaped around what his body can genuinely handle each day.</li>
-                  <li><span class="tier-tag tier-tag--personal">Personal</span>A generative programme lets his return progress phase by phase, instead of repeating the same starting point.</li>
+                  <li><span class="tier-tag tier-tag--plan">Plan</span>All 7 session types and every duration, so his return can be shaped around what his body can genuinely handle each day.</li>
+                  <li><span class="tier-tag tier-tag--plan">Plan</span>A generative programme lets his return progress phase by phase, instead of repeating the same starting point.</li>
                 </ul>
               </div>
               <div class="persona-card__narrative">
@@ -261,7 +270,7 @@
       </section>
 
       <section aria-labelledby="comparison-title">
-        <h2 id="comparison-title" style="text-align: center;"><span class="upgrade-product-label--teal">Free</span> vs <span class="upgrade-product-label--gold">Personal</span>.</h2>
+        <h2 id="comparison-title" style="text-align: center;"><span class="upgrade-product-label--teal">Free</span> vs <span class="upgrade-product-label--gold">the Plan</span>.</h2>
         <p class="persona-intro">
           Safety and wellbeing are never part of this comparison — they're
           standard at every tier, always.
@@ -270,34 +279,34 @@
         <dl class="areas-explained">
           <div class="areas-explained__item">
             <dt>Sessions</dt>
-            <dd>A session is one workout — the exercises the coach puts together for you to do in one sitting. There are seven kinds, each focused on something different (like Full Body, Upper Body, or Cardio). On Free, you always get the Full Body kind, at a fixed 30 minutes. On Personal, you choose which of the seven you want, and how long you've got.</dd>
+            <dd>A session is one workout — the exercises the coach puts together for you to do in one sitting. There are seven kinds, each focused on something different (like Full Body, Upper Body, or Cardio). On Free, you always get the Full Body kind, at a fixed 30 minutes. On the Plan, you choose which of the seven you want, and how long you've got.</dd>
           </div>
           <div class="areas-explained__item">
             <dt>Exercise library</dt>
-            <dd>This is the full set of exercises the coach can choose from — hundreds of movements, each rated from easier to harder. On Personal, the coach matches exercises to your level and moves you up as you're ready, instead of leaving that to guesswork.</dd>
+            <dd>This is the full set of exercises the coach can choose from — hundreds of movements, each rated from easier to harder. On the Plan, the coach matches exercises to your level and moves you up as you're ready, instead of leaving that to guesswork.</dd>
           </div>
           <div class="areas-explained__item">
             <dt>Programmes</dt>
-            <dd>A programme is how your sessions connect to each other over time, not just what happens in one sitting. On Personal, the coach builds a programme that progresses week by week — not just a fresh session each time, but one that's going somewhere.</dd>
+            <dd>A programme is how your sessions connect to each other over time, not just what happens in one sitting. On the Plan, the coach builds a programme that progresses week by week — not just a fresh session each time, but one that's going somewhere.</dd>
           </div>
           <div class="areas-explained__item">
             <dt>Progress</dt>
-            <dd>How much insight you get into your own patterns. On Free, you see the last 7 days. On Personal, you can look back 30 or 90 days too, and the coach points out patterns it's noticed.</dd>
+            <dd>How much insight you get into your own patterns. On Free, you see the last 7 days. On the Plan, you can look back 30 or 90 days too, and the coach points out patterns it's noticed.</dd>
           </div>
           <div class="areas-explained__item">
             <dt>Coach behaviour</dt>
-            <dd>On Free, the coach responds to how you are today. On Personal, it also remembers — noticing patterns across weeks and bringing them up, not just reacting in the moment.</dd>
+            <dd>On Free, the coach responds to how you are today. On the Plan, it also remembers — noticing patterns across weeks and bringing them up, not just reacting in the moment.</dd>
           </div>
         </dl>
 
         <div class="comparison-table-wrap">
           <table class="comparison-table">
-            <caption class="visually-hidden">Comparison of Free and Personal tier features for Alongside: Move</caption>
+            <caption class="visually-hidden">Comparison of Free and Plan features for Alongside: Move</caption>
             <thead>
               <tr>
                 <th scope="col">Area</th>
                 <th scope="col" class="comparison-table__free">Free</th>
-                <th scope="col" class="comparison-table__personal">Personal</th>
+                <th scope="col" class="comparison-table__plan">Plan</th>
               </tr>
             </thead>
             <tbody>
@@ -336,7 +345,7 @@
         </div>
 
         <p style="text-align: center; margin-top: var(--space-6);">
-          <a class="btn btn--gold" href="../upgrade/">See Personal tier pricing</a>
+          <a class="btn btn--gold" href="../upgrade/">See Plan pricing</a>
         </p>
       </section>
 
