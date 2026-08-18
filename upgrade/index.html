@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <!--
   upgrade/index.html
+  18 Aug 2026 v13
+
+  v13 — PRICE-2. Annual is £59.99, not £49.99. The old £49.99 was the
+    "launch year" rate running to 30 Nov 2026 — a window that closed
+    before the soft launch in December and two months before public
+    launch in January 2027, so it was a price nobody could have paid.
+    £59.99 is now simply the annual price, with no expiry: Year 2
+    pricing is deferred to Year 2. Matches js/views/upgrade.js v9's
+    PRICE_ANNUAL constant, which is the source of truth.
+
   18 Aug 2026 v12
 
   v12 — NAME-1. The paid tier is "the Plan", not "Personal". Copy only,
@@ -143,7 +153,7 @@
 
           <div class="card pricing-card">
             <p class="pricing-card__period">Annual</p>
-            <p class="pricing-card__price">&pound;49.99</p>
+            <p class="pricing-card__price">&pound;59.99</p>
             <p class="pricing-card__period">for the year</p>
           </div>
         </div>
