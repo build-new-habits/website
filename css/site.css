@@ -1,5 +1,15 @@
 /* site.css
- * 18 Aug 2026 v23
+ * 18 Oct 2026 v24
+ *
+ * v24 — WEB-CLAIMS. .persona-card__quote becomes .persona-card__want
+ *   (upright, not italic: a plain sentence about a made-up person, not a
+ *   quotation); .persona-card__narrative removed with the invented
+ *   stories it styled; .persona-intro--note for the line saying the
+ *   people are made up; the comparison table's scroll area shows focus.
+ *   Home: .belonging__voices styles list items, not blockquotes (the
+ *   lines are no longer quotations). .a11y-statement for the new
+ *   /accessibility/ page. On a phone the comparison's row names wrap so
+ *   the Plan column is on screen.
  *
  * v23 — NAME-1. .tier-tag--personal renamed .tier-tag--plan. The paid
  *   tier is "the Plan" across the product family from 18 Aug; the app
@@ -1220,14 +1230,19 @@ html[data-layout="desktop"] .cause-cards {
   margin: 0;
 }
 
-.belonging__voices blockquote {
+.belonging__voices-lead {
+  margin: 0 0 var(--space-3);
+  font-weight: var(--font-semibold);
+  color: var(--color-text);
+}
+
+.belonging__voices li {
   margin: 0;
   padding: var(--space-4);
   background: var(--color-bg-card);
   border-radius: var(--radius-md);
   border-left: 3px solid var(--color-primary);
   color: var(--color-text-secondary);
-  font-style: italic;
 }
 
 /* Movement 3 — Main Street */
@@ -1648,12 +1663,16 @@ html[data-layout="desktop"] .cause-cards {
   gap: var(--space-4);
 }
 
-.persona-card__quote {
+.persona-card__want {
   font-size: var(--text-lg);
-  font-style: italic;
   line-height: var(--leading-relaxed);
   color: var(--color-text);
   margin: 0;
+}
+
+.persona-intro--note {
+  font-size: var(--text-base);
+  padding-top: 0;
 }
 
 .persona-card__label {
@@ -1702,21 +1721,14 @@ html[data-layout="desktop"] .cause-cards {
   border: 1px solid var(--color-gold);
 }
 
-.persona-card__narrative {
-  border-top: 1px solid var(--color-border-light);
-  padding-top: var(--space-4);
-}
-
-.persona-card__narrative p {
-  color: var(--color-text);
-  line-height: var(--leading-relaxed);
-  margin: 0;
-  font-style: italic;
-}
-
 .comparison-table-wrap {
   overflow-x: auto;
   margin: var(--space-4) 0;
+}
+
+.comparison-table-wrap:focus-visible {
+  outline: 3px solid var(--color-primary-light);
+  outline-offset: 2px;
 }
 
 .comparison-table {
@@ -1767,6 +1779,24 @@ html[data-layout="desktop"] .cause-cards {
 .comparison-table th:last-child,
 .comparison-table td:last-child {
   border-right: none;
+}
+
+/* v24. On a phone all three columns fit: the row names wrap instead of
+   pushing the Plan column off the side. Still a real table, so a screen
+   reader keeps its row and column headings. */
+@media (max-width: 560px) {
+  .comparison-table th,
+  .comparison-table td {
+    padding: var(--space-3) var(--space-2);
+  }
+  .comparison-table thead th {
+    font-size: var(--text-lg);
+  }
+  .comparison-table tbody th[scope="row"] {
+    white-space: normal;
+    font-size: var(--text-sm);
+    width: 28%;
+  }
 }
 
 .upgrade-product-label--teal {
@@ -1995,4 +2025,37 @@ html[data-layout="desktop"] .cause-cards {
   color: var(--color-text-secondary);
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+/* ========================================
+   ACCESSIBILITY STATEMENT (v24, A-10 first part)
+   Uses the About page's reading column; adds visible headings and lists.
+   ======================================== */
+
+.a11y-statement h2 {
+  margin: 0 0 var(--space-4) 0;
+}
+
+.a11y-statement ul {
+  margin: 0 0 var(--space-5) 0;
+  padding-left: var(--space-5);
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text);
+}
+
+.a11y-statement li {
+  margin-bottom: var(--space-3);
+}
+
+.a11y-statement__address {
+  font-weight: var(--font-semibold);
+  overflow-wrap: anywhere;
+  user-select: all;
+}
+
+.about .a11y-statement__date {
+  margin-top: var(--space-8);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
 }

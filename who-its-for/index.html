@@ -1,7 +1,21 @@
 <!DOCTYPE html>
 <!--
   who-its-for/index.html
-  18 Aug 2026 v12
+  18 Oct 2026 v13
+
+  v13 — WEB-CLAIMS (Graeme, 18 Oct: "you have this control because it's
+    still in GitHub repo"). Matched to the app's tier table
+    (alongside-app js/data/tier-table.js v7): the comparison is now its
+    twelve rows, word for word; the old one said Free was Full Body only
+    at 30 minutes, and claimed periodisation and correlation insights the
+    app never had. Each persona's "How Alongside helps" says only what the
+    app does today: no cycle or menopause adaptation (removed from the app
+    in W3-8), no "detection", no calorie claim beyond "never counts
+    calories". The four people are labelled as made up; what each is
+    after is a plain sentence, not a quotation; the "How it felt, over
+    time" stories (invented outcomes that read as testimonials) are gone.
+    The comparison table's scroll area can take keyboard focus.
+    site.css ?v=24, site.js ?v=10.
 
   v12 — NAME-1. The paid tier is "the Plan", not "Personal". Graeme's
     decision, 18 Aug; the app shipped it the same day (js/auth.js v2).
@@ -117,7 +131,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Who it's for | Alongside</title>
   <meta name="description" content="Four people. Four different reasons mainstream fitness apps failed them. See how Alongside actually meets each one.">
-  <link rel="stylesheet" href="../css/site.css?v=22">
+  <link rel="stylesheet" href="../css/site.css?v=24">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -132,19 +146,23 @@
         <h1 id="page-title" style="text-align: center;">Who it's for.</h1>
         <p class="persona-intro">
           Your body. Your wellbeing. A coach that adapts to how you actually
-          feel — not how you're supposed to feel. Built for people
-          mainstream fitness culture has consistently failed: neurodivergent
-          adults, people navigating burnout, hormonal change, or chronic
-          conditions. Here are four of them — real reasons other apps
-          didn't work, and what actually changes here.
+          feel, not how you're supposed to feel. Built for people
+          mainstream fitness culture has let down: neurodivergent adults,
+          people dealing with burnout, hormonal change, or long-term
+          conditions.
+        </p>
+        <p class="persona-intro persona-intro--note">
+          The four people below are made up. Each is drawn from the reasons
+          people give for giving up on other apps. They are not customers
+          and these are not reviews: Alongside is still being tested.
         </p>
       </section>
 
       <section aria-labelledby="personas-title">
-        <h2 id="personas-title" class="visually-hidden">Persona walkthroughs</h2>
+        <h2 id="personas-title" class="visually-hidden">Four people it was built for</h2>
 
         <div id="persona-tabs">
-          <div class="coach-tabs__list" role="tablist" aria-label="Choose a persona">
+          <div class="coach-tabs__list" role="tablist" aria-label="Choose a person">
             <button type="button" role="tab" id="tab-jess" aria-selected="true" aria-controls="panel-jess" tabindex="0" class="coach-tabs__tab">Jess</button>
             <button type="button" role="tab" id="tab-claire" aria-selected="false" aria-controls="panel-claire" tabindex="-1" class="coach-tabs__tab">Claire</button>
             <button type="button" role="tab" id="tab-priya" aria-selected="false" aria-controls="panel-priya" tabindex="-1" class="coach-tabs__tab">Priya</button>
@@ -154,56 +172,48 @@
           <div role="tabpanel" id="panel-jess" aria-labelledby="tab-jess" class="coach-tabs__panel">
             <div class="card persona-card">
               <span class="persona-card__label">Neurodivergent adult, ADHD, mid-30s</span>
-              <p class="persona-card__quote">"I don't need another app that decides for me. I need one that actually notices what's going on."</p>
+              <p class="persona-card__want"><span class="persona-card__label">What she's after:</span> An app that notices what's going on, instead of deciding for her.</p>
               <div>
                 <span class="persona-card__label">What's been hard</span>
                 <ul class="persona-card__list">
-                  <li>Streaks, guilt notifications, and broken-chain messaging punish exactly the inconsistency her condition produces.</li>
-                  <li>A small pool of workouts reshuffled to look varied reads as repetitive and triggers disengagement.</li>
-                  <li>Long onboarding forms feel like rejection, not a task — each extra step multiplies exit risk.</li>
+                  <li>Streaks, guilt notifications and broken-chain messages punish exactly the inconsistency her ADHD produces.</li>
+                  <li>A small pool of workouts reshuffled to look varied feels repetitive, and she drifts away.</li>
+                  <li>Long sign-up forms feel like a test she's failing; every extra step is another reason to leave.</li>
                 </ul>
               </div>
               <div>
                 <span class="persona-card__label">How Alongside helps</span>
                 <ul class="persona-card__list">
-                  <li><span class="tier-tag tier-tag--free">Free</span>Credits, not streaks — nothing resets, nothing is broken by a missed week.</li>
-                  <li><span class="tier-tag tier-tag--free">Free</span>A short, conversational check-in — energy, mood, pain, time — not a form.</li>
-                  <li><span class="tier-tag tier-tag--plan">Plan</span>The other six session types open up — Glute Focus, Upper Body, Cardio, and more — so a session can genuinely look different, not the same Full Body slot every time.</li>
-                  <li><span class="tier-tag tier-tag--plan">Plan</span>The coach starts noticing her own patterns — when a hyperfocus curve usually breaks — instead of only responding to today.</li>
+                  <li><span class="tier-tag tier-tag--free">Free</span>No streaks. Nothing counts days in a row, so nothing resets after a missed week.</li>
+                  <li><span class="tier-tag tier-tag--free">Free</span>Three quick questions each day: energy, mood, and anything sore. The session changes when your day does.</li>
+                  <li><span class="tier-tag tier-tag--plan">Plan</span>Three ways in: let the coach decide, say what you want, or make it up as you go.</li>
+                  <li><span class="tier-tag tier-tag--plan">Plan</span>You see the whole plan after you check in, and can swap any exercise or choose something different.</li>
                 </ul>
-              </div>
-              <div class="persona-card__narrative">
-                <span class="persona-card__label">How it felt, over time</span>
-                <p>Three weeks in, she noticed the coach hadn't asked her to explain the gap the one week she'd disappeared. It just picked up where she'd left off. That was the moment it stopped feeling like every other app she'd abandoned.</p>
               </div>
             </div>
           </div>
 
           <div role="tabpanel" id="panel-claire" aria-labelledby="tab-claire" class="coach-tabs__panel" hidden>
             <div class="card persona-card">
-              <span class="persona-card__label">Woman navigating perimenopause, late 40s</span>
-              <p class="persona-card__quote">"I'm not looking to push through this. I'm looking for something that finally takes it seriously."</p>
+              <span class="persona-card__label">Woman going through perimenopause, late 40s</span>
+              <p class="persona-card__want"><span class="persona-card__label">What she's after:</span> Something that takes a hard day seriously instead of telling her to push through.</p>
               <div>
                 <span class="persona-card__label">What's been hard</span>
                 <ul class="persona-card__list">
-                  <li>Mainstream fitness apps offer no menopause support, or tracking only — nothing that actually changes what's recommended.</li>
-                  <li>Rigid 28-day cycle logic doesn't fit an irregular or absent cycle.</li>
-                  <li>Wellness marketing implicitly says push harder, rather than validating that today is genuinely different from yesterday.</li>
+                  <li>Fitness apps treat every day the same, when hers aren't.</li>
+                  <li>Plans assume this week will be like last week.</li>
+                  <li>Wellness marketing says push harder, instead of accepting that today is different from yesterday.</li>
                 </ul>
               </div>
               <div>
                 <span class="persona-card__label">How Alongside helps</span>
                 <ul class="persona-card__list">
-                  <li><span class="tier-tag tier-tag--free">Free</span>Coaching tone and exercise selection adapt to perimenopause/menopause status and symptoms.</li>
-                  <li><span class="tier-tag tier-tag--free">Free</span>No assumed cycle pattern — the daily check-in drives adaptation, not a fixed 28-day model.</li>
-                  <li><span class="tier-tag tier-tag--free">Free</span>Cycle tracking is optional, never required — skip it with no penalty.</li>
-                  <li><span class="tier-tag tier-tag--plan">Plan</span>Trend view shows how her energy has actually moved week to week, not just today.</li>
-                  <li><span class="tier-tag tier-tag--plan">Plan</span>The coach starts naming patterns across weeks, not just reacting to each day in isolation.</li>
+                  <li><span class="tier-tag tier-tag--free">Free</span>Three quick questions each day: energy, mood, and anything sore. The session changes when your day does.</li>
+                  <li><span class="tier-tag tier-tag--free">Free</span>When your energy has been low for a while, the coach says so and keeps things gentle until it lifts.</li>
+                  <li><span class="tier-tag tier-tag--free">Free</span>All of Wellbeing is free on both tiers: breathing, mindful awareness, the journal and In Step.</li>
+                  <li><span class="tier-tag tier-tag--plan">Plan</span>You tell the coach where you're heading, something you want to be able to do or just a direction, and it builds towards it.</li>
+                  <li><span class="tier-tag tier-tag--plan">Plan</span>Progress over 90 days, with your arc read back to you: what has come up, and what your logged weights show.</li>
                 </ul>
-              </div>
-              <div class="persona-card__narrative">
-                <span class="persona-card__label">How it felt, over time</span>
-                <p>She'd stopped expecting anyone, let alone an app, to take the unpredictability seriously. What changed her mind wasn't a big feature — it was the coach adjusting a session on a bad brain-fog day without her having to explain why.</p>
               </div>
             </div>
           </div>
@@ -211,58 +221,49 @@
           <div role="tabpanel" id="panel-priya" aria-labelledby="tab-priya" class="coach-tabs__panel" hidden>
             <div class="card persona-card">
               <span class="persona-card__label">Woman in general fitness, early 30s</span>
-              <p class="persona-card__quote">"I don't want a transformation. I want something that doesn't make me feel like I've failed every time life gets in the way."</p>
+              <p class="persona-card__want"><span class="persona-card__label">What she's after:</span> Not a transformation. Something that doesn't make her feel she has failed every time life gets in the way.</p>
               <div>
                 <span class="persona-card__label">What's been hard</span>
                 <ul class="persona-card__list">
-                  <li>Apps built on streaks and comparison pushed her into over-exertion followed by guilt-driven abandonment.</li>
-                  <li>Most fitness content quietly reduces movement to appearance management.</li>
-                  <li>Even as a younger user, cycle-linked energy shifts are ignored by mainstream apps.</li>
+                  <li>Apps built on streaks and comparison pushed her into overdoing it, then guilt, then giving up.</li>
+                  <li>A lot of fitness content quietly turns movement into managing how you look.</li>
+                  <li>Missing one week meant starting from zero again.</li>
                 </ul>
               </div>
               <div>
                 <span class="persona-card__label">How Alongside helps</span>
                 <ul class="persona-card__list">
-                  <li><span class="tier-tag tier-tag--free">Free</span>Pattern-detection triggers Recovery Mode before burnout lands.</li>
-                  <li><span class="tier-tag tier-tag--free">Free</span>Cycle-phase adaptation applies to regular cycles too, not just perimenopause.</li>
-                  <li><span class="tier-tag tier-tag--free">Free</span>No before/after, no calorie language, anywhere in the product.</li>
-                  <li><span class="tier-tag tier-tag--plan">Plan</span>Every session type and every duration, so a workout can actually match how much time and energy she has that day — not always the same 30-minute slot.</li>
-                  <li><span class="tier-tag tier-tag--plan">Plan</span>Progress is framed as consistency and trend, never a number to chase.</li>
-                  <li><span class="tier-tag tier-tag--plan">Plan</span>A generative programme builds week on week toward her own goals, instead of always starting fresh.</li>
+                  <li><span class="tier-tag tier-tag--free">Free</span>No streaks. Nothing counts days in a row, so nothing resets after a missed week.</li>
+                  <li><span class="tier-tag tier-tag--free">Free</span>A busy few days makes the next plan lighter.</li>
+                  <li><span class="tier-tag tier-tag--free">Free</span>It never counts calories.</li>
+                  <li><span class="tier-tag tier-tag--plan">Plan</span>Choose how long you've got, and the plan says what that comes to.</li>
+                  <li><span class="tier-tag tier-tag--plan">Plan</span>You tell the coach where you're heading, something you want to be able to do or just a direction, and it builds towards it.</li>
                 </ul>
-              </div>
-              <div class="persona-card__narrative">
-                <span class="persona-card__label">How it felt, over time</span>
-                <p>The thing that stayed with her wasn't a single workout — it was going back after a rough two weeks and finding nothing had reset. No lost streak to mourn. Just the next session, waiting.</p>
               </div>
             </div>
           </div>
 
           <div role="tabpanel" id="panel-mark" aria-labelledby="tab-mark" class="coach-tabs__panel" hidden>
             <div class="card persona-card">
-              <span class="persona-card__label">Returning after illness or chronic pain, mid-40s</span>
-              <p class="persona-card__quote">"I've done this before. I just need something that remembers I'm not starting from zero — and that some days genuinely are harder than others."</p>
+              <span class="persona-card__label">Coming back after illness or long-term pain, mid-40s</span>
+              <p class="persona-card__want"><span class="persona-card__label">What he's after:</span> Something that remembers he isn't starting from zero, and that some days really are harder than others.</p>
               <div>
                 <span class="persona-card__label">What's been hard</span>
                 <ul class="persona-card__list">
-                  <li>Most apps offer a blanket disclaimer instead of genuine exercise-level filtering for his specific condition.</li>
-                  <li>Post-session recovery guidance isn't linked to what was actually trained that day.</li>
-                  <li>Returning users get funnelled into generic "beginner" content that ignores real history.</li>
+                  <li>Most apps give a blanket disclaimer instead of taking account of what actually hurts.</li>
+                  <li>Advice after a session has nothing to do with what he did that day.</li>
+                  <li>Coming back means being pushed into generic beginner content that ignores what he has done before.</li>
                 </ul>
               </div>
               <div>
                 <span class="persona-card__label">How Alongside helps</span>
                 <ul class="persona-card__list">
-                  <li><span class="tier-tag tier-tag--free">Free</span>Three-tier condition safety filtering — every exercise gated safe, caution, or blocked.</li>
-                  <li><span class="tier-tag tier-tag--free">Free</span>Exercise history and "returning after" context let onboarding build from his real background.</li>
-                  <li><span class="tier-tag tier-tag--free">Free</span>Condition filtering and burnout detection are free forever — never a feature he has to pay to access safely.</li>
-                  <li><span class="tier-tag tier-tag--plan">Plan</span>All 7 session types and every duration, so his return can be shaped around what his body can genuinely handle each day.</li>
-                  <li><span class="tier-tag tier-tag--plan">Plan</span>A generative programme lets his return progress phase by phase, instead of repeating the same starting point.</li>
+                  <li><span class="tier-tag tier-tag--free">Free</span>Tell the coach what's sore today and the session works around it.</li>
+                  <li><span class="tier-tag tier-tag--free">Free</span>It asks at the start what you're coming back from, and you can change your answer in Settings.</li>
+                  <li><span class="tier-tag tier-tag--free">Free</span>Everything that keeps you safe is the same on both tiers. Safety is never something you pay for.</li>
+                  <li><span class="tier-tag tier-tag--plan">Plan</span>Leave a session part-way and carry on later, exactly where you stopped.</li>
+                  <li><span class="tier-tag tier-tag--plan">Plan</span>You tell the coach where you're heading, something you want to be able to do or just a direction, and it builds towards it.</li>
                 </ul>
-              </div>
-              <div class="persona-card__narrative">
-                <span class="persona-card__label">How it felt, over time</span>
-                <p>He'd expected another blanket disclaimer. What he got instead was a plan that actually knew which exercises to avoid for his back — and, a few months on, one that had quietly moved him past where he'd stalled the last two times he tried.</p>
               </div>
             </div>
           </div>
@@ -272,36 +273,13 @@
       <section aria-labelledby="comparison-title">
         <h2 id="comparison-title" style="text-align: center;"><span class="upgrade-product-label--teal">Free</span> vs <span class="upgrade-product-label--gold">the Plan</span>.</h2>
         <p class="persona-intro">
-          Safety and wellbeing are never part of this comparison — they're
-          standard at every tier, always.
+          Safety and wellbeing are the same on both. Everything else, row by
+          row, is what the app does today.
         </p>
 
-        <dl class="areas-explained">
-          <div class="areas-explained__item">
-            <dt>Sessions</dt>
-            <dd>A session is one workout — the exercises the coach puts together for you to do in one sitting. There are seven kinds, each focused on something different (like Full Body, Upper Body, or Cardio). On Free, you always get the Full Body kind, at a fixed 30 minutes. On the Plan, you choose which of the seven you want, and how long you've got.</dd>
-          </div>
-          <div class="areas-explained__item">
-            <dt>Exercise library</dt>
-            <dd>This is the full set of exercises the coach can choose from — hundreds of movements, each rated from easier to harder. On the Plan, the coach matches exercises to your level and moves you up as you're ready, instead of leaving that to guesswork.</dd>
-          </div>
-          <div class="areas-explained__item">
-            <dt>Programmes</dt>
-            <dd>A programme is how your sessions connect to each other over time, not just what happens in one sitting. On the Plan, the coach builds a programme that progresses week by week — not just a fresh session each time, but one that's going somewhere.</dd>
-          </div>
-          <div class="areas-explained__item">
-            <dt>Progress</dt>
-            <dd>How much insight you get into your own patterns. On Free, you see the last 7 days. On the Plan, you can look back 30 or 90 days too, and the coach points out patterns it's noticed.</dd>
-          </div>
-          <div class="areas-explained__item">
-            <dt>Coach behaviour</dt>
-            <dd>On Free, the coach responds to how you are today. On the Plan, it also remembers — noticing patterns across weeks and bringing them up, not just reacting in the moment.</dd>
-          </div>
-        </dl>
-
-        <div class="comparison-table-wrap">
+        <div class="comparison-table-wrap" tabindex="0" role="region" aria-labelledby="comparison-caption">
           <table class="comparison-table">
-            <caption class="visually-hidden">Comparison of Free and Plan features for Alongside: Move</caption>
+            <caption id="comparison-caption" class="visually-hidden">What Free and the Plan each include in Alongside: Move</caption>
             <thead>
               <tr>
                 <th scope="col">Area</th>
@@ -311,34 +289,64 @@
             </thead>
             <tbody>
               <tr>
-                <th scope="row">Sessions</th>
-                <td>Full Body only, 30 minutes</td>
-                <td>All 7 session types, 15/30/45/60 min, per-session equipment override</td>
+                <th scope="row">Home</th>
+                <td>Choose any kind of session, or let the coach suggest one from your check-in</td>
+                <td>Three ways in: tell me what to do, I know what I want, or make it up as I go</td>
               </tr>
               <tr>
-                <th scope="row">Exercise library</th>
-                <td>Full pool, all levels</td>
-                <td>Full pool, matched and progressed to your level</td>
+                <th scope="row">Check-in</th>
+                <td>Three quick questions: energy, mood, and anything sore. The session changes when your day does</td>
+                <td>The same three questions</td>
               </tr>
               <tr>
-                <th scope="row">Programmes</th>
-                <td>A fresh session, built for how you are today</td>
-                <td>A programme that builds week on week, with real periodisation</td>
+                <th scope="row">After you check in</th>
+                <td>One suggested session with every exercise named, and Start</td>
+                <td>The full plan: swap any exercise, choose something different, see what you lifted last time</td>
+              </tr>
+              <tr>
+                <th scope="row">I know what I want</th>
+                <td>Not included. Home on Free lets you choose any kind of session</td>
+                <td>Pick the kind of session and how long yourself, and save sessions to start again</td>
+              </tr>
+              <tr>
+                <th scope="row">Make it up as I go</th>
+                <td>Not included. Log what I did, in the Library, records anything you did</td>
+                <td>Log each move and set as you go, and it counts as a full session</td>
+              </tr>
+              <tr>
+                <th scope="row">Where you are heading</th>
+                <td>Each session meets you where you are today</td>
+                <td>You tell the coach where you are heading, and it builds towards it</td>
               </tr>
               <tr>
                 <th scope="row">Progress</th>
-                <td>Basic view (rolling 7-day)</td>
-                <td>Trend analysis, correlation insights, coach insight cards</td>
+                <td>Your sessions today and over the last 7, 14 or 30 days, and ways to share them</td>
+                <td>The same, and 90 days, with your arc read back to you: what has come up and your logged weights</td>
               </tr>
               <tr>
-                <th scope="row">Coach behaviour</th>
-                <td>Warm, adaptive, meets you today</td>
-                <td>Warm, adaptive, remembers across time</td>
+                <th scope="row">Weight</th>
+                <td>Not included</td>
+                <td>Weight tracking, off unless you turn it on; then losing weight can be a goal</td>
               </tr>
               <tr>
-                <th scope="row">Safety and wellbeing</th>
-                <td>Always full — never gated</td>
-                <td>Always full — never gated</td>
+                <th scope="row">Coming back</th>
+                <td>A gentler start after time away; a session the phone closed can still be saved</td>
+                <td>The same, and a session you left part-way carries on where you stopped</td>
+              </tr>
+              <tr>
+                <th scope="row">Where the five percent goes</th>
+                <td>Each session you finish counts once</td>
+                <td>Each session you finish counts twice</td>
+              </tr>
+              <tr>
+                <th scope="row">Wellbeing</th>
+                <td>Everything: breathing, mindful awareness, the journal, In Step</td>
+                <td>Everything, the same</td>
+              </tr>
+              <tr>
+                <th scope="row">Safety</th>
+                <td>Everything that keeps you safe, always</td>
+                <td>Everything, the same</td>
               </tr>
             </tbody>
           </table>
@@ -355,7 +363,7 @@
   <div id="site-footer"></div>
 
   <script src="../js/layout.js?v=1"></script>
-  <script src="../js/site.js?v=9"></script>
+  <script src="../js/site.js?v=10"></script>
   <script src="../js/who-its-for.js?v=1"></script>
 </body>
 </html>

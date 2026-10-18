@@ -1,7 +1,24 @@
 <!DOCTYPE html>
 <!--
   index.html
-  10 Aug 2026 v16
+  18 Oct 2026 v17
+
+  v17 — WEB-CLAIMS (Graeme, 18 Oct). Nothing here claims the app
+    "detects the early signs" or "responds with restoration": the
+    science answer now says what the app does (when your energy has been
+    low for a while, it says so and keeps things gentle), and Graeme's
+    reflection no longer says "burnout detection". The three lines under
+    "You are not alone" were quotation marks around words no user said;
+    they are now plain questions under "Sound familiar?". The coach
+    preview said it was what the coach "actually sounds like" but held
+    conversations the app cannot have; every line is now one the app
+    really says (alongside-app v676: today.js, coach-proposal.js,
+    conditions.js soreLine, reflect.js). The sign-up form stays switched
+    off and says so: it needs Graeme's Kit account. Footer links to the
+    new accessibility statement (site.js v10). site.css ?v=24.
+    "Listens to what your body is saying, even when you can't" claimed
+    more than a check-in can know: now "Listens to how you say you are,
+    every day."
 
   v16 — No markup change; site.js ?v= bumped to 9 (nav links now built
     from a runtime BASE_PATH so they work under both the github.io
@@ -83,7 +100,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alongside — You were never the one who needed fixing.</title>
   <meta name="description" content="An adaptive coach that meets you where you actually are — not where you're supposed to be. Alongside: Move.">
-  <link rel="stylesheet" href="css/site.css?v=22">
+  <link rel="stylesheet" href="css/site.css?v=24">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -140,10 +157,11 @@
             Something wasn't working. And they wondered if it was them.<br>
             It wasn't.
           </p>
+          <p class="belonging__voices-lead">Sound familiar?</p>
           <ul class="belonging__voices">
-            <li><blockquote>I'd quit four apps before this one.</blockquote></li>
-            <li><blockquote>I didn't know what I was missing until the coach noticed.</blockquote></li>
-            <li><blockquote>I came back after six weeks away. It welcomed me.</blockquote></li>
+            <li>You've given up on more than one app already.</li>
+            <li>Nobody noticed when you stopped.</li>
+            <li>Coming back felt like starting again from nothing.</li>
           </ul>
         </div>
       </section>
@@ -153,61 +171,57 @@
         <h2 id="values-title" class="visually-hidden">What makes this different</h2>
         <div class="value-statements">
           <p class="value-statement">Ready when you are.</p>
-          <p class="value-statement">Listens to what your body is saying, even when you can't.</p>
+          <p class="value-statement">Listens to how you say you are, every day.</p>
           <p class="value-statement">Adjusts to who you are today, not to where you're supposed to be.</p>
         </div>
       </section>
 
       <!-- Movement 4 — The First Ride -->
       <section aria-labelledby="coach-preview-title">
-        <h2 id="coach-preview-title" class="visually-hidden">This is what the coach actually sounds like</h2>
-        <p class="coach-preview__framing">This is your coach. They don't have a name — but they know yours.</p>
+        <h2 id="coach-preview-title" class="visually-hidden">What the coach says, word for word</h2>
+        <p class="coach-preview__framing">This is your coach. They don't have a name — but they know yours. Every line below is one the app says.</p>
 
         <div id="coach-tabs">
           <div class="coach-tabs__list" role="tablist" aria-label="Coach message categories">
             <button type="button" role="tab" id="tab-struggling" aria-selected="true" aria-controls="panel-struggling" tabindex="0" class="coach-tabs__tab">When you're struggling</button>
             <button type="button" role="tab" id="tab-return" aria-selected="false" aria-controls="panel-return" tabindex="-1" class="coach-tabs__tab">When you return</button>
-            <button type="button" role="tab" id="tab-grow" aria-selected="false" aria-controls="panel-grow" tabindex="-1" class="coach-tabs__tab">When you grow</button>
+            <button type="button" role="tab" id="tab-grow" aria-selected="false" aria-controls="panel-grow" tabindex="-1" class="coach-tabs__tab">When you keep going</button>
           </div>
 
           <div role="tabpanel" id="panel-struggling" aria-labelledby="tab-struggling" class="coach-tabs__panel">
             <div class="coach-bubble">
-              <span class="coach-bubble__context">You open the app. Energy at 2.</span>
-              <p class="coach-bubble__message">"I hear you. Energy at 2 is real, and I'm not going to pretend otherwise. Today is for gentle movement only. No pushing. Just being kind to yourself."</p>
+              <span class="coach-bubble__context">Your check-ins have shown low energy for a while.</span>
+              <p class="coach-bubble__message">"Your energy has been low for a while now, not just today. I'll keep things gentle until it lifts."</p>
             </div>
             <div class="coach-bubble">
-              <span class="coach-bubble__context">You check in and flag that your back is at 7 out of 10 today.</span>
-              <p class="coach-bubble__message">"I'm sorry your back is difficult today. 7 out of 10 is significant, and I want to be really careful with you. I've adjusted everything to protect that area. We'll be gentle."</p>
+              <span class="coach-bubble__context">You check in and say your lower back is quite sore.</span>
+              <p class="coach-bubble__message">"You said your lower back is quite sore today. 6 movements that could make it worse are left out today; skip anything else that hurts it."</p>
             </div>
             <div class="coach-bubble">
-              <span class="coach-bubble__context">You tell the coach you're thinking about stopping altogether.</span>
-              <p class="coach-bubble__message">"I'm glad you told me how you're feeling. That takes trust. Can you help me understand what's going on? Whatever's happening, we can figure it out together. But I'm not going to let you give up on yourself without at least talking about it first."</p>
+              <span class="coach-bubble__context">You say you're struggling this morning.</span>
+              <p class="coach-bubble__message">"You said you're struggling today. Wellbeing has the quieter things, if that's more like it."</p>
             </div>
           </div>
 
           <div role="tabpanel" id="panel-return" aria-labelledby="tab-return" class="coach-tabs__panel" hidden>
             <div class="coach-bubble">
-              <span class="coach-bubble__context">You haven't opened the app in ten days.</span>
-              <p class="coach-bubble__message">"Welcome back. I'm genuinely glad you're here. Whatever kept you away — that's okay. You don't need to explain. Let's start gently and take it one day at a time."</p>
+              <span class="coach-bubble__context">You come back after an injury.</span>
+              <p class="coach-bubble__message">"Welcome back. Starting gently — that's the right call after an injury."</p>
             </div>
             <div class="coach-bubble">
-              <span class="coach-bubble__context">The coach has noticed something across your last few sessions.</span>
-              <p class="coach-bubble__message">"I've noticed you've been running on low for a few days. That's not a failure — it's information. Your nervous system is asking for rest. When you're ready for more, I'll be here."</p>
+              <span class="coach-bubble__context">You come back and choose to start a notch gentler.</span>
+              <p class="coach-bubble__message">"Welcome back. A notch gentler today, as you chose, and we build from there."</p>
             </div>
           </div>
 
           <div role="tabpanel" id="panel-grow" aria-labelledby="tab-grow" class="coach-tabs__panel" hidden>
             <div class="coach-bubble">
-              <span class="coach-bubble__context">You tell the coach you've been letting yourself down.</span>
-              <p class="coach-bubble__message">"I want to gently push back on that. I'm watching you try. That's not failure. That's courage."</p>
+              <span class="coach-bubble__context">You finish a session that felt hard.</span>
+              <p class="coach-bubble__message">"Hard sessions count just as much as easy ones. You finished it. That is what matters."</p>
             </div>
             <div class="coach-bubble">
-              <span class="coach-bubble__context">You've told the coach you're running on empty. The session begins.</span>
-              <p class="coach-bubble__message">"Today's session is gentle by design. There's no rush. Take a breath, and start when you feel ready."</p>
-            </div>
-            <div class="coach-bubble">
-              <span class="coach-bubble__context">You finish your first full programme.</span>
-              <p class="coach-bubble__message">"I am so proud of you. Take time to really feel this. You committed to something and saw it through. That takes strength."</p>
+              <span class="coach-bubble__context">A few flatter days in a row.</span>
+              <p class="coach-bubble__message">"It's been a flatter few days than usual. I'll go a bit easier with what I suggest."</p>
             </div>
           </div>
         </div>
@@ -229,11 +243,12 @@
           <details class="science-accordion__item">
             <summary>What does the science say actually works? <span class="science-accordion__chevron" aria-hidden="true">&rarr;</span></summary>
             <div class="science-accordion__body">
-              <p>Burnout is nervous system dysregulation, not tiredness. Pushing through makes it worse. Alongside detects the early signs — sustained low energy, broken sleep, accumulating pain — and responds with restoration, not pressure.</p>
+              <p>Burnout is nervous system dysregulation, not tiredness. Pushing through makes it worse.</p>
               <span class="science-accordion__source">— Dr Claire Plumbly, Burnout: How to Manage Your Nervous System, 2024</span>
+              <p>So Alongside never pushes. When your check-ins show your energy has been low for a while, the coach says so and keeps things gentle until it lifts. It is not a medical device.</p>
               <p>Self-compassion improves motivation, not reduces it. Removing shame correlates with stronger resilience, better barrier self-efficacy, and more sustainable physical activity over time.</p>
               <span class="science-accordion__source">— Zhang et al., British Journal of Health Psychology, 2025</span>
-              <p class="science-accordion__reflection">Graeme's reflection: I built the burnout detection into the app before I read Plumbly's research. When I did read it, I felt seen by a book for the first time in years. I knew the feeling, I just couldn't name it. That's exactly the feeling I want Alongside to give people.</p>
+              <p class="science-accordion__reflection">Graeme's reflection: I built the app's gentler days before I read Plumbly's research. When I did read it, I felt seen by a book for the first time in years. I knew the feeling, I just couldn't name it. That's exactly the feeling I want Alongside to give people.</p>
             </div>
           </details>
 
@@ -312,8 +327,8 @@
           </div>
           <button type="submit" class="btn btn--disabled" aria-disabled="true" disabled>I'm ready</button>
           <p class="form-hint" id="capture-hint">
-            Sign-up isn't wired up yet — this form is a placeholder until the
-            mailing list connection is ready. Check back soon.
+            Sign-up isn't open yet. This form is switched off until the
+            mailing list is connected, so nothing you type here is sent.
           </p>
         </form>
 
@@ -329,7 +344,7 @@
   <div id="site-footer"></div>
 
   <script src="js/layout.js?v=1"></script>
-  <script src="js/site.js?v=9"></script>
+  <script src="js/site.js?v=10"></script>
   <script src="js/home.js?v=2"></script>
 </body>
 </html>

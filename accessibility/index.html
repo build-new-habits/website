@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--
+  accessibility/index.html
+  18 Oct 2026 v1
+
+  v1 — A-10, first part (master schedule, before the app is wrapped,
+    row 9). The accessibility statement for this website and for
+    Alongside: Move. It says what the target is (WCAG 2.2 AA), what has
+    been checked and how, and what is known not to be right yet. It
+    claims no audit that has not happened. Update it when the domain
+    goes live, after the device test, and after any independent review.
+
+  Route: /accessibility/
+-->
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessibility | Alongside</title>
+  <meta name="description" content="How accessible the Alongside website and the Alongside: Move app are, what has been checked, what is not right yet, and how to tell us.">
+  <link rel="stylesheet" href="../css/site.css?v=24">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div id="site-nav"></div>
+
+  <main id="main-content">
+    <div class="container">
+      <article class="about a11y-statement">
+
+        <h1 id="page-title">Accessibility</h1>
+
+        <p class="about__opening">
+          Alongside is built for people other apps have let down, and that
+          has to include people who use a screen reader, a keyboard, larger
+          text or less motion.
+        </p>
+
+        <section aria-labelledby="a11y-target">
+          <h2 id="a11y-target">What we aim for</h2>
+          <p>
+            This website and the Alongside: Move app aim to meet the Web
+            Content Accessibility Guidelines (WCAG) 2.2 at level AA.
+          </p>
+          <p>
+            This statement covers this website and the app at
+            build-new-habits.github.io/alongside-app. Alongside: Move is
+            still being tested, so both are changing week by week.
+          </p>
+        </section>
+
+        <section aria-labelledby="a11y-site">
+          <h2 id="a11y-site">This website</h2>
+          <ul>
+            <li>Every page can be used with a keyboard alone, starts with a link to skip to the main content, and shows where the keyboard is.</li>
+            <li>The rotating lines on the home page have a Pause button, and screen readers get all of them as a plain list instead.</li>
+            <li>Tabs (the coach's lines, the four people) work with the arrow keys and say which one is selected.</li>
+            <li>Text and background colours were checked for contrast.</li>
+            <li>Tables have proper row and column headings.</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="a11y-app">
+          <h2 id="a11y-app">The app</h2>
+          <ul>
+            <li>Every screen is checked automatically, on both Free and the Plan, at normal text and at 1.45 and 2 times the size: nothing may run off the side of a phone, and no word may be split.</li>
+            <li>The app follows your phone's Reduce motion setting.</li>
+            <li>Every button and switch has a name a screen reader can read, and switches read their description with them.</li>
+            <li>Exercise pictures have a written description of the position.</li>
+            <li>No screen asks you to read more than about 60 words before its first button.</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="a11y-known">
+          <h2 id="a11y-known">What isn't right yet</h2>
+          <ul>
+            <li>Neither the website nor the app has had an independent accessibility audit, or been tested by disabled people. Both are planned before the app is offered more widely.</li>
+            <li>The home page has a placeholder where a photograph will go.</li>
+            <li>The mailing list sign-up is switched off until it is connected, so it cannot be used by anyone yet.</li>
+            <li>Some exercise pictures are being redrawn because they don't show the position clearly.</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="a11y-tell">
+          <h2 id="a11y-tell">Tell us</h2>
+          <p>
+            If something on the website or in the app is hard to use, or you
+            need anything in a different format, email
+            <span class="a11y-statement__address">hello@buildnewhabits.co.uk</span>.
+            Say what you were trying to do and, if you can, what you were
+            using (a screen reader, a keyboard, a larger text size). We aim to
+            reply within 5 working days.
+          </p>
+        </section>
+
+        <p class="a11y-statement__date">
+          Prepared 18 October 2026. Last reviewed 18 October 2026.
+        </p>
+
+      </article>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../js/layout.js?v=1"></script>
+  <script src="../js/site.js?v=10"></script>
+</body>
+</html>

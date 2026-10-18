@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   sitemap.xml
-  10 Aug 2026 v5
+  18 Oct 2026 v6
 
+  v6 — Accessibility statement added.
   v5 — About added.
   v4 — Philosophy added. Also fixes a real gap found while checking this
     file: /upgrade/ and /who-its-for/ both shipped on 03 Aug and were
@@ -24,7 +25,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://build-new-habits.github.io/website/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-10-18</lastmod>
   </url>
   <url>
     <loc>https://build-new-habits.github.io/website/philosophy/</loc>
@@ -47,11 +48,15 @@
     <lastmod>2026-08-10</lastmod>
   </url>
   <url>
+    <loc>https://build-new-habits.github.io/website/accessibility/</loc>
+    <lastmod>2026-10-18</lastmod>
+  </url>
+  <url>
     <loc>https://build-new-habits.github.io/website/upgrade/</loc>
     <lastmod>2026-08-03</lastmod>
   </url>
   <url>
     <loc>https://build-new-habits.github.io/website/who-its-for/</loc>
-    <lastmod>2026-08-03</lastmod>
+    <lastmod>2026-10-18</lastmod>
   </url>
 </urlset>

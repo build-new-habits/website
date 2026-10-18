@@ -1,5 +1,8 @@
 /* site.js
- * 10 Aug 2026 v9
+ * 18 Oct 2026 v10
+ *
+ * v10 — A-10, first part: Accessibility added to the footer, linking the
+ *   new /accessibility/ statement (built from BASE_PATH like the nav).
  *
  * v9 — Domain-migration prep. Every nav/brand link is now built from a
  *   BASE_PATH detected at runtime rather than hardcoding "/website/".
@@ -81,6 +84,7 @@
   var FOOTER_LINKS = [
     { label: "Privacy", href: "#", comingSoon: true },
     { label: "Terms", href: "#", comingSoon: true },
+    { label: "Accessibility", href: BASE_PATH + "/accessibility/", comingSoon: false },
     { label: "Contact", href: "mailto:hello@buildnewhabits.co.uk", comingSoon: false }
   ];
 
