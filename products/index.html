@@ -1,155 +1,26 @@
 <!DOCTYPE html>
 <!--
   products/index.html
-  07 Nov 2026 v17
+  07 Nov 2026 v1 (retired page)
 
-  v17 — Live: both links to the app go to app.buildnewhabits.co.uk.
-
-  v16 — WEB-CLAIMS: Move's badge says In testing, not Live now (it is not offered to the public yet). site.css ?v=24 and site.js ?v=10 (Accessibility
-    statement linked from the footer).
-
-  v15 — No markup change; site.js ?v= bumped to 9 (nav links now built
-    from a runtime BASE_PATH so they work under both the github.io
-    /website/ prefix and the custom domain root - see site.js v9).
-  v14 — No markup change; site.css ?v= bumped to 22 and site.js ?v=
-    bumped to 8 (About page built - new .about styles, new About nav
-    link).
-  v13 — No markup change; site.css ?v= bumped to 21 (specificity bug
-    fix on the philosophy page - see site.css v21 changelog).
-  v12 — No markup change; site.css ?v= bumped to 20 (Philosophy page
-    emphasis pass: power statements unified to bold teal, new centred
-    teal divider between beats - see site.css v20 changelog).
-  v11 — No markup change; site.css ?v= bumped to 19 and site.js ?v=
-    bumped to 7 (Philosophy page built - new .philosophy styles, new
-    Philosophy nav link).
-  v10 — No markup change; site.css ?v= bumped to 18 (h2 headings now
-    teal site-wide - see site.css v18 changelog).
-  v9 — No markup change; site.css ?v= bumped to 17 (comparison table
-    header/divider polish, areas-explained section - see site.css v17
-    changelog).
-  v8 — Details link under the Move card changed from a plain text link
-    to a proper gold button, per Graeme's feedback. site.css ?v=
-    bumped to 16.
-  v7 — Restructured per Graeme's correction: the generic below-all-
-    cards "Learn more" section (added last session) is wrong — removed.
-    Replaced with a single details link specifically under the Move
-    card only ("See who it's for, compare tiers & pricing"), since
-    that content (/who-its-for/) is Move-specific, not family-wide.
-    "Get early access" now opens in a new tab (target="_blank",
-    rel="noopener noreferrer"). site.css ?v= bumped to 14.
-  v6 — Added links to /who-its-for/ and /upgrade/, per Graeme's
-    instruction that both should be reachable from this page (only
-    Upgrade is also in the top nav bar). site.css ?v= bumped to 13,
-    site.js ?v= bumped to 6.
-  v5 — No markup change; site.css ?v= bumped to 11, site.js ?v= bumped
-    to 5 (Upgrade nav link now included in shared nav). Note: page's
-    own header comment ("pricing lives only on /upgrade, which does
-    not exist yet") is now stale — /upgrade/ was built this session.
-    Not correcting the comment text itself here, out of this edit's
-    narrow scope; flagged in session summary.
-  v4 — Added section-wide class to the product-cards section (see
-    site.css v7 desktop-width fix). ?v= bumped to match.
-  v3 — 20 Jul 2026. Cache-busting fix: ?v=N added to css/site.css and js/*.js
-    references (see index.html v4 changelog for the full reason and the
-    new standing rule).
-  v2 — 20 Jul 2026. Added product-cards class for the desktop 3-column grid (see
-    site.css v4 / js/layout.js). Content unchanged.
-  v1 — Initial build.
-
-  Alongside — Products page.
-  Route: /products/
-  Cards: Move (live), Learn (coming soon), Life (coming soon).
-  No pricing anywhere on this page — pricing lives only on /upgrade/,
-  which now exists (built 03 Aug 2026).
+  WEB-TRIM (master schedule row 9b). Products is no longer a page of its own;
+  this sends anyone with an old link to Home. The old page is archived in
+  BNH-Files (Archive/website_web-trim_07nov2026/live-before-48cf877/products/).
 -->
 <html lang="en-GB">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Alongside family | Alongside</title>
-  <meta name="description" content="One coach. Every context. Every phase of life. Meet the Alongside family of products.">
-  <link rel="stylesheet" href="../css/site.css?v=24">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="refresh" content="0; url=../">
+  <link rel="canonical" href="https://buildnewhabits.co.uk/">
+  <title>Moved | Alongside</title>
+  <link rel="stylesheet" href="../css/main.css?v=1">
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-
-  <div id="site-nav"></div>
-
-  <main id="main-content">
-    <div class="container">
-
-      <section aria-labelledby="page-title">
-        <h1 id="page-title">The Alongside family.</h1>
-        <p class="form-note">One coach. Every context. Every phase of life.</p>
-      </section>
-
-      <section aria-label="Alongside products" class="product-cards section-wide">
-
-        <article class="card product-card">
-          <div class="product-card__header">
-            <h2 class="product-card__name">Move</h2>
-            <span class="badge badge--live">In testing</span>
-          </div>
-          <p class="product-card__body">
-            Your body. Your wellbeing. A coach that adapts to how you actually feel —
-            not how you're supposed to feel.
-          </p>
-          <a class="btn btn--primary" href="https://app.buildnewhabits.co.uk/" target="_blank" rel="noopener noreferrer">
-            Get early access
-          </a>
-          <p class="product-card__details-link">
-            <a class="btn btn--gold" href="../who-its-for/">See who it's for, compare tiers &amp; pricing</a>
-          </p>
-        </article>
-
-        <article class="card product-card">
-          <div class="product-card__header">
-            <h2 class="product-card__name">Learn</h2>
-            <span class="badge badge--soon">Coming soon</span>
-          </div>
-          <p class="product-card__body">
-            For families navigating GCSE years. A coach for the student and the
-            parent — adaptive, compassionate, built for the pressure of real
-            academic life.
-          </p>
-        </article>
-
-        <article class="card product-card">
-          <div class="product-card__header">
-            <h2 class="product-card__name">Life</h2>
-            <span class="badge badge--soon">Coming soon</span>
-          </div>
-          <p class="product-card__body">
-            For students and young adults stepping into independence. Meals,
-            budgets, tenancy, tasks — the practical stuff, coached with the same
-            care as everything else we build.
-          </p>
-        </article>
-
-      </section>
-
-      <section class="vision-line" aria-label="Future products">
-        <p>And there's more coming.</p>
-        <p class="vision-line__names">Rest. Love. Lead. Compass. Savvy.</p>
-        <p>The same coach. A different context.</p>
-      </section>
-
-      <section aria-label="Closing statement">
-        <p class="close-statement">
-          Every Alongside product is built on the same belief: that everyone
-          deserves a coach that actually understands them.
-        </p>
-        <p style="text-align: center;">
-          <a class="site-footer__link" href="https://app.buildnewhabits.co.uk/">&larr; Back to Move</a>
-        </p>
-      </section>
-
-    </div>
+  <main id="main-content" class="wrap moved">
+    <h1>This page has moved</h1>
+    <p><a href="../">Go to Home</a></p>
   </main>
-
-  <div id="site-footer"></div>
-
-  <script src="../js/layout.js?v=1"></script>
-  <script src="../js/site.js?v=10"></script>
 </body>
 </html>

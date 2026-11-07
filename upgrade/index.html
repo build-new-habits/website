@@ -1,205 +1,26 @@
 <!DOCTYPE html>
 <!--
   upgrade/index.html
-  28 Oct 2026 v15
+  07 Nov 2026 v1 (retired page)
 
-  v15 — STAGE PATH P-4. Four doors, by what you came for, in place of three
-  ways in (the app's tier table).
-
-  v14 — WEB-CLAIMS. "What changes with the Plan" is the app's tier table
-    (alongside-app js/data/tier-table.js v7, the `says` sentences): it
-    claimed the exercise library "opens fully" on the Plan (it is the
-    same on both) and a programme built "phase by phase". site.css ?v=24,
-    site.js ?v=10 (Accessibility in the footer).
-
-  v13 — PRICE-2. Annual is £59.99, not £49.99. The old £49.99 was the
-    "launch year" rate running to 30 Nov 2026 — a window that closed
-    before the soft launch in December and two months before public
-    launch in January 2027, so it was a price nobody could have paid.
-    £59.99 is now simply the annual price, with no expiry: Year 2
-    pricing is deferred to Year 2. Matches js/views/upgrade.js v9's
-    PRICE_ANNUAL constant, which is the source of truth.
-
-  18 Aug 2026 v12
-
-  v12 — NAME-1. The paid tier is "the Plan", not "Personal". Copy only,
-    including the meta description and the visually-hidden heading —
-    a screen-reader-only heading left on the old name is still the
-    product carrying two names for one tier.
-
-  10 Aug 2026 v11
-
-  v11 — No markup change; site.js ?v= bumped to 9 (nav links now built
-    from a runtime BASE_PATH so they work under both the github.io
-    /website/ prefix and the custom domain root - see site.js v9).
-  v10 — No markup change; site.css ?v= bumped to 22 and site.js ?v=
-    bumped to 8 (About page built - new .about styles, new About nav
-    link).
-  v9 — No markup change; site.css ?v= bumped to 21 (specificity bug
-    fix on the philosophy page - see site.css v21 changelog).
-  v8 — No markup change; site.css ?v= bumped to 20 (Philosophy page
-    emphasis pass: power statements unified to bold teal, new centred
-    teal divider between beats - see site.css v20 changelog).
-  v7 — No markup change; site.css ?v= bumped to 19 and site.js ?v=
-    bumped to 7 (Philosophy page built - new .philosophy styles, new
-    Philosophy nav link).
-  v6 — No markup change; site.css ?v= bumped to 18 (h2 headings now
-    teal site-wide - see site.css v18 changelog).
-  v5 — No markup change; site.css ?v= bumped to 17 (comparison table
-    header/divider polish, areas-explained section - see site.css v17
-    changelog).
-  v4 — No markup change; site.css ?v= bumped to 16.
-  v3 — "Alongside: Move" teal product label added at top (this page is
-    Move-specific; needed once other products get their own /upgrade
-    variant). Subscription line split onto its own line. Wellbeing note
-    reworded per Graeme's preferred phrasing. site.css ?v= bumped to 14
-    for the lightened gold token (see site.css v14 changelog).
-  v2 — Colour/interest pass per Graeme's critique: gold on "Personal
-    tier" and the four what-changes lead phrases, teal wellbeing-
-    always-free note added, pricing note given real visual weight
-    (card treatment, larger text) and its closing line goldened.
-  v1 — Initial build, from alongside_upgrade_page_architecture_09jul2026_v1
-    (confirmed and locked). Content is verbatim from that document.
-
-  Alongside — Upgrade page.
-  Route: /upgrade/
-
-  IMPORTANT — what this build does and does not include:
-  This is the static content and design layer only. The full spec (see
-  Upgrade Flow Blueprint, alongside_upgrade_flow_blueprint_04jun2026_v1)
-  calls for this page to read a token from the URL, validate it against
-  Supabase, and run Stripe checkout. None of that infrastructure exists
-  yet (Supabase auth is S-F3, Stripe is S-F4 — neither built as of this
-  session). Building fake/non-functional Stripe or Supabase calls would
-  be worse than an honest placeholder, so the CTA button below is
-  disabled with a plain note, following the same pattern already used
-  for the Community page's mailing-list signup. Wiring the real
-  checkout flow is separate infra work, not a copy/content task.
-
-  Pricing: £7.99/month, £59.99/year, from the pricing model v3 (18 Aug
-  2026) and matching js/views/upgrade.js's PRICE_ANNUAL constant, which
-  is the source of truth. No expiry — Year 2 pricing is deferred to
-  Year 2. The £4.99 three-month intro is REMOVED entirely (it placed a
-  60% price rise at month four); a free trial replaces it, and trial
-  mechanics are a checkout-flow concern, not page copy, per the locked
-  architecture's "honest, calm, no pressure" design note.
-
-  ⚠️ This paragraph previously described the £4.99 intro and a Year 2
-  increase as current. Both are gone. A stale note in a header is how a
-  retired price gets quoted as live — the exact fault verify-price.mjs
-  was written for on 18 Aug.
+  WEB-TRIM (master schedule row 9b). Upgrade is no longer a page of its own;
+  this sends anyone with an old link to How it works. The old page is archived in
+  BNH-Files (Archive/website_web-trim_07nov2026/live-before-48cf877/upgrade/).
 -->
 <html lang="en-GB">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ready to go deeper? | Alongside</title>
-  <meta name="description" content="The Plan gives the coach more to work with. The deeper the relationship, the better it understands you.">
-  <link rel="stylesheet" href="../css/site.css?v=24">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="refresh" content="0; url=../how-it-works/">
+  <link rel="canonical" href="https://buildnewhabits.co.uk/how-it-works/">
+  <title>Moved | Alongside</title>
+  <link rel="stylesheet" href="../css/main.css?v=1">
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-
-  <div id="site-nav"></div>
-
-  <main id="main-content">
-    <div class="container">
-
-      <section aria-labelledby="page-title" class="upgrade-hero">
-        <p class="text-teal upgrade-product-label">Alongside: Move</p>
-        <h1 id="page-title">Ready to go deeper?</h1>
-
-        <p class="upgrade-hero__opening">
-          You've already felt something different.
-          The coach noticed. Adapted. Met you where you were.
-          That wasn't a trial. That was real.
-        </p>
-
-        <p class="upgrade-hero__shift">
-          <span class="text-gold">The Plan</span> gives the coach more to work with.
-          The deeper the relationship, the better it understands you.
-        </p>
-      </section>
-
-      <section aria-labelledby="changes-title" class="upgrade-changes">
-        <h2 id="changes-title" class="visually-hidden">What changes with the Plan</h2>
-
-        <p class="upgrade-changes__item">
-          <span class="text-gold">Four doors</span> — by what you came for: get stronger, keep moving, stretch or move to feel better, and one suggestion for today from your check-in.
-        </p>
-        <p class="upgrade-changes__item">
-          <span class="text-gold">The whole plan</span> — after you check in you see every exercise, and you can swap any of them or choose something different.
-        </p>
-        <p class="upgrade-changes__item">
-          <span class="text-gold">Where you're heading</span> — tell the coach something you want to be able to do, or just a direction, and it builds towards it.
-        </p>
-        <p class="upgrade-changes__item">
-          <span class="text-gold">Progress over 90 days</span> — with your arc read back to you: what has come up, and what your logged weights show.
-        </p>
-        <p class="upgrade-changes__item">
-          <span class="text-gold">Carry on later</span> — leave a session part-way and pick it up exactly where you stopped.
-        </p>
-        <p class="upgrade-changes__item">
-          <span class="text-gold">Weight tracking</span> — off unless you turn it on, and only you see it; with it on, losing weight can be one of your goals.
-        </p>
-        <p class="upgrade-changes__item">
-          <span class="text-gold">Twice the good</span> — every session you finish counts double towards where the five percent goes.
-        </p>
-      </section>
-
-      <section aria-label="A note on commitment" class="upgrade-commitment">
-        <p>No contract. Cancel any time.</p>
-        <p>This isn't a commitment to us. It's a commitment to yourself.</p>
-        <p>And you can change your mind.</p>
-      </section>
-
-      <p class="upgrade-wellbeing-note">
-        We don't want to restrict how you Move with mental health and
-        wellbeing.
-      </p>
-
-      <section aria-labelledby="pricing-title" class="pricing-section">
-        <h2 id="pricing-title" class="visually-hidden">Pricing</h2>
-
-        <div class="pricing-cards">
-          <div class="card pricing-card">
-            <p class="pricing-card__period">Monthly</p>
-            <p class="pricing-card__price">&pound;7.99</p>
-            <p class="pricing-card__period">a month</p>
-          </div>
-
-          <div class="card pricing-card">
-            <p class="pricing-card__period">Annual</p>
-            <p class="pricing-card__price">&pound;59.99</p>
-            <p class="pricing-card__period">for the year</p>
-          </div>
-        </div>
-
-        <p class="pricing-note--emphasis">
-          That's it. And five percent of everything you pay goes to causes
-          our community chooses.
-          <span class="text-gold pricing-note__standout">Your subscription does more than you might think.</span>
-        </p>
-
-        <div class="upgrade-cta">
-          <button type="button" class="btn btn--gold" aria-disabled="true" disabled>
-            I'm ready
-          </button>
-        </div>
-
-        <p class="upgrade-safety-note">
-          Checkout isn't connected yet — this page is ready, the payment
-          flow comes next. Nothing is lost either way: all your data stays
-          with your account, whatever you decide.
-        </p>
-      </section>
-
-    </div>
+  <main id="main-content" class="wrap moved">
+    <h1>This page has moved</h1>
+    <p><a href="../how-it-works/">Go to How it works</a></p>
   </main>
-
-  <div id="site-footer"></div>
-
-  <script src="../js/layout.js?v=1"></script>
-  <script src="../js/site.js?v=10"></script>
 </body>
 </html>

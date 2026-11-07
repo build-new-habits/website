@@ -1,0 +1,162 @@
+/* css/main.css
+ * 07 Nov 2026 v1
+ *
+ * WEB-TRIM (master schedule row 9b). One stylesheet for the whole site,
+ * from the approved mock-ups (Home v3, How it works v2, About v1, 07 Nov).
+ * Replaces site.css (archived in BNH-Files). Dark, one column, phone first.
+ * WCAG 2.2 AA: text contrast checked on every token pair used for text;
+ * every control at least 44px; focus always visible; reduced motion honoured.
+ */
+
+/* Layout: one column; each band is one idea, about one phone screen at most. */
+:root {
+  --bg-deep: #0F172A;
+  --bg: #1E293B;
+  --card: #334155;
+  --text: #E2E8F0;
+  --text-2: #A8B8CC;
+  --teal: #2DD4BF;
+  --border: #475569;
+  --ink: #0F172A;
+  --note-bg: #3B2F0B;
+  --note-text: #FDE68A;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg-deep); color: var(--text); font-family: var(--font); font-size: 1.0625rem; line-height: 1.55; }
+img, video { max-width: 100%; }
+a { color: var(--teal); }
+:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; border-radius: 4px; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+
+.wrap { max-width: 34rem; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.wrap.wide { max-width: 40rem; }
+.skip-link { position: absolute; left: -999px; }
+.skip-link:focus { left: 16px; top: 16px; background: var(--teal); color: var(--ink); padding: .5rem .75rem; z-index: 20; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+h1, h2, h3 { text-wrap: balance; letter-spacing: -0.02em; line-height: 1.15; margin: 0; }
+h1 { font-size: clamp(2rem, 8vw, 2.6rem); font-weight: 800; }
+h2 { font-size: 1.625rem; font-weight: 750; margin-bottom: 1.25rem; }
+p { margin: 0; }
+
+/* Header and footer (built by js/site.js) */
+.site-header { border-bottom: 1px solid var(--card); }
+.site-header .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .25rem 1rem; padding-block: .6rem; }
+.brand { display: flex; align-items: center; gap: .5rem; color: var(--text); text-decoration: none; font-weight: 700; font-size: 1.125rem; min-height: 44px; }
+.brand img { width: 32px; height: 32px; border-radius: 8px; }
+.nav-links { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0 1rem; }
+.nav-links a { display: inline-flex; align-items: center; min-height: 44px; color: var(--text); text-decoration: none; font-weight: 600; font-size: .9375rem; }
+.nav-links a[aria-current="page"] { color: var(--teal); text-decoration: underline; text-underline-offset: 6px; }
+.site-footer { border-top: 1px solid var(--card); color: var(--text-2); font-size: .875rem; margin-top: 1rem; }
+.site-footer .wrap { padding-block: 1.25rem 2rem; display: flex; flex-wrap: wrap; align-items: center; gap: .25rem 1.25rem; }
+.site-footer a { color: var(--text-2); display: inline-flex; align-items: center; min-height: 44px; }
+.email { user-select: all; color: var(--text); }
+
+/* Shared pieces */
+section { padding-block: 2.5rem; }
+section + section, .hero + section, .top + section { border-top: 1px solid var(--bg); }
+.cta { display: inline-flex; align-items: center; justify-content: center; background: var(--teal); color: var(--ink); text-decoration: none; padding: .9rem 1.4rem; border-radius: 12px; min-height: 52px; justify-self: start; border: 0; font: inherit; font-weight: 700; cursor: pointer; }
+.cta:disabled { cursor: not-allowed; }
+.small { color: var(--text-2); font-size: .875rem; }
+.more { display: inline-block; margin-top: 1rem; font-weight: 600; padding-block: .5rem; }
+
+/* Free / Plan switch (Home and How it works) */
+.switch { display: inline-grid; grid-template-columns: 1fr 1fr; background: var(--bg-deep); border: 1px solid var(--border); border-radius: 16px; padding: 4px; gap: 4px; width: min(100%, 360px); }
+.switch button { font: inherit; border: 0; border-radius: 12px; padding: .5rem .75rem; min-height: 52px; background: transparent; color: var(--text-2); cursor: pointer; display: grid; gap: .1rem; justify-items: center; align-content: center; }
+.switch button span:first-child { font-weight: 700; }
+.switch .p { font-size: .875rem; font-weight: 600; }
+.switch button[aria-pressed="true"] { background: var(--teal); color: var(--ink); }
+video { width: min(100%, 300px); aspect-ratio: 9 / 16; border-radius: 16px; background: var(--bg-deep); display: block; }
+details { width: 100%; background: var(--bg-deep); border-radius: 12px; padding: .65rem .9rem; text-align: left; }
+summary { cursor: pointer; font-weight: 600; min-height: 32px; }
+details ol { margin: .5rem 0 0; padding-left: 1.25rem; color: var(--text-2); display: grid; gap: .25rem; }
+
+/* Tick tables */
+.table-wrap { overflow-x: auto; width: 100%; }
+table { width: 100%; border-collapse: collapse; font-size: .9375rem; }
+caption { text-align: left; color: var(--text-2); padding-bottom: .5rem; font-size: .875rem; }
+th, td { padding: .7rem .5rem; border-bottom: 1px solid var(--card); vertical-align: top; text-align: left; }
+thead th + th, td { text-align: center; width: 24%; }
+tbody th { font-weight: 500; }
+.price td, .price th { font-weight: 700; color: var(--text); }
+.yes { color: var(--teal); font-weight: 800; font-size: 1.1rem; }
+.no { color: var(--text-2); }
+col.on { background: rgba(45, 212, 191, .08); }
+.early { margin-top: 1rem; border: 2px solid var(--teal); border-radius: 14px; padding: 1rem 1.1rem; display: grid; gap: .3rem; }
+.early strong { font-size: 1.125rem; }
+.early p { color: var(--text-2); }
+
+/* Home */
+.hero .wrap { padding-block: 2.25rem 2.5rem; display: grid; gap: 1.1rem; }
+.hero h1 { font-size: clamp(2.1rem, 9vw, 2.75rem); }
+.lede { font-size: 1.1875rem; font-weight: 600; }
+.for { color: var(--text-2); }
+.facts { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0; padding: 0; list-style: none; }
+.facts li { font-size: .875rem; border: 1px solid var(--border); border-radius: 999px; padding: .3rem .75rem; }
+.familiar { list-style: none; margin: 0 0 1.25rem; padding: 0; display: grid; gap: .6rem; }
+.familiar li { background: var(--bg); border-radius: 12px; padding: .8rem 1rem; }
+.answer { font-size: 1.25rem; font-weight: 700; }
+.see { display: grid; gap: 1rem; justify-items: center; text-align: center; }
+.see .hint { color: var(--text-2); font-size: .9375rem; }
+.coach-card { background: var(--bg); border-radius: 16px; padding: 1.25rem; display: grid; gap: .6rem; }
+.coach-card .when { font-size: .875rem; color: var(--text-2); }
+.coach-bubble__message { font-size: 1.1875rem; font-weight: 600; }
+.never { list-style: none; margin: 0; padding: 0; display: grid; gap: .75rem; }
+.never li { display: flex; gap: .75rem; align-items: baseline; font-weight: 600; }
+.never li::before { content: "\2713"; color: var(--teal); font-weight: 800; }
+.me { display: grid; grid-template-columns: 4.5rem 1fr; gap: 1rem; align-items: center; }
+.photo { width: 4.5rem; height: 4.5rem; border-radius: 50%; border: 2px dashed var(--border); }
+form { display: grid; gap: .75rem; }
+label { font-weight: 600; }
+input[type=email] { font: inherit; padding: .8rem .9rem; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); color: var(--text); min-height: 48px; }
+.check { display: flex; gap: .6rem; align-items: flex-start; font-weight: 400; color: var(--text-2); font-size: .9375rem; }
+.check input { width: 1.25rem; height: 1.25rem; margin-top: .15rem; accent-color: var(--teal); }
+
+/* How it works */
+.top { padding-block: 2.25rem 1.5rem; display: grid; gap: 1rem; }
+.two { display: grid; gap: .75rem; grid-template-columns: 1fr; }
+@media (min-width: 34rem) { .two { grid-template-columns: 1fr 1fr; } }
+.coach-type { border: 1px solid var(--border); border-radius: 14px; padding: 1rem 1.1rem; display: grid; gap: .3rem; }
+.coach-type.plan { border: 2px solid var(--teal); }
+.coach-type h2 { font-size: 1.125rem; margin: 0; }
+.coach-type p { color: var(--text-2); }
+.pick { padding-block: .5rem 1.5rem; }
+.pick h2 { font-size: 1.375rem; margin-bottom: .75rem; }
+.items { display: grid; gap: .6rem; }
+.item { border: 1px solid var(--card); border-radius: 16px; background: var(--bg); }
+.item h3 { font-size: 1rem; }
+.opener { width: 100%; font: inherit; font-size: 1.0625rem; font-weight: 700; text-align: left; background: none; border: 0; color: var(--text); padding: .9rem 1rem; min-height: 52px; display: flex; justify-content: space-between; align-items: center; gap: 1rem; cursor: pointer; border-radius: 16px; scroll-margin-top: 12px; }
+.opener::after { content: "+"; font-size: 1.5rem; line-height: 1; color: var(--teal); }
+.opener[aria-expanded="true"] { color: var(--teal); }
+.opener[aria-expanded="true"]::after { content: "\2212"; }
+.item:has(.opener[aria-expanded="true"]) { border-color: var(--teal); }
+.panel { padding: 0 1rem 1.25rem; display: grid; gap: .9rem; justify-items: center; }
+.intro { color: var(--text-2); justify-self: stretch; }
+.yearly { margin-top: -.5rem; color: var(--text-2); font-size: .875rem; }
+.end { padding-block: 1rem 2.5rem; display: grid; gap: 1rem; }
+
+/* About and prose pages */
+.page .wrap { padding-block: 2.25rem 0; }
+.page section .wrap { padding-block: 0; }
+.page > .wrap + section { padding-top: .25rem; border-top: 0; }
+.page h1 { margin-bottom: 1rem; }
+.page p { margin-bottom: .9rem; }
+.big { font-size: 1.25rem; font-weight: 700; }
+.beliefs { list-style: none; margin: 0; padding: 0; display: grid; gap: .75rem; }
+.beliefs li { background: var(--bg); border-radius: 14px; padding: 1rem 1.1rem; display: grid; gap: .25rem; }
+.beliefs strong { font-size: 1.0625rem; }
+.beliefs span { color: var(--text-2); }
+.sig { font-weight: 700; }
+.prose { padding-block: 2.25rem 2.5rem; }
+.prose h1 { margin-bottom: 1rem; }
+.prose h2 { font-size: 1.25rem; margin: 1.75rem 0 .6rem; }
+.prose p, .prose li { color: var(--text); }
+.prose p + p { margin-top: .75rem; }
+.prose ul { padding-left: 1.25rem; display: grid; gap: .4rem; margin: 0; }
+
+/* Retired pages (redirects) */
+.moved { padding-block: 3rem; display: grid; gap: 1rem; }

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!--
+  how-it-works/index.html
+  07 Nov 2026 v1
+
+  v1 — WEB-TRIM (master schedule row 9b). Built from the approved How it
+    works mock-up v2 (Graeme, 07 Nov: "what does free give me when I want...
+    What does plan give me when I want...."; the price and nothing more
+    beside the videos; a tick table per scenario; the arc, "One who gives you
+    a session. The other who understands the long or medium term goal and
+    works towards it"; each option opens straight under itself, one at a
+    time; Free and the Plan side by side with a switch, as on Home).
+  Replaces Who it's for and Upgrade, which now send you here.
+  Six scenarios, arc first. Each has a Free and a Plan video (real app
+    screens with example data, captions at the top, no sound, steps written
+    out underneath), the price on the switch, and its own tick table.
+  Checked by tools/verify-website.mjs v2 in the app repository: every table
+    is tools/website-claims.mjs word for word, and every claim's proof is in
+    the app. Without JavaScript every scenario shows, open.
+-->
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>How it works | Alongside</title>
+  <meta name="description" content="Free is a coach for today. The Plan is a coach for where you're going. See what each one does, with short videos from the app.">
+  <link rel="icon" href="../assets/logo.png">
+  <link rel="stylesheet" href="../css/main.css?v=1">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="site-nav"></div>
+
+  <main id="main-content">
+    <div class="wrap wide top">
+      <h1>How it works</h1>
+      <div class="two">
+        <div class="coach-type"><h2>Free: a coach for today</h2><p>Tell it how you are. It gives you a good session for today.</p></div>
+        <div class="coach-type plan"><h2>The Plan: a coach for where you&rsquo;re going</h2><p>It also remembers what you&rsquo;re working towards, and builds towards it.</p></div>
+      </div>
+    </div>
+
+    <div class="wrap wide pick">
+      <h2 id="pick-h">What do you want to see?</h2>
+      <div class="items" id="scenarios">
+<div class="item" data-s="arc">
+    <h3><button type="button" class="opener" id="b-arc" aria-expanded="true" aria-controls="p-arc">When I&rsquo;m working towards something</button></h3>
+    <div class="panel" id="p-arc" role="region" aria-labelledby="b-arc">
+      <p class="intro">This is the real difference. Free gives you a good session for today. The Plan remembers what you&rsquo;re aiming for and builds towards it, week by week, with no dates to fail.</p>
+      <div class="switch" role="group" aria-label="Show the app on">
+        <button type="button" data-t="free" aria-pressed="true"><span>Free</span><span class="p">&pound;0</span></button>
+        <button type="button" data-t="plan" aria-pressed="false"><span>The Plan</span><span class="p">&pound;7.99 a month</span></button>
+      </div>
+      <p class="yearly" data-t="plan" hidden>or &pound;59.99 a year</p>
+      <video controls muted playsinline preload="none" poster="../assets/video/arc_free_poster.webp"
+        data-free="arc_free" data-plan="arc_plan" data-free-secs="11" data-plan-secs="32"
+        aria-label="Free: a 11-second video with captions and no sound">
+        <source src="../assets/video/arc_free.mp4" type="video/mp4"></video>
+      <details><summary>What the video shows</summary><ol class="steps" data-t="free" ><li>Free gives you a coach for today.</li><li>Working towards something is part of the Plan.</li><li>Free: each session meets you where you are today.</li></ol><ol class="steps" data-t="plan" hidden><li>Tell the coach what you want to be able to do.</li><li>Pick up to three things that feed it.</li><li>Say how you&#x27;d know, in your own words.</li><li>No dates. Nothing to keep up with.</li><li>It sits at the top of Home, week by week.</li><li>Today&#x27;s plan is built towards it.</li><li>See when each part last came up.</li><li>Progress reads it back to you.</li><li>The Plan: a coach who knows where you&#x27;re going.</li></ol></details>
+      <div class="table-wrap"><table data-claims="arc">
+        <caption>What each one does</caption>
+        <thead><tr><th scope="col"><span class="visually-hidden">What you get</span></th><th scope="col">Free</th><th scope="col">The Plan</th></tr></thead>
+        <tbody><tr><th scope="row">Tell the coach what you want to be able to do, in your own words</th><td><span class="no" aria-hidden="true">&mdash;</span><span class="visually-hidden">Not included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr><tr><th scope="row">Pick up to three things that feed it</th><td><span class="no" aria-hidden="true">&mdash;</span><span class="visually-hidden">Not included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr><tr><th scope="row">Sessions are built towards it</th><td><span class="no" aria-hidden="true">&mdash;</span><span class="visually-hidden">Not included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr><tr><th scope="row">See it on Home, week by week</th><td><span class="no" aria-hidden="true">&mdash;</span><span class="visually-hidden">Not included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr><tr><th scope="row">Progress reads it back to you</th><td><span class="no" aria-hidden="true">&mdash;</span><span class="visually-hidden">Not included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr><tr><th scope="row">No dates or targets. Change it or stop it any time</th><td><span class="no" aria-hidden="true">&mdash;</span><span class="visually-hidden">Not included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr><tr><th scope="row">Each session meets you where you are today</th><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr></tbody></table></div>
+    </div>
+  </div>
+<div class="item" data-s="coach">
+    <h3><button type="button" class="opener" id="b-coach" aria-expanded="true" aria-controls="p-coach">When I want the coach to choose for me</button></h3>
+    <div class="panel" id="p-coach" role="region" aria-labelledby="b-coach">
+      <p class="intro">Both tiers ask the same three quick questions and give you a real session. The Plan shows its working and lets you change it.</p>
+      <div class="switch" role="group" aria-label="Show the app on">
+        <button type="button" data-t="free" aria-pressed="true"><span>Free</span><span class="p">&pound;0</span></button>
+        <button type="button" data-t="plan" aria-pressed="false"><span>The Plan</span><span class="p">&pound;7.99 a month</span></button>
+      </div>
+      <p class="yearly" data-t="plan" hidden>or &pound;59.99 a year</p>
+      <video controls muted playsinline preload="none" poster="../assets/video/coach_free_poster.webp"
+        data-free="coach_free" data-plan="coach_plan" data-free-secs="18" data-plan-secs="18"
+        aria-label="Free: a 18-second video with captions and no sound">
+        <source src="../assets/video/coach_free.mp4" type="video/mp4"></video>
+      <details><summary>What the video shows</summary><ol class="steps" data-t="free" ><li>Tell the coach how your energy is.</li><li>Then your mood, and anything sore.</li><li>Low energy? A shorter, gentler session.</li><li>Every exercise says why, and how.</li><li>Free: one session, shaped to today.</li></ol><ol class="steps" data-t="plan" hidden><li>The same three quick questions.</li><li>It shows what it changed, and why.</li><li>Swap any exercise you don&#x27;t fancy.</li><li>Do one later, or see what&#x27;s left.</li><li>The Plan: today&#x27;s session, your way.</li></ol></details>
+      <div class="table-wrap"><table data-claims="coach">
+        <caption>What each one does</caption>
+        <thead><tr><th scope="col"><span class="visually-hidden">What you get</span></th><th scope="col">Free</th><th scope="col">The Plan</th></tr></thead>
+        <tbody><tr><th scope="row">Three quick questions: energy, mood, and anything sore</th><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr><tr><th scope="row">A session shaped to your answers</th><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr><tr><th scope="row">Every exercise says why it helps, and how to do it</th><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr><tr><th scope="row">A list of what the coach adjusted, and Change my check-in</th><td><span class="no" aria-hidden="true">&mdash;</span><span class="visually-hidden">Not included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr><tr><th scope="row">Swap any exercise</th><td><span class="no" aria-hidden="true">&mdash;</span><span class="visually-hidden">Not included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr><tr><th scope="row">Do an exercise later, or see what&rsquo;s left</th><td><span class="no" aria-hidden="true">&mdash;</span><span class="visually-hidden">Not included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr></tbody></table></div>
+    </div>
+  </div>
+<div class="item" data-s="know">
+    <h3><button type="button" class="opener" id="b-know" aria-expanded="true" aria-controls="p-know">When I want to choose for myself</button></h3>
+    <div class="panel" id="p-know" role="region" aria-labelledby="b-know">
+      <p class="intro">Free lets you pick any kind of session. The Plan starts from why you came, and lets you build, save and repeat your own.</p>
+      <div class="switch" role="group" aria-label="Show the app on">
+        <button type="button" data-t="free" aria-pressed="true"><span>Free</span><span class="p">&pound;0</span></button>
+        <button type="button" data-t="plan" aria-pressed="false"><span>The Plan</span><span class="p">&pound;7.99 a month</span></button>
+      </div>
+      <p class="yearly" data-t="plan" hidden>or &pound;59.99 a year</p>
+      <video controls muted playsinline preload="none" poster="../assets/video/know_free_poster.webp"
+        data-free="know_free" data-plan="know_plan" data-free-secs="18" data-plan-secs="22"
+        aria-label="Free: a 18-second video with captions and no sound">
+        <source src="../assets/video/know_free.mp4" type="video/mp4"></video>
+      <details><summary>What the video shows</summary><ol class="steps" data-t="free" ><li>Pick the kind of session.</li><li>Home or gym.</li><li>How long you&#x27;ve got.</li><li>The coach builds it for you.</li><li>Free: choose any kind of session.</li></ol><ol class="steps" data-t="plan" hidden><li>Start with where you are.</li><li>Then which part of you.</li><li>Five ways to build it, including trends.</li><li>Build your own, part by part.</li><li>Ask the coach to help fill a part.</li><li>The Plan: build it, save it, start it again.</li></ol></details>
+      <div class="table-wrap"><table data-claims="know">
+        <caption>What each one does</caption>
+        <thead><tr><th scope="col"><span class="visually-hidden">What you get</span></th><th scope="col">Free</th><th scope="col">The Plan</th></tr></thead>
+        <tbody><tr><th scope="row">Choose the kind of session, home or gym, and how long</th><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr><tr><th scope="row">Start from your purpose: get stronger, keep moving, stretch, or move to feel better</th><td><span class="no" aria-hidden="true">&mdash;</span><span class="visually-hidden">Not included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr><tr><th scope="row">Build your own session, part by part, with the coach&rsquo;s help</th><td><span class="no" aria-hidden="true">&mdash;</span><span class="visually-hidden">Not included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr><tr><th scope="row">Follow a fitness trend: Zone 2, HILIT, hybrid training, reformer-style Pilates, 10-minute snacks</th><td><span class="no" aria-hidden="true">&mdash;</span><span class="visually-hidden">Not included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr><tr><th scope="row">Save sessions to start again</th><td><span class="no" aria-hidden="true">&mdash;</span><span class="visually-hidden">Not included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr><tr><th scope="row">Log what you did</th><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr><tr><th scope="row">Make it up as you go, logging each set</th><td><span class="no" aria-hidden="true">&mdash;</span><span class="visually-hidden">Not included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr></tbody></table></div>
+    </div>
+  </div>
+<div class="item" data-s="low">
+    <h3><button type="button" class="opener" id="b-low" aria-expanded="true" aria-controls="p-low">When I want something for a low day</button></h3>
+    <div class="panel" id="p-low" role="region" aria-labelledby="b-low">
+      <p class="intro">Both tiers notice a low day and go gentler. The Plan has sessions made for low days.</p>
+      <div class="switch" role="group" aria-label="Show the app on">
+        <button type="button" data-t="free" aria-pressed="true"><span>Free</span><span class="p">&pound;0</span></button>
+        <button type="button" data-t="plan" aria-pressed="false"><span>The Plan</span><span class="p">&pound;7.99 a month</span></button>
+      </div>
+      <p class="yearly" data-t="plan" hidden>or &pound;59.99 a year</p>
+      <video controls muted playsinline preload="none" poster="../assets/video/low_free_poster.webp"
+        data-free="low_free" data-plan="low_plan" data-free-secs="11" data-plan-secs="11"
+        aria-label="Free: a 11-second video with captions and no sound">
+        <source src="../assets/video/low_free.mp4" type="video/mp4"></video>
+      <details><summary>What the video shows</summary><ol class="steps" data-t="free" ><li>Running on empty? Say so.</li><li>A shorter session, or something gentler.</li><li>Free: gentler on low days.</li></ol><ol class="steps" data-t="plan" hidden><li>Running on empty? Say so.</li><li>Very gentle, short, and no countdown timers.</li><li>The Plan: a session made for a low day.</li></ol></details>
+      <div class="table-wrap"><table data-claims="low">
+        <caption>What each one does</caption>
+        <thead><tr><th scope="col"><span class="visually-hidden">What you get</span></th><th scope="col">Free</th><th scope="col">The Plan</th></tr></thead>
+        <tbody><tr><th scope="row">Notices when your energy or mood is low</th><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr><tr><th scope="row">A shorter, gentler session</th><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr><tr><th scope="row">Something gentler, or Wellbeing, one tap away</th><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr><tr><th scope="row">Sessions made for low days, with no countdown timers</th><td><span class="no" aria-hidden="true">&mdash;</span><span class="visually-hidden">Not included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr><tr><th scope="row">A gentler start after time away</th><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr><tr><th scope="row">Carry on a session you left part-way</th><td><span class="no" aria-hidden="true">&mdash;</span><span class="visually-hidden">Not included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr></tbody></table></div>
+    </div>
+  </div>
+<div class="item" data-s="calm">
+    <h3><button type="button" class="opener" id="b-calm" aria-expanded="true" aria-controls="p-calm">When I want something calmer</button></h3>
+    <div class="panel" id="p-calm" role="region" aria-labelledby="b-calm">
+      <p class="intro">Wellbeing is the same on both tiers, always. The Plan adds movement for how you feel.</p>
+      <div class="switch" role="group" aria-label="Show the app on">
+        <button type="button" data-t="free" aria-pressed="true"><span>Free</span><span class="p">&pound;0</span></button>
+        <button type="button" data-t="plan" aria-pressed="false"><span>The Plan</span><span class="p">&pound;7.99 a month</span></button>
+      </div>
+      <p class="yearly" data-t="plan" hidden>or &pound;59.99 a year</p>
+      <video controls muted playsinline preload="none" poster="../assets/video/calm_free_poster.webp"
+        data-free="calm_free" data-plan="calm_plan" data-free-secs="8" data-plan-secs="14"
+        aria-label="Free: a 8-second video with captions and no sound">
+        <source src="../assets/video/calm_free.mp4" type="video/mp4"></video>
+      <details><summary>What the video shows</summary><ol class="steps" data-t="free" ><li>Breathing, mindful awareness and the journal.</li><li>Free: all of Wellbeing, always.</li></ol><ol class="steps" data-t="plan" hidden><li>Move to feel better: how are you feeling?</li><li>Tai chi, qigong, yoga and gentle movement.</li><li>And all of Wellbeing, the same as Free.</li><li>The Plan: movement for your mood.</li></ol></details>
+      <div class="table-wrap"><table data-claims="calm">
+        <caption>What each one does</caption>
+        <thead><tr><th scope="col"><span class="visually-hidden">What you get</span></th><th scope="col">Free</th><th scope="col">The Plan</th></tr></thead>
+        <tbody><tr><th scope="row">Breathing, mindful awareness, the journal, and In Step</th><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr><tr><th scope="row">Help numbers, if you need them</th><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr><tr><th scope="row">Move to feel better: grounded, calmer, worn out, wake up, ready for sleep</th><td><span class="no" aria-hidden="true">&mdash;</span><span class="visually-hidden">Not included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr><tr><th scope="row">Tai chi, qigong, calming yoga and gentle movement</th><td><span class="no" aria-hidden="true">&mdash;</span><span class="visually-hidden">Not included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr></tbody></table></div>
+    </div>
+  </div>
+<div class="item" data-s="progress">
+    <h3><button type="button" class="opener" id="b-progress" aria-expanded="true" aria-controls="p-progress">When I want to see how it&rsquo;s going</button></h3>
+    <div class="panel" id="p-progress" role="region" aria-labelledby="b-progress">
+      <p class="intro">Free shows what you&rsquo;ve done. The Plan shows what&rsquo;s working for you.</p>
+      <div class="switch" role="group" aria-label="Show the app on">
+        <button type="button" data-t="free" aria-pressed="true"><span>Free</span><span class="p">&pound;0</span></button>
+        <button type="button" data-t="plan" aria-pressed="false"><span>The Plan</span><span class="p">&pound;7.99 a month</span></button>
+      </div>
+      <p class="yearly" data-t="plan" hidden>or &pound;59.99 a year</p>
+      <video controls muted playsinline preload="none" poster="../assets/video/progress_free_poster.webp"
+        data-free="progress_free" data-plan="progress_plan" data-free-secs="8" data-plan-secs="14"
+        aria-label="Free: a 8-second video with captions and no sound">
+        <source src="../assets/video/progress_free.mp4" type="video/mp4"></video>
+      <details><summary>What the video shows</summary><ol class="steps" data-t="free" ><li>Your last 7, 14 or 30 days.</li><li>Free: see what you&#x27;ve done.</li></ol><ol class="steps" data-t="plan" hidden><li>Up to 90 days.</li><li>How you felt before and after moving.</li><li>And your arc, read back to you.</li><li>The Plan: see what&#x27;s working for you.</li></ol></details>
+      <div class="table-wrap"><table data-claims="progress">
+        <caption>What each one does</caption>
+        <thead><tr><th scope="col"><span class="visually-hidden">What you get</span></th><th scope="col">Free</th><th scope="col">The Plan</th></tr></thead>
+        <tbody><tr><th scope="row">Today, and the last 7, 14 or 30 days</th><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr><tr><th scope="row">Share your progress as a picture, certificate, report or text</th><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr><tr><th scope="row">Up to 90 days</th><td><span class="no" aria-hidden="true">&mdash;</span><span class="visually-hidden">Not included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr><tr><th scope="row">How you felt before and after moving, and what seems to help</th><td><span class="no" aria-hidden="true">&mdash;</span><span class="visually-hidden">Not included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr><tr><th scope="row">Your arc, read back to you</th><td><span class="no" aria-hidden="true">&mdash;</span><span class="visually-hidden">Not included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr><tr><th scope="row">The weights you&rsquo;ve lifted</th><td><span class="no" aria-hidden="true">&mdash;</span><span class="visually-hidden">Not included</span></td><td><span class="yes" aria-hidden="true">&#10003;</span><span class="visually-hidden">Included</span></td></tr></tbody></table></div>
+    </div>
+  </div>
+      </div>
+    </div>
+
+    <div class="wrap wide end">
+      <div class="early">
+        <strong>Early bird for testers: &pound;44.99 a year</strong>
+        <p>For testers who take the Plan in December 2026. The price stays for as long as your yearly subscription does.</p>
+      </div>
+      <p class="small">All screens are from the app, with example data. The Plan goes on sale after testing. Free stays free.</p>
+      <a class="cta" href="../#join">Join the testers list</a>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="../js/site.js?v=11"></script>
+  <script src="../js/how-it-works.js?v=1"></script>
+</body>
+</html>

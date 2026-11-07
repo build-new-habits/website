@@ -1,184 +1,26 @@
 <!DOCTYPE html>
 <!--
   community/index.html
-  07 Nov 2026 v17
+  07 Nov 2026 v1 (retired page)
 
-  v17 — Live at buildnewhabits.co.uk: the share button copies that address.
-
-  v16 — WEB-CLAIMS: the switched-off sign-up says plainly that nothing typed is sent. site.css ?v=24 and site.js ?v=10 (Accessibility
-    statement linked from the footer).
-
-  v15 — No markup change; site.js ?v= bumped to 9 (nav links now built
-    from a runtime BASE_PATH so they work under both the github.io
-    /website/ prefix and the custom domain root - see site.js v9).
-  v14 — No markup change; site.css ?v= bumped to 22 and site.js ?v=
-    bumped to 8 (About page built - new .about styles, new About nav
-    link).
-  v13 — No markup change; site.css ?v= bumped to 21 (specificity bug
-    fix on the philosophy page - see site.css v21 changelog).
-  v12 — No markup change; site.css ?v= bumped to 20 (Philosophy page
-    emphasis pass: power statements unified to bold teal, new centred
-    teal divider between beats - see site.css v20 changelog).
-  v11 — No markup change; site.css ?v= bumped to 19 and site.js ?v=
-    bumped to 7 (Philosophy page built - new .philosophy styles, new
-    Philosophy nav link).
-  v10 — Per Graeme's direct feedback (twice now on the charter):
-    removed the "What belongs here"/"What doesn't" charter block
-    entirely - flagged as confusing and not doing anything useful.
-    Content preserved here, not deleted from history, in case it's
-    wanted again once there's an actual live space for it to describe:
-    "What belongs here: Identity, struggle, what worked for me, asking
-    for support, celebrating quietly. What doesn't: Counts, comparisons,
-    challenges, weight numbers, before/after content."
-    Hero heading centred. "Three ways" given an explanatory intro line
-    (it wasn't clear what the section was for). "Share the impact"
-    rewritten to cover both meanings Graeme intended - inviting others,
-    AND sending in your own story (mailto link, explicit permission
-    language for reuse on socials/website/marketing). "Carry the
-    signal" rewritten - was too narrow to "talk about our philosophy";
-    now the actual evangelism call-to-action Graeme described. Closing
-    line: "Alongside" now teal. site.css ?v= bumped to 18.
-  v9 — No markup change; site.css ?v= bumped to 17 (comparison table
-    header/divider polish, areas-explained section - see site.css v17
-    changelog).
-  v8 — "What belongs here"/"What doesn't" charter reframed as forward-
-    looking (honest that only a mailing list exists today, not a live
-    posting space) - flagged by Graeme in an earlier session, not
-    actioned until now. "Three ways" rebuilt from three bare words into
-    real content per item; "Share the impact" gets a working copy-link
-    button (js/community.js, new). site.css ?v= bumped to 16.
-  v7 — No markup change; site.css ?v= bumped to 14 (gold token
-    lightened, see site.css v14 changelog).
-  v6 — No markup change; site.css ?v= bumped to 12, site.js ?v= bumped
-    to 6 (footer "Ltd" removed - sole trader, never Ltd).
-  v5 — No markup change; site.css ?v= bumped to 11, site.js ?v= bumped
-    to 5 (Upgrade nav link now included in shared nav).
-  v4 — No markup change; site.css ?v= bumped to 7 to match the desktop-
-    width fix (see site.css v7 changelog).
-  v3 — 20 Jul 2026. Cache-busting fix: ?v=N added to css/site.css and js/*.js
-    references (see index.html v4 changelog for the full reason and the
-    new standing rule).
-  v2 — 20 Jul 2026. Loads js/layout.js for the responsive/manual layout toggle. No
-    content or markup changes otherwise.
-  v1 — Initial build.
-
-  Alongside — Community page.
-  Route: /community/
-  AMENDED per blueprint Section 8: join mechanism is the mailing list only.
-  Zero references to Facebook, Discord, or any named social platform.
-  Kit embed not yet available — join form is a placeholder state, flagged
-  in the handoff as needing the real embed before this page goes live.
+  WEB-TRIM (master schedule row 9b). Community is no longer a page of its own;
+  this sends anyone with an old link to Home. The old page is archived in
+  BNH-Files (Archive/website_web-trim_07nov2026/live-before-48cf877/community/). Giving back waits until Graeme has something to say (07 Nov).
 -->
 <html lang="en-GB">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Community | Alongside</title>
-  <meta name="description" content="Help us grow something worth growing. Shared values, not competitive performance.">
-  <link rel="stylesheet" href="../css/site.css?v=24">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="refresh" content="0; url=../">
+  <link rel="canonical" href="https://buildnewhabits.co.uk/">
+  <title>Moved | Alongside</title>
+  <link rel="stylesheet" href="../css/main.css?v=1">
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-
-  <div id="site-nav"></div>
-
-  <main id="main-content">
-    <div class="container">
-
-      <section aria-labelledby="page-title" style="text-align: center;">
-        <h1 id="page-title">Help us grow something worth growing.</h1>
-        <p class="form-note">Shared values, not competitive performance.</p>
-      </section>
-
-      <section aria-labelledby="ways-title">
-        <h2 id="ways-title">Three ways</h2>
-        <p class="form-note" style="text-align: center; margin-bottom: var(--space-5);">
-          If Alongside means something to you, here's how you can help it
-          grow — no algorithm, no pressure, just word of mouth.
-        </p>
-        <div class="three-ways">
-          <div class="three-ways__item">
-            <p class="three-ways__title">Show up</p>
-            <p class="three-ways__body">Use Alongside the way that works for you today. That's already enough.</p>
-          </div>
-          <div class="three-ways__item">
-            <p class="three-ways__title">Share the impact</p>
-            <p class="three-ways__body">
-              Tell someone who needs this that it exists. A quiet
-              recommendation carries more trust than any ad we could run.
-            </p>
-            <button type="button" class="btn btn--ghost three-ways__share-btn" id="share-link-btn" data-share-url="https://buildnewhabits.co.uk/">
-              Copy link to share
-            </button>
-            <p class="three-ways__share-status" id="share-link-status" role="status" aria-live="polite"></p>
-            <p class="three-ways__body" style="margin-top: var(--space-4);">
-              Or tell us: what has Alongside actually done for you? Send a
-              few words to
-              <a class="site-footer__link" href="mailto:hello@buildnewhabits.co.uk?subject=What%20Alongside%20did%20for%20me">hello@buildnewhabits.co.uk</a>.
-              With your permission, we'll share it — on our socials, our
-              website, or in how we talk about this work. Without it, it's
-              just for us, so we know we're getting this right.
-            </p>
-          </div>
-          <div class="three-ways__item">
-            <p class="three-ways__title">Carry the signal</p>
-            <p class="three-ways__body">
-              If you believe in what we're building — coaching that actually
-              adapts to you, no shame, no comparison — say so. Tell people.
-              The impact we want to have in the world starts with the people
-              who already feel it, passing it on. Let the community grow
-              because you were part of growing it.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section aria-labelledby="join-title">
-        <h2 id="join-title">Join the list</h2>
-        <div class="card join-panel">
-          <p class="form-note">
-            No group to join yet — just a list. We'll let you know when there's
-            a real space worth stepping into.
-          </p>
-
-          <form class="join-panel__form" aria-label="Join the Alongside mailing list">
-            <div class="join-panel__row">
-              <div class="form-field">
-                <label class="form-label" for="join-email">Email address</label>
-                <input
-                  class="form-input"
-                  type="email"
-                  id="join-email"
-                  name="email"
-                  autocomplete="email"
-                  required
-                  aria-describedby="join-hint"
-                  disabled
-                >
-              </div>
-              <button type="submit" class="btn btn--disabled" aria-disabled="true" disabled>
-                Join the list
-              </button>
-            </div>
-            <p class="form-hint" id="join-hint">
-              Sign-up isn't open yet. This form is switched off until the
-              mailing list is connected, so nothing you type here is sent.
-            </p>
-          </form>
-        </div>
-      </section>
-
-      <section aria-label="Closing statement">
-        <p class="close-statement">We hope to work <span class="text-teal">Alongside</span> you.</p>
-      </section>
-
-    </div>
+  <main id="main-content" class="wrap moved">
+    <h1>This page has moved</h1>
+    <p><a href="../">Go to Home</a></p>
   </main>
-
-  <div id="site-footer"></div>
-
-  <script src="../js/layout.js?v=1"></script>
-  <script src="../js/site.js?v=10"></script>
-  <script src="../js/community.js?v=1"></script>
 </body>
 </html>

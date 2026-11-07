@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   sitemap.xml
-  07 Nov 2026 v7
+  07 Nov 2026 v8
+
+  v8 — WEB-TRIM (master schedule row 9b): Home, How it works, About and
+    Accessibility. Who it's for, Upgrade, Philosophy, Products, Community
+    and Impact are retired and send you on, so they are no longer listed.
 
   v7 — Live at buildnewhabits.co.uk: every address moved from the
     github.io one (GitHub redirects the old addresses).
@@ -26,40 +30,8 @@
   planning doc — not this session).
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://buildnewhabits.co.uk/</loc>
-    <lastmod>2026-10-18</lastmod>
-  </url>
-  <url>
-    <loc>https://buildnewhabits.co.uk/philosophy/</loc>
-    <lastmod>2026-08-10</lastmod>
-  </url>
-  <url>
-    <loc>https://buildnewhabits.co.uk/products/</loc>
-    <lastmod>2026-07-14</lastmod>
-  </url>
-  <url>
-    <loc>https://buildnewhabits.co.uk/community/</loc>
-    <lastmod>2026-07-14</lastmod>
-  </url>
-  <url>
-    <loc>https://buildnewhabits.co.uk/impact/</loc>
-    <lastmod>2026-07-20</lastmod>
-  </url>
-  <url>
-    <loc>https://buildnewhabits.co.uk/about/</loc>
-    <lastmod>2026-08-10</lastmod>
-  </url>
-  <url>
-    <loc>https://buildnewhabits.co.uk/accessibility/</loc>
-    <lastmod>2026-10-18</lastmod>
-  </url>
-  <url>
-    <loc>https://buildnewhabits.co.uk/upgrade/</loc>
-    <lastmod>2026-08-03</lastmod>
-  </url>
-  <url>
-    <loc>https://buildnewhabits.co.uk/who-its-for/</loc>
-    <lastmod>2026-10-18</lastmod>
-  </url>
+  <url><loc>https://buildnewhabits.co.uk/</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://buildnewhabits.co.uk/how-it-works/</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://buildnewhabits.co.uk/about/</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://buildnewhabits.co.uk/accessibility/</loc><lastmod>2026-11-07</lastmod></url>
 </urlset>
