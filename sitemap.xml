@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   sitemap.xml
-  18 Oct 2026 v6
+  07 Nov 2026 v7
+
+  v7 — Live at buildnewhabits.co.uk: every address moved from the
+    github.io one (GitHub redirects the old addresses).
 
   v6 — Accessibility statement added.
   v5 — About added.
@@ -24,39 +27,39 @@
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://build-new-habits.github.io/website/</loc>
+    <loc>https://buildnewhabits.co.uk/</loc>
     <lastmod>2026-10-18</lastmod>
   </url>
   <url>
-    <loc>https://build-new-habits.github.io/website/philosophy/</loc>
+    <loc>https://buildnewhabits.co.uk/philosophy/</loc>
     <lastmod>2026-08-10</lastmod>
   </url>
   <url>
-    <loc>https://build-new-habits.github.io/website/products/</loc>
+    <loc>https://buildnewhabits.co.uk/products/</loc>
     <lastmod>2026-07-14</lastmod>
   </url>
   <url>
-    <loc>https://build-new-habits.github.io/website/community/</loc>
+    <loc>https://buildnewhabits.co.uk/community/</loc>
     <lastmod>2026-07-14</lastmod>
   </url>
   <url>
-    <loc>https://build-new-habits.github.io/website/impact/</loc>
+    <loc>https://buildnewhabits.co.uk/impact/</loc>
     <lastmod>2026-07-20</lastmod>
   </url>
   <url>
-    <loc>https://build-new-habits.github.io/website/about/</loc>
+    <loc>https://buildnewhabits.co.uk/about/</loc>
     <lastmod>2026-08-10</lastmod>
   </url>
   <url>
-    <loc>https://build-new-habits.github.io/website/accessibility/</loc>
+    <loc>https://buildnewhabits.co.uk/accessibility/</loc>
     <lastmod>2026-10-18</lastmod>
   </url>
   <url>
-    <loc>https://build-new-habits.github.io/website/upgrade/</loc>
+    <loc>https://buildnewhabits.co.uk/upgrade/</loc>
     <lastmod>2026-08-03</lastmod>
   </url>
   <url>
-    <loc>https://build-new-habits.github.io/website/who-its-for/</loc>
+    <loc>https://buildnewhabits.co.uk/who-its-for/</loc>
     <lastmod>2026-10-18</lastmod>
   </url>
 </urlset>
