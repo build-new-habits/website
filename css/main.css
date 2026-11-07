@@ -1,5 +1,7 @@
 /* css/main.css
- * 07 Nov 2026 v1
+ * 07 Nov 2026 v2
+ *
+ * v2 — .steps-list for Home's "Put it on your phone".
  *
  * WEB-TRIM (master schedule row 9b). One stylesheet for the whole site,
  * from the approved mock-ups (Home v3, How it works v2, About v1, 07 Nov).
@@ -157,6 +159,8 @@ input[type=email] { font: inherit; padding: .8rem .9rem; border-radius: 10px; bo
 .prose p, .prose li { color: var(--text); }
 .prose p + p { margin-top: .75rem; }
 .prose ul { padding-left: 1.25rem; display: grid; gap: .4rem; margin: 0; }
+
+.steps-list { margin: 1rem 0 0; padding-left: 1.25rem; display: grid; gap: .6rem; }
 
 /* Retired pages (redirects) */
 .moved { padding-block: 3rem; display: grid; gap: 1rem; }
