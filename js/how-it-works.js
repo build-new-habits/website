@@ -1,5 +1,8 @@
 /* how-it-works.js
- * 07 Nov 2026 v1
+ * 07 Nov 2026 v2
+ *
+ * v2 — Graeme, 07 Nov: the first one opening by itself hid the other
+ *   options. Now all six start closed, so the whole list is seen first.
  *
  * WEB-TRIM (master schedule row 9b). How it works: each "When…" opens
  * straight under its own button and closes the one before (one open at a
@@ -43,5 +46,9 @@
       b.addEventListener("click", function () { tier = b.dataset.t; setTier(item, tier); });
     });
   });
-  open("arc", false);
+  // All closed to begin with, so every option is seen first.
+  items.forEach(function (item) {
+    item.querySelector(".opener").setAttribute("aria-expanded", "false");
+    item.querySelector(".panel").hidden = true;
+  });
 })();
