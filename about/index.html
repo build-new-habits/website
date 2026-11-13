@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <!--
   about/index.html
-  07 Nov 2026 v5
+  13 Nov 2026 v6
 
+  v6 — Founder audio (13 Nov). "Hear it from me": Graeme's "why I built it"
+    in his own cloned voice (ElevenLabs), from the approved script
+    (BNH project: alongside_founder_why_audio_script_13nov2026_v1.md).
+    No autoplay, native controls, preload none, says plainly it is a
+    recreated voice, full transcript beside it (WCAG 1.2.1, 1.4.2).
+    Audio: assets/audio/founder-why.mp3 (mono 96k, loudness -16 LUFS).
+    main.css ?v=3.
   v5 — The closing button is Try the app (Graeme, 07 Nov).
 
   v4 — WEB-TRIM (master schedule row 9b). About and a short Philosophy in
@@ -23,7 +30,7 @@
   <title>About | Alongside</title>
   <meta name="description" content="Why Alongside exists, and what it believes. Graeme, founder of Build New Habits.">
   <link rel="icon" href="../assets/logo.png">
-  <link rel="stylesheet" href="../css/main.css?v=2">
+  <link rel="stylesheet" href="../css/main.css?v=3">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -34,6 +41,31 @@
       <h1>Why I built it</h1>
       <p>I&rsquo;m Graeme. I was playing football, running and tennis. Then I got injured, and I couldn&rsquo;t.</p>
     </div>
+    <section aria-labelledby="listen-h" class="listen">
+      <div class="wrap">
+        <h2 id="listen-h">Hear it from me</h2>
+        <p class="small" id="listen-note">About 1 minute 30 seconds. Read in my own voice, recreated with ElevenLabs.</p>
+        <audio controls preload="none" src="../assets/audio/founder-why.mp3" aria-describedby="listen-note">
+          <a href="../assets/audio/founder-why.mp3">Download the recording (MP3)</a>
+        </audio>
+        <details>
+          <summary>Read the transcript</summary>
+          <div class="transcript">
+            <p>Hello. I&rsquo;m Graeme, and I built Alongside.</p>
+            <p>For a long time, I was the person fitness apps were made for. I ran. I played football and tennis. Probably too much, but I loved it.</p>
+            <p>Then I got injured. My hamstring, my glutes, my lower back. Running stopped. Some days, even walking far was hard.</p>
+            <p>So I opened fitness apps. The ones I tried didn&rsquo;t ask whether I was carrying an injury. Or how much energy I had. Or what kind of day it was. They told me to push through. My body was telling me something different.</p>
+            <p>I went through it in stages. Motivated first. Then frustrated. Then disappointed, in myself as much as in the apps. Then sad. And then I gave up.</p>
+            <p>But the injury was only part of it. I&rsquo;ve spent a lot of my life feeling like the rules changed when I wasn&rsquo;t looking. Feeling judged. Feeling I should just know things nobody had taught me.</p>
+            <p>What I needed wasn&rsquo;t a programme. It was something that understood where I was, and worked with what I could give that day.</p>
+            <p>It didn&rsquo;t exist. So I built it.</p>
+            <p>Alongside asks how you are before it asks anything of you. When your energy is low, the session is gentler. When something&rsquo;s sore, it leaves some moves out. There are no streaks, and no telling you off for the days you didn&rsquo;t come.</p>
+            <p>And there&rsquo;s one more thing I hope it does. Everyone you pass today is carrying a day you can&rsquo;t see. Once you&rsquo;ve been met where you are, it gets a little easier to meet other people there too.</p>
+            <p>I hope you find it useful.</p>
+          </div>
+        </details>
+      </div>
+    </section>
     <section aria-labelledby="story-h">
       <div class="wrap">
         <h2 id="story-h" class="visually-hidden">My story</h2>
