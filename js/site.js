@@ -1,5 +1,9 @@
 /* site.js
- * 07 Nov 2026 v11
+ * 18 Nov 2026 v12
+ *
+ * v12 — 18 Nov 2026: the product is named Alongside: Move in full (Graeme,
+ *   18 Nov: "that's what it is"), so a family home page can come later
+ *   without rewording the Move pages.
  *
  * v11 — WEB-TRIM (master schedule row 9b; Graeme, 07 Nov: "far far far too
  *   many words … too busy"). Three pages: Home, How it works, About, shown
@@ -46,7 +50,7 @@
     mount.innerHTML =
       '<header class="site-header">' +
         '<div class="wrap">' +
-          '<a class="brand" href="' + (BASE_PATH || "") + '/"><img src="' + BASE_PATH + '/assets/logo.png" alt="" width="32" height="32">Alongside</a>' +
+          '<a class="brand" href="' + (BASE_PATH || "") + '/"><img src="' + BASE_PATH + '/assets/logo.png" alt="" width="32" height="32">Alongside: Move</a>' +
           '<nav aria-label="Main"><ul class="nav-links">' + links + "</ul></nav>" +
         "</div>" +
       "</header>";
