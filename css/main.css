@@ -1,6 +1,8 @@
 /* css/main.css
- * 13 Nov 2026 v3
+ * 23 Nov 2026 v4
  *
+ * v4 — the email address may wrap anywhere: at 200% text on a 320px
+ *   phone it ran off the side on every page (found by the edit-plan check).
  * v3 — .listen block for the founder audio on About (player, transcript).
  * v2 — .steps-list for Home's "Put it on your phone".
  *
@@ -57,7 +59,7 @@ p { margin: 0; }
 .site-footer { border-top: 1px solid var(--card); color: var(--text-2); font-size: .875rem; margin-top: 1rem; }
 .site-footer .wrap { padding-block: 1.25rem 2rem; display: flex; flex-wrap: wrap; align-items: center; gap: .25rem 1.25rem; }
 .site-footer a { color: var(--text-2); display: inline-flex; align-items: center; min-height: 44px; }
-.email { user-select: all; color: var(--text); }
+.email { user-select: all; color: var(--text); overflow-wrap: anywhere; }
 
 /* Shared pieces */
 section { padding-block: 2.5rem; }
