@@ -1,7 +1,14 @@
 /*
  * edit-plan/edit-plan.js
- * 23 Nov 2026 v1
+ * 24 Nov 2026 v2
  *
+ * v2 — P-45 THE LIVE LINK. A link that carries a live link (&live=<id>.<key>
+ *   after the #) and a relay that is set up (relay-config.js): Send back also
+ *   sends the changes straight to their phone, sealed here with the link's
+ *   key (live-link.js), so the relay only ever holds locked bytes. The
+ *   privacy line says so. If it can't be sent, said, and the link is the way.
+ *   With no live link, or the relay not set up, the page is as v1 and makes
+ *   no call to anyone.
  * v1 — P-44 S3: the physio's editing page. Reads the plan after the #,
  *   shows each list and exercise to change (name, sets, reps or time, a
  *   note), Take out and Add an exercise, a line for the person, and Send
@@ -14,6 +21,12 @@
  * results said in a status line; nothing relies on colour.
  */
 import { decodePlan, encodePlan, checkPlan, linkFor, LIMITS, NOT_COMPLETE } from "./plan-link.js";
+import { RELAY } from "./relay-config.js";
+import { relayClient, readLive, seal } from "./live-link.js";
+
+export let client = relayClient(RELAY);
+/** For the gate: a stand-in relay. */
+export const _useClient = c => { client = c; };
 
 export const APP = "https://app.buildnewhabits.co.uk/";
 const root = document.getElementById("ep-app");
@@ -23,6 +36,8 @@ let out = null;           // the plan as it came
 let lists = [];           // [{ g, items: [{ i?, l?, n, s, r, nt, was, gone, fresh }] }]
 let say = "";
 let backLink = "";
+let live = null;          // { id, key } when the link carries a live link and the relay is set up
+let sent = null;          // null, "yes" or "no": sent straight to their phone
 
 function status(msg) {
   const s = document.getElementById("ep-status");
@@ -60,7 +75,9 @@ function render(focusSel) {
   const sent = new Date(out.at).toLocaleDateString("en-GB", { day: "numeric", month: "long" });
   root.innerHTML = `
     <p class="big">${esc(who)} from Alongside: Move, sent on ${esc(sent)}. Change what you need, then press <strong>Send back</strong> at the bottom.</p>
-    <p class="ep-private"><span aria-hidden="true">&#128274;</span><span>Nothing you type is sent to us or kept. It is all in the link, so it goes only where you send it.</span></p>
+    <p class="ep-private"><span aria-hidden="true">&#128274;</span><span>${live
+      ? "When you press Send back, your changes go straight to their phone, locked on this device so only their phone can read them. We can\u2019t read them, and they are deleted once their phone has them (30 days at most)."
+      : "Nothing you type is sent to us or kept. It is all in the link, so it goes only where you send it."}</span></p>
     ${lists.map((l, li) => `<section class="ep-list" aria-labelledby="ep-l-${li}">
       <h2 id="ep-l-${li}">${esc(l.g)}</h2>
       ${l.items.map((x, xi) => exHtml(li, xi, x)).join("")}
@@ -78,9 +95,13 @@ function render(focusSel) {
 }
 
 function backHtml() {
+  const head = sent === "yes" ? "Sent straight to their phone" : "Your changes are ready to send";
+  const line = sent === "yes" ? "They\u2019ll see your changes next time they open Alongside: Move, and choose what to keep. If you\u2019d like, send them this link too."
+    : sent === "no" ? "They couldn\u2019t be sent straight to their phone just now. Send them this link instead, the way they sent theirs."
+    : "Send this link back to them, the way they sent theirs. They will see each change and choose what to keep.";
   return `<section class="ep-back" aria-labelledby="ep-back-h">
-    <h2 id="ep-back-h" tabindex="-1">Your changes are ready to send</h2>
-    <p>Send this link back to them, the way they sent theirs. They will see each change and choose what to keep.</p>
+    <h2 id="ep-back-h" tabindex="-1">${head}</h2>
+    <p>${line}</p>
     <label class="ep-hint" for="ep-link">The link</label>
     <textarea id="ep-link" readonly>${esc(backLink)}</textarea>
     <div class="ep-acts">
@@ -145,7 +166,13 @@ async function make() {
   }
   const p = backPlan();
   if (!p) { status("This could not be made into a link. Check each exercise has a name."); return; }
-  backLink = linkFor(APP, "back=" + await encodePlan(p));
+  const code = await encodePlan(p);
+  backLink = linkFor(APP, "back=" + code);
+  sent = null;
+  if (live) {
+    try { sent = (await client.post(live.id, await seal(live.key, code))) != null ? "yes" : "no"; }
+    catch { sent = "no"; }
+  }
   document.getElementById("ep-back-box").innerHTML = backHtml();
   wireBack();
   document.getElementById("ep-back-h")?.focus();
@@ -191,7 +218,10 @@ function wire() {
 }
 
 export async function start(hash = location.hash) {
-  const r = await decodePlan(hash);
+  const [codePart] = String(hash || "").split("&live=");
+  live = client.on ? readLive(hash) : null;
+  sent = null;
+  const r = await decodePlan(codePart);
   if (!r.ok || r.plan.t !== "out") {
     root.innerHTML = `<p class="big">${esc(r.ok ? "This is a link with changes for the person. Open it on their phone, in Alongside: Move." : NOT_COMPLETE)}</p>
       <p class="ep-lead">Links from Alongside: Move are long. If it was copied by hand or cut short in a message, ask for it to be sent again.</p>`;
